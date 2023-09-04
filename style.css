@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+  }
+  /* Background Navbar Image */
+  .bg-img {
+    background-image: url('/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg');
+    background-size: cover;
+    min-height: 755px;
+    position: relative;
+  }
+  
+  /* Navbar style */
+  .navbar a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    font-size: 25px;
+    padding: 15px;
+    margin: 15px 15px;
+    text-align: center;
+  }
+  
+  .navbar ul{
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .navbar li {
+    list-style-type: none;
+    float: right;
+  }
+  
+  .navbar a:hover {
+    background-color: bisque;
+  }
