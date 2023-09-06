@@ -1,35 +1,63 @@
 body {
-    margin: 0;
-  }
-  /* Background Navbar Image */
-  .bg-img {
-    background-image: url('/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg');
-    background-size: cover;
-    min-height: 755px;
-    position: relative;
-  }
-  
-  /* Navbar style */
-  .navbar a {
-    text-decoration: none;
-    display: block;
-    color: black;
-    font-size: 25px;
-    padding: 15px;
-    margin: 15px 15px;
-    text-align: center;
-  }
-  
-  .navbar ul{
-    overflow: hidden;
-    margin: 0;
-  }
-  
-  .navbar li {
-    list-style-type: none;
-    float: right;
-  }
-  
-  .navbar a:hover {
-    background-color: bisque;
-  }
+  margin: 0;
+}
+/* Background Navbar Image */
+.bg-img {
+  background-image: url("/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg");
+  background-size: cover;
+  min-height: 755px;
+  position: relative;
+}
+
+/* NavBar */
+.navbar ul {
+  margin: 0;
+}
+
+.nav {
+  text-decoration: none;
+  display: inline;
+  margin: 10px;
+  color: black;
+}
+
+.navbar li {
+  list-style-type: none;
+  float: right;
+  margin-right: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.navbar li:hover {
+  background-color: #ddd;
+}
+
+/* Dropdown Menu */
+.dropdown a {
+  position: relative;
+  display: inline-block;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+
+.content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .content {
+  display: block;
+}
+
+.content a:hover {
+  background-color: #ddd;
+}
