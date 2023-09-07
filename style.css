@@ -18,19 +18,16 @@ body {
   text-decoration: none;
   display: inline;
   margin: 10px;
-  color: black;
+  color: rgb(248, 240, 17);
 }
 
 .navbar li {
   list-style-type: none;
   float: right;
+  font-weight: 550;
   margin-right: 40px;
   margin-top: 20px;
   font-size: 20px;
-}
-
-.navbar li:hover {
-  background-color: #ddd;
 }
 
 /* Dropdown Menu */
