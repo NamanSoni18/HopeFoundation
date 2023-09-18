@@ -1,11 +1,13 @@
 body {
   margin: 0;
+  background-color: #053B50;
 }
 /* Background Navbar Image */
 .bg-img {
   background-image: url("/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg");
   background-size: cover;
   min-height: 755px;
+  margin-bottom: 30px;
   position: relative;
 }
 
