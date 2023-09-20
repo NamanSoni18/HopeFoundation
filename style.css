@@ -1,15 +1,17 @@
 body {
   /* background-color: #053B50; */
   margin: 0;
-  background-color: #053B50;
+  /* background-color: #053B50; */
 }
 /* Background Navbar Image */
-.bg-img {
-  background-image: url("/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg");
+.image {
   background-size: cover;
-  min-height: 755px;
-  margin-bottom: 30px;
-  position: relative;
+  width: 100%;
+  /* margin-bottom: 30px; */
+  z-index: -1; 
+  /* height: 800px; */
+  /* top: 30px; */
+  position: absolute;
 }
 
 /* NavBar */
@@ -17,11 +19,14 @@ body {
   margin: 0;
 }
 
+.navbar {
+  position: relative;
+}
 .nav {
   text-decoration: none;
   display: inline;
   margin: 10px;
-  color: rgb(247, 2, 19);
+  color: rgb(32, 24, 24);
 }
 
 .navbar li {
