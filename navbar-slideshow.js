@@ -1,15 +1,14 @@
-let index = 0;
-displayImages();
-function displayImages() {
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
   let i;
-  const images = document.getElementsByClassName("image-div");
-  for (i = 0; i < images.length; i++) {
-    images[i].style.display = "none";
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  index++;
-  if (index > images.length) {
-    index = 1;
-  }
-  images[index - 1].style.display = "block";
-  setTimeout(displayImages, 6000);
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
