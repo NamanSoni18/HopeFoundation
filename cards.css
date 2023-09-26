@@ -1,8 +1,8 @@
-/* .image img {
+.card-image img {
   /* width: 200px; */
   width: auto;
   height: 700px;
-} */
+}
 
 .card {
   border: 5px solid rgb(104, 188, 241);
@@ -15,7 +15,7 @@
   overflow: hidden;
   background: linear-gradient(to right, #74ebd5, #acb6e5);
   flex-direction: row;
-  position: relative;
+  /* position: relative; */
   /* justify-content: center; */
   /* align-items: center; */
 }
@@ -35,12 +35,12 @@
 }
 
 .details span {
-  position: relative; 
+  /* position: relative;  */
   left: 400px;
   font-size: larger;
-  top: 30px;
+  /* top: 30px; */
   color: rgb(150, 7, 42);
-  /* padding: 30px; */
+  padding: 30px;
 }
 
 .details h1 {

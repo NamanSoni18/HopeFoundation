@@ -4,41 +4,36 @@ body {
   /* background-color: #053B50; */
 }
 /* Background Navbar Image */
-.image {
+.slidshow-img {
   background-size: cover;
   width: 100%;
-  /* margin-bottom: 30px; */
   z-index: -1; 
-  /* height: 800px; */
-  /* top: 30px; */
-  position: absolute;
 }
 
 nav {
   position: relative;
-  z-index: 1;
-}
-/* NavBar */
-.navbar ul {
-  margin: 0;
+  /* background-color: bisque; */
+  z-index: 2;
 }
 
-.navbar {
-  position: relative;
+.navbar ul {
+  margin-bottom: 10px;
 }
+
 .nav {
   text-decoration: none;
-  display: inline;
+  /* display: inline; */
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif; 
   margin: 10px;
-  color: rgb(32, 24, 24);
+  color: rgb(14, 11, 10);
 }
 
 .navbar li {
   list-style-type: none;
   float: right;
-  font-weight: 550;
+  font-weight: 900;
   margin-right: 40px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 20px;
 }
 
@@ -52,7 +47,6 @@ nav {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  z-index: 1;
 }
 
 

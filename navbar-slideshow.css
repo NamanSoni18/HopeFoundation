@@ -1,5 +1,10 @@
-* {
+.slideshow-container {
   box-sizing: border-box;
+}
+
+div > .image {
+  height: 750px;
+  width: fit-content;
 }
 
 /* Slideshow container */
@@ -22,9 +27,10 @@
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.6;
   }
   to {
     opacity: 1;
   }
+
 }
