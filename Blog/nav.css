@@ -1,54 +1,41 @@
 body {
   /* background-color: #053B50; */
   margin: 0;
-  /* background-color: #053B50; */
-}
-/* Background Navbar Image */
-.slidshow-img {
-  background-size: cover;
-  width: 100%;
-  z-index: -1; 
-}
-
-nav {
-  position: relative;
-  /* background-color: bisque; */
-  z-index: 2;
+  background-color: #ffffff; /* Add your desired background color here */
 }
 
 .navbar ul {
   margin-bottom: 10px;
+  padding: 0; /* Remove default padding */
 }
+
 
 .nav {
   text-decoration: none;
-  /* display: inline; */
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif; 
-  margin: 10px;
-  color: rgb(14, 11, 10);
+  padding: 10px;
+  color: #000000; /* Change font color to white */
 }
 
 .navbar li {
   list-style-type: none;
   float: right;
-  font-weight: 900;
-  margin-right: 40px;
-  /* margin-top: 20px; */
   font-size: 20px;
+  font-weight: 900;
+  margin-right: 20px; /* Adjust margin for better spacing */
 }
 
-/* Dropdown Menu */
 .dropdown a {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
+  min-width: 160px; /* Set a minimum width for the dropdown content */
 }
-
 
 .content a {
   color: black;
