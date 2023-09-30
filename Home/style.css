@@ -8,6 +8,11 @@
   font-family: "Inter", sans-serif;
 }
 
+header {
+  margin: 20px;
+  /* background-color: #349f4b; */
+}
+
 :root {
   --dark-grey: #333333;
   --medium-grey: #636363;
@@ -18,6 +23,17 @@
   --border: 1px solid var(--light-grey);
   --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.Inc {
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.4s ease;
+}
+
+.Inc:hover {
+  transform: scale(1.5);
+  /* transform: translateX(15px); */
 }
 
 body {
@@ -43,7 +59,7 @@ button {
   color: inherit;
 }
 
-.btn {
+/* .btn {
   display: block;
   background-color: var(--primary-color);
   color: var(--white);
@@ -52,7 +68,7 @@ button {
   font-size: 1rem;
   font-weight: 500;
   border-radius: 5px;
-}
+} */
 
 .icon {
   padding: 0.5rem;
