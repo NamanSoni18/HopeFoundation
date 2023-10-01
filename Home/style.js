@@ -9,6 +9,7 @@ function setAriaExpandedFalse() {
   dropdownBtn.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
 }
 
+console.log("Hello naman");
 function closeDropdownMenu() {
   dropdown.forEach((drop) => {
     drop.classList.remove("active");
