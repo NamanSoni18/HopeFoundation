@@ -9,145 +9,22 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Home/navbar-slideshow/navbar-slideshow.css">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- <script src="/Home/style.js"></script> -->
 </head>
 
 <body>
-    <header id="nav-menu" aria-label="navigation bar">
-        <div class="container">
-            <div class="nav-start">
-                <a class="logo" href="/Home/index.html">
-                    <img src="/assests/Hope_Foundation_logo.png" width="100" height="100" alt="Inc Logo"
-                        class="Inc Logo" />
-                </a>
-                <nav class="menu">
-                    <ul class="menu-bar">
-                        <li>
-                            <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-haspopup="true"
-                                aria-expanded="false" aria-label="browse">
-                                Programs
-                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
-                            </button>
-                            <div id="dropdown1" class="dropdown">
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
 
-                                <ul role="menu">
-                                    <li class="dropdown-title">
-                                        <span class="dropdown-link-title">Browse by Categories</span>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#after-effect">
-                                            <img src="./assets/icons/ae.svg" />
-                                            Education
-                                        </a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#sketch">
-                                            <img src="./assets/icons/sketch.svg" />
-                                            Health Care
-                                        </a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#indesign">
-                                            <img src="./assets/icons/indesign.svg" />
-                                            Community
-                                        </a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#figma">
-                                            <img src="./assets/icons/figma.svg" />
-                                            Development
-                                        </a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#figma">
-                                            <img src="./assets/icons/figma.svg" />
-                                            Environment
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-haspopup="true"
-                                aria-expanded="false" aria-label="discover">
-                                Contact Us
-                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
-                            </button>
-                            <div id="dropdown2" class="dropdown">
-                                <ul role="menu">
-                                    <li>
-                                        <span class="dropdown-link-title">Browse</span>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#branding">Contact Information</a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#illustrations">Social Media Links</a>
-                                    </li>
-                                </ul>
-                                <ul role="menu">
-                                    <li>
-                                        <span class="dropdown-link-title">About Us</span>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#mac-windows">Mission and Vision</a>
-                                    </li>
-                                    <li role="menuitem">
-                                        <a class="dropdown-link" href="#linux">Values</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="nav-link dropdown-btn" data-dropdown="dropdown3" aria-expanded="false">
-                                Get Involved
-                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
-                            </button>
-                            <div id="dropdown3" class="dropdown">
-                                <ul>
-                                    <li><span class="dropdown-link-title">Donate</span></li>
-                                    <li>
-                                        <a class="dropdown-link" href="#frontend">Volunteer Donate</a>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <span class="dropdown-link-title">Others</span>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-link" href="#ui-ux">News and Updates</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-link" href="/Blog/Blog.html">Blog Press Release</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a class="nav-link" href="/">Login</a></li>
-                        <li><a class="nav-link" href="/">Signup</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="nav-end">
-                <div class="right-container">
-                    <form class="search" role="search">
-                        <input type="search" name="search" placeholder="Search" />
-                        <i class="bx bx-search" aria-hidden="true"></i>
-                    </form>
+    </div>
 
-                    <a href="#profile">
-                        <img src="/assets/images/user.jpg" width="30" height="30" alt="user image" />
-                    </a>
-                    <!-- <button class="btn btn-primary">Create</button> -->
-                </div>
-
-                <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-menu" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-    <script src="style.js"></script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("/Home/nav.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
 
     <div class="slideshow-container" style="z-index: -1;">
 

@@ -10,7 +10,8 @@
 
 header {
   margin-top: 20px;
-  font-family: 'Eczar'; 
+  font-size: 18px;
+  font-family: 'Marcellus'; 
   /* background-color: #349f4b; */
 }
 
@@ -114,9 +115,9 @@ button {
 }
 
 .menu-bar .nav-link {
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 500;
-  font-family: 'Eczar'; 
+  font-family: 'Marcellus'; 
   letter-spacing: -0.6px;
   padding: 0.3rem;
   min-width: 60px;
