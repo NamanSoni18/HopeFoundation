@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/login/login.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <!-- Nav Bar -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
+    <!-- NavBar load-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
@@ -22,7 +19,7 @@
 
     <script>
         $(function () {
-            $("#nav-placeholder").load("/Home/nav.html");
+            $("#nav-placeholder").load("/navbar/nav.html");
         });
     </script>
     <!--end of Navigation bar-->
@@ -30,14 +27,14 @@
     
     <div class="container">
         <div class="form-container">
-            <p class="title">Welcome</p>
-            <form class="form">
-                <input type="email" class="input" placeholder="Email">
-                <input type="password" class="input" placeholder="Password">
+            <p class="title">Login into your Account</p>
+            <form class="form" method="post" action="">
+                <input type="email" name="email" class="input" placeholder="Email">
+                <input type="password" name="password" class="input" placeholder="Password">
                 <p class="page-link">
                     <span class="page-link-label">Forgot Password?</span>
                 </p>
-                <button class="form-btn">Log in</button>
+                <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit"></button>
             </form>
             <p class="sign-up-label">
                 Don't have an account?<a href="/login/signup.html"><span class="sign-up-link">Sign up</span></a>

@@ -11,7 +11,7 @@
 header {
   margin-top: 20px;
   font-size: 18px;
-  font-family: 'Marcellus'; 
+  font-family: 'Biryani'; 
   /* background-color: #349f4b; */
 }
 
@@ -117,7 +117,7 @@ button {
 .menu-bar .nav-link {
   font-size: 18px;
   font-weight: 500;
-  font-family: 'Marcellus'; 
+  font-family: 'Biryani', serif;
   letter-spacing: -0.6px;
   padding: 0.3rem;
   min-width: 60px;

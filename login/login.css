@@ -87,6 +87,13 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.submit {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  font-size: 15px;
+}
+
 .sign-up-link {
   margin-left: 1px;
   font-size: 11px;
