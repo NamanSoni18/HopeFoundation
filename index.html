@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheHopeFoundation</title>
+    <link rel="stylesheet" href="navbar-slideshow/navbar-slideshow.css">
+
+
+    <!-- NavBar Load-->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar/nav.html");
+        });
+    </script>
+    <!-- end of Navigation bar -->
+
+    <div class="slideshow-container" style="z-index: -1;">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-01-35_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-02-07_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-02-19_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+    </div>
+    <script src="navbar-slideshow/navbar-slideshow.js"></script>
+
+</body>
+
+</html>
