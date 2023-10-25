@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login/login.css">
+
+    <!-- NavBar load-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(function() {
+            $("#nav-placeholder").load("/navbar/nav.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
+
+    <div class="container">
+        <div class="form-container">
+            <p class="title">Login into your Account</p>
+            <form class="form" method="post" action="login.php">
+                <input type="email" name="email" class="input" placeholder="Email">
+                <input type="password" name="password" class="input" placeholder="Password">
+                <p class="page-link">
+                    <span class="page-link-label">Forgot Password?</span>
+                </p>
+                <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit"></button>
+            </form>
+            <p class="sign-up-label">
+                Don't have an account?<a href="/login/signup.html"><span class="sign-up-link">Sign up</span></a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

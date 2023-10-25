@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3307,
+            "driver": "MySQL",
+            "name": "MySQLNaman19",
+            "database": "student",
+            "username": "root",
+            "password": "Admin1234"
+        }
+    ],
+    "liveServer.settings.port": 5503
+}

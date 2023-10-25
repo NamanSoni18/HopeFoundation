@@ -1,0 +1,53 @@
+body {
+  /* background-color: #053B50; */
+  margin: 0;
+  background-color: #ffffff; /* Add your desired background color here */
+}
+
+.navbar ul {
+  margin-bottom: 10px;
+  padding: 0; /* Remove default padding */
+}
+
+
+.nav {
+  text-decoration: none;
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif; 
+  padding: 10px;
+  color: #000000; /* Change font color to white */
+}
+
+.navbar li {
+  list-style-type: none;
+  float: right;
+  font-size: 20px;
+  font-weight: 900;
+  margin-right: 20px; /* Adjust margin for better spacing */
+}
+
+.dropdown a {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px; /* Set a minimum width for the dropdown content */
+}
+
+.content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .content {
+  display: block;
+}
+
+.content a:hover {
+  background-color: #ddd;
+}

@@ -5,139 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheHopeFoundation</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="cards.css"> -->
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Mooli">
-    <link rel="stylesheet" href="navbar-slideshow.css">
-    <link rel="stylesheet" href="contactus.css">
-    <!-- <link rel="stylesheet" href="navbar-slideshow.js"> -->
+    <link rel="stylesheet" href="navbar-slideshow/navbar-slideshow.css">
+
+    <!-- NavBar Load-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="navbar">
-        <nav>
-            <div class="nav-bg">
-                <ul>
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav" href="#">Login</a>
-                        </div>
-                    </li>
 
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav" href="#">Contact Us</a>
-                            <div class="content">
-                                <a href="#">Contact Information</a>
-                                <a href="#">Social Media Links</a>
-                                <!-- <a href="#">FAQs</a> -->
-                                <!-- <a href="#">Content 4</a> -->
-                            </div>
-                        </div>
-                    </li>
+    <!-- <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
 
-                    <li>
-                        <div class="dropdown"><a class="nav" href="#">About Us</a>
-                            <div class="content">
-                                <a href="#">Mission and Vision</a>
-                                <a href="#">Values</a>
-                                <!-- <a href="#">Team</a> -->
-                                <!-- <a href="#">Pa</a> -->
-                            </div>
-                        </div>
-                    </li>
+    <div w3-include-html="nav.html"></div>
 
+    <script>
+        includeHTML();
+    </script>
 
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav" href="#">Programs</a>
-                            <div class="content">
-                                <a href="#">Overview</a>
-                                <a href="#">Education</a>
-                                <a href="#">Health Care</a>
-                                <a href="#">Community Development</a>
-                                <a href="#">Environment</a>
-                            </div>
-                        </div>
-                    </li>
+    <script src="script.js"></script> -->
 
-
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav" href="#">Get Involved</a>
-                            <div class="content">
-                                <a href="#">Volunteer</a>
-                                <a href="#">Donate</a>
-                                <!-- <a href="#"></a> -->
-                                <!-- <a href="#">Content 4</a> -->
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li>
-                        <div class="dropdown">
-                            <a class="nav" href="#">News and Updates</a>
-                            <div class="content">
-                                <a href="#">Blog</a>
-                                <a href="#">Press Release</a>
-                                <!-- <a href="#"></a> -->
-                                <!-- <a href="#">Content 4</a> -->
-                            </div>
-                        </div>
-                    </li>
-
-
-                </ul>
-            </div>
-        </nav>
-
-        <div class="slideshow-container">
-
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <img src="/assests/dl.beatsnoop.com-ultra-bNE6LjYyUh.jpg" class="image slidshow-img" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="/assests/Hero_multidimensional_poverty.jpg" class="image slidshow-img" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="/assests/istockphoto-1252924066-170667a.jpg" class="image slidshow-img" style="width:100%">
-            </div>
-        </div>
-        <script src="navbar-slideshow.js"></script>
-    </div>
-
-    <!-- <div class="card-align">
-        <div class="card">
-            <div class="card-image">
-                <img src="/assests/Leena.jpg" alt="Errorrrr" width="50%">
-            </div>
-            <div class="details">
-                <span><strong>Web Developer</strong></span>
-                <div class="contact">
-                    <h1>Leena</h1>
-                    <h1>Sharma</h1>
-                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolores eum, nostrum voluptas
-                        numquam
-                        velit odit accusamus dignissimos a facere illo quos expedita ad modi odio quis. Magni dolore in
-                        similique minima veniam accusamus reiciendis iure quibusdam quidem. Possimus, similique!</h3>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <div class="contact">
-        <h1>Contact US</h1>
-        <div class="relative-contact">
-            <div class="hopefoundation absolute">HOPE FOUNDATION</div>
-            <div class="slash absolute">|</div>
-            <div class="copyright absolute">Copyright © 2024 HopeFoundation</div>
-        </div>
+    
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
 
     </div>
+
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <!-- end of Navigation bar -->
+
+    <div class="slideshow-container" style="z-index: -1;">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-01-35_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-02-07_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="assests/photo_2023-10-02_00-02-19_edited.jpg" class="image slidshow-img" style="width:100%">
+        </div>
+    </div>
+    <script src="navbar-slideshow/navbar-slideshow.js"></script>
+
 </body>
 
 </html>
