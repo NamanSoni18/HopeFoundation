@@ -1,18 +1,10 @@
-/* style.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Inter", sans-serif; */
-}
-
-header {
-  margin-top: 20px;
-  font-size: 18px;
-  font-family: 'Biryani'; 
-  /* background-color: #349f4b; */
+  font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -25,17 +17,6 @@ header {
   --border: 1px solid var(--light-grey);
   --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-.Inc {
-  border-radius: 50%;
-  padding: 10px;
-  transition: 0.4s ease;
-}
-
-.Inc:hover {
-  transform: scale(1.5);
-  /* transform: translateX(15px); */
 }
 
 body {
@@ -61,7 +42,7 @@ button {
   color: inherit;
 }
 
-/* .btn {
+.btn {
   display: block;
   background-color: var(--primary-color);
   color: var(--white);
@@ -70,11 +51,16 @@ button {
   font-size: 1rem;
   font-weight: 500;
   border-radius: 5px;
-} */
+}
+
+.icon {
+  padding: 0.5rem;
+  background-color: var(--light-grey);
+  border-radius: 10px;
+}
 
 .logo {
   margin-right: 1.5rem;
-  z-index: 2;
 }
 
 #nav-menu {
@@ -97,7 +83,7 @@ button {
   background: var(--white);
 }
 
-/* .menu-bar li:first-child .dropdown {
+.menu-bar li:first-child .dropdown {
   flex-direction: initial;
   min-width: 480px;
 }
@@ -108,16 +94,15 @@ button {
 
 .menu-bar li:nth-child(n + 2) ul:nth-child(1) {
   border-bottom: var(--border);
-} */
+}
 
 .menu-bar .dropdown-link-title {
   font-weight: 600;
 }
 
 .menu-bar .nav-link {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
-  font-family: 'Biryani', serif;
   letter-spacing: -0.6px;
   padding: 0.3rem;
   min-width: 60px;
@@ -242,7 +227,6 @@ button {
     display: none;
     position: absolute;
     top: 87px;
-    z-index: 1;
     left: 0;
     min-height: 100vh;
     width: 100vw;
