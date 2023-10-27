@@ -12,50 +12,39 @@
 <body>
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
-            <div class="nav-start">
-                <a class="logo" href="../Main/index.html">
-                    <img alt="Inc Logo" src="../assests/Hope_Foundation_logo.png" width="100" height="100" class="Inc Logo" />
-                </a>
-                <nav class="menu">
-                    <ul class="menu-bar">
-                        <li>
-                            <button class="nav-link">
-                                Programs
-                            </button>
-                        </li>
-                        <li>
-                            <button class="nav-link">
-                                Contact Us
-                            </button>
-                        </li>
-                        <li>
-                            <button class="nav-link">
-                                Get Involved
-                            </button>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="../login/login.html">Login</a>
-                        </li>
-                        <li><a class="nav-link" href="../login/signup.html">Signup</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="nav-end">
-                <div class="right-container">
-                    <form class="search" role="search">
-                        <input type="search" name="search" placeholder="Search" />
-                        <i class="bx bx-search" aria-hidden="true"></i>
-                    </form>
+            <a class="logo" href="../Main/index.html">
+                <img alt="Inc Logo" src="../assests/Hope_Foundation_logo.png" width="100" height="100"
+                    class="Inc Logo" />
+            </a>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu-bar menu">
+                <li>
+                    <button class="nav-link">
+                        Programs
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-link">
+                        Contact Us
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-link">
+                        Get Involved
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-link"><a class="nav-link" href="../login/login.html">Login</a></button>
+                </li>
+                <li><button class="nav-link"><a class="nav-link" href="../login/signup.html">Signup</a></button></li>
+            </ul>
 
-                    <a href="#profile">
-                        <img src="../assets/images/user.jpg" width="30" height="30" alt="user image" />
-                    </a>
-                </div>
-
-                <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-menu" aria-hidden="true"></i>
-                </button>
-            </div>
+            <a href="#profile">
+                <img src="../assets/images/user.jpg" width="30" height="30" alt="user image" />
+            </a>
         </div>
     </header>
 </body>

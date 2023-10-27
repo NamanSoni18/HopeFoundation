@@ -74,11 +74,12 @@ button {
 
 .logo {
   margin-right: 1.5rem;
-  z-index: 2;
+  z-index: 6;
 }
 
 #nav-menu {
   border-bottom: var(--border);
+  /* background: linear-gradient(to left, #f46b45, #eea849); */
 }
 
 .container {
@@ -92,10 +93,10 @@ button {
   padding: 1.2rem 3rem;
 }
 
-.menu {
+/* .menu {
   position: relative;
   background: var(--white);
-}
+} */
 
 /* .menu-bar li:first-child .dropdown {
   flex-direction: initial;
@@ -129,15 +130,11 @@ button {
   color: var(--primary-color);
 }
 
-.nav-start,
-.nav-end,
-.menu-bar,
-.right-container,
-.right-container .search {
+/* .menu-bar {
   display: flex;
   align-items: center;
-}
-
+} */
+/* 
 .right-container {
   display: flex;
   align-items: center;
@@ -170,9 +167,9 @@ button {
   font-size: 1.3rem;
   transform: translateY(-50%);
   opacity: 0.6;
-}
+} */
 
-#hamburger {
+/* #hamburger {
   display: none;
   padding: 0.1rem;
   margin-left: 1rem;
@@ -225,10 +222,6 @@ button {
     margin: 0;
   }
 
-  /* .menu-bar li:first-child .dropdown {
-    min-width: 100%;
-  } */
-
   .menu-bar > li:not(:last-child) {
     padding-bottom: 0.5rem;
     border-bottom: var(--border);
@@ -239,5 +232,115 @@ button {
   .right-container {
     display: none;
   }
+} */
+
+
+/* HamBurger */
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #080404;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 1100px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 100px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked ~ .menu li {
+    /* border: 0.4px solid #333; */
+    height: 2.5em;
+    z-index: 5;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: rgb(1, 0, 0);
+    background-color: #f4f4f4;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
