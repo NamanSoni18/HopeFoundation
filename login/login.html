@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../navbar/nav2.css">
 
     <!-- NavBar load-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
+    
+    <div w3-include-html="../navbar/nav.html"></div>
+
+
     <!--Navigation bar-->
-    <div id="nav-placeholder">
+    <!-- <div id="nav-placeholder">
 
     </div>
 
@@ -21,7 +26,7 @@
         $(function () {
             $("#nav-placeholder").load("/nav.html");
         });
-    </script>
+    </script> -->
     <!--end of Navigation bar-->
 
     <div class="container">
@@ -36,10 +41,17 @@
                 <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit"></button>
             </form>
             <p class="sign-up-label">
-                Don't have an account?<a href="/login/signup.html"><span class="sign-up-link">Sign up</span></a>
+                Don't have an account?<a href="signup.html"><span class="sign-up-link">Sign up</span></a>
             </p>
         </div>
     </div>
+
+    <!-- NavBar Scripts -->
+    <script src="../navbar/nav.js"></script>
+    <script async src="../navbar/script.js"></script>
+    <script>
+        includeHTML();
+    </script>
 
 </body>
 

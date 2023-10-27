@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="/login/signup.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../navbar/nav2.css">
 
     <!-- NavBar Load-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
+    
+    <div w3-include-html="../navbar/nav.html"></div>
+
+
+
     <!--Navigation bar-->
-    <div id="nav-placeholder">
+    <!-- <div id="nav-placeholder">
 
     </div>
 
@@ -21,7 +27,7 @@
         $(function () {
             $("#nav-placeholder").load("/nav.html");
         });
-    </script>
+    </script> -->
     <!--end of Navigation bar-->
 
 
@@ -42,6 +48,14 @@
             </div>
         </div>
     </div>
+
+    <!-- NavBar Scripts -->
+    <script src="../navbar/nav.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script async src="../navbar/script.js"></script>
+
 </body>
 
 </html>
