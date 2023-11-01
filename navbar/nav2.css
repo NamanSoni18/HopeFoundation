@@ -25,6 +25,11 @@ header {
   --border: 1px solid var(--light-grey);
   --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --nav-gradient: linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .Inc {
@@ -40,7 +45,7 @@ header {
 
 body {
   font-family: inherit;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   color: var(--dark-grey);
   letter-spacing: -0.4px;
 }
@@ -233,7 +238,6 @@ button {
     display: none;
   }
 } */
-
 
 /* HamBurger */
 .menu {

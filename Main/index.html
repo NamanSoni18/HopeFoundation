@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <title>TheHopeFoundation</title>
-    <link rel="stylesheet" href="/navbar-slideshow/navbar-slideshow.css">
-    <link rel="stylesheet" href="../navbar/nav2.css">
+    <link rel="stylesheet" href="../navbar-slideshow/navbar-slideshow.css">
+    <!-- <link rel="stylesheet" href="../navbar/nav2.css"> -->
 
     <!-- <style>
         .logo::after {
@@ -16,13 +17,32 @@
 
     <!-- NavBar Load-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    <script>
+        
+        
+        function reloadCss() {
+            var links = document.getElementsByTagName("link");
+            for (var cl in links) {
+                var link = links[cl];
+                if (link.rel === "stylesheet")
+                link.href += "";
+            }
+        }
+        setTimeout(() => {
+            reloadCss();
+            document.location.reload();
+        }, 3000);
+    </script>
 </head>
 
 <body>
 
+
+
     <!-- Nav Bar Load -->
 
-    <div w3-include-html="../navbar/nav.html"></div>
+    <div w3-include-html="../navbar/nav.php"></div>
 
 
     <!--Navigation bar-->
@@ -34,7 +54,7 @@
         $(function () {
             $("#nav-placeholder").load("nav.html");
         });
-    </script> -->
+    </scrip> -->
     <!-- end of Navigation bar -->
 
     <!-- <script id="replace_with_navbar" src="nav.js"></script> -->

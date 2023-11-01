@@ -1,36 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../navbar/nav2.css">
+
+    <!-- NavBar load-->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+
+    <div w3-include-html="../navbar/nav.php"></div>
+
+
+    <!--Navigation bar-->
+    <!-- <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("/nav.html");
+        });
+    </script> -->
+    <!--end of Navigation bar-->
+
+    <div class="form-container">
+        <p class="title">Login into your Account</p>
+        <form class="form" method="post" action="" autocomplete="off">
+            <input type="text" name="username" class="input" placeholder="Username">
+            <input type="password" name="password" class="input" placeholder="Password">
+            <p class="page-link">
+                <span class="page-link-label">Forgot Password?</span>
+            </p>
+            <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit">
+            </button>
+        </form>
+        <p class="sign-up-label">
+            Don't have an account?<a href="signup.php"><span class="sign-up-link">Sign up</span></a>
+        </p>
+    </div>
+
+    <!-- NavBar Scripts -->
+    <script src="../navbar/nav.js"></script>
+    <!-- <script async src="../navbar/script.js"></script> -->
+    <script>
+        includeHTML();
+    </script>
+
+</body>
+
+</html>
+
 <?php
-// define variables and set to empty values
-$email = $password = "";
+include "connection.php";
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email = test_input($_POST["email"]);
-  $password = test_input($_POST["password"]);
+$username = $pwd = "";
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $pwd = $_POST['password'];
+
+    $query = "SELECT * FROM user WHERE username = '$username' AND password = '$pwd'";
+
+    // $data = mysqli_query($conn, $query);
+
+    // $total = mysqli_num_rows($data);
+
+    if (mysqli_num_rows(mysqli_query($conn, $query)) == 1) {
+        $_SESSION['username'] = $username;
+        header('Location: ../Main/index.html');
+    } else {
+        echo "<script> alert('Login Failed'); </script>";
+    }
 }
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-// Connecting to the database
-$servername = "localhost";
-$username = "root";
-$password = "Admin1234";
-$database = "student";
-$port = 3307;
-$socket = null;
-
-// Create a connection
-$conn = mysqli_connect($servername, $username, $password, $database, $port, $socket);
-
-$query = "INSERT INTO STUDENT VALUES(1108, 'Umesh','Gayakwad', 'Raipur')";
-
-mysqli_query($conn, $query);
-
-echo $email;
-echo $password;
-
-
 ?>
