@@ -34,8 +34,10 @@ function user()
         }
 
         header {
-            margin-top: 20px;
+            /* margin-top: 20px; */
             font-size: 18px;
+            padding-top: 20px;
+            /* background: var(--nav-gradient); */
             font-family: "Biryani";
             /* background-color: #349f4b; */
         }
@@ -50,14 +52,12 @@ function user()
             --border: 1px solid var(--light-grey);
             --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
                 rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-            --nav-gradient: linear-gradient(to right,
-                    #38ef7d,
-                    #11998e);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            --nav-gradient: linear-gradient(43deg, #1bb5ad 0%, #47d06c 46%, #c1ff70 100%);
+            ;
         }
 
         .Inc {
-            border-radius: 50%;
+            border-radius: 25%;
             padding: 10px;
             transition: 0.4s ease;
         }
@@ -159,6 +159,30 @@ function user()
             color: var(--primary-color);
         }
 
+        .btn-donate {
+            background-color: orange;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .span-donate {
+            font-size: 20px;
+            /* font-family: 'Biryani'; */
+            font-weight: 600;
+        }
+
+        .right-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: inherit;
+        }
+
         /* .menu-bar {
   display: flex;
   align-items: center;
@@ -256,12 +280,6 @@ function user()
     border-bottom: var(--border);
   }
 }
-
-@media (max-width: 600px) {
-  .right-container {
-    display: none;
-  }
-} */
 
         /* HamBurger */
         .menu {
@@ -384,7 +402,7 @@ function user()
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
             <a class="logo" href="../Main/index.html">
-                <img alt="Inc Logo" src="../assests/Hope_Foundation_logo.svg" width="100" height="100"
+                <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
                     class="Inc Logo" />
             </a>
             <input id="menu-toggle" type="checkbox" />
@@ -413,12 +431,18 @@ function user()
                 <li><button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button></li>
             </ul>
 
-            <div>
+            <div class="right-container">
                 <span>
                     <?php echo user() ?>
                 </span>
                 <a href="#profile">
-                    <img src="../assets/images/user.jpg" width="30" height="30" alt="user image" />
+                    <img src="../assests/Hopefo.jpg" width="30" height="30" alt="user image" />
+                </a>
+                <a href="#Donate">
+                    <button class="btn-donate">
+                        <span class="span-donate">Donate</span>
+                        <img src="../assests/Donate.png" width="30" height="30" alt="Donate" />
+                    </button>
                 </a>
             </div>
         </div>
