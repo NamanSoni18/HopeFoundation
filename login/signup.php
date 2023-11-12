@@ -24,11 +24,10 @@
 
             /* Center a div */
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* display: none; */
+            top: 20%;
+            /* left: 50%; */
+            /* right: 0;
+            bottom: 0; */
         }
     </style>
 
@@ -36,7 +35,14 @@
 
 <body>
 
-    <div w3-include-html="../navbar/nav.php"></div>
+    <!-- Nav Bar Load -->
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000">
+    </div>
+    <!-- NavBar Scripts -->
+    <script src="../navbar/nav.js"></script>
+    <script>
+        includeHTML();
+    </script>
 
 
 
@@ -69,11 +75,6 @@
 
     </div>
 
-    <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
     <!-- <script async src="../navbar/script.js"></script> -->
 
     <!-- <script>

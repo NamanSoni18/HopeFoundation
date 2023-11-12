@@ -34,14 +34,18 @@ function user()
         }
 
         header {
-            /* margin-top: 20px; */
+            margin-top: 0;
+            color: whitesmoke;
             font-size: 18px;
             padding-top: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             /* background: var(--nav-gradient); */
             font-family: "Biryani";
             /* background-color: #349f4b; */
         }
-
+        
         :root {
             --dark-grey: #333333;
             --medium-grey: #636363;
@@ -51,66 +55,10 @@ function user()
             --white: white;
             --border: 1px solid var(--light-grey);
             --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-                rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             --nav-gradient: linear-gradient(43deg, #1bb5ad 0%, #47d06c 46%, #c1ff70 100%);
             ;
         }
-
-        .Inc {
-            border-radius: 25%;
-            padding: 10px;
-            transition: 0.4s ease;
-        }
-
-        .Inc:hover {
-            transform: scale(1.5);
-            /* transform: translateX(15px); */
-        }
-
-        body {
-            font-family: inherit;
-            /* background-color: var(--white); */
-            color: var(--dark-grey);
-            letter-spacing: -0.4px;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-            color: inherit;
-        }
-
-        /* .btn {
-  display: block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  text-align: center;
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 5px;
-} */
-
-        .logo {
-            margin-right: 1.5rem;
-            z-index: 6;
-        }
-
-        #nav-menu {
-            border-bottom: var(--border);
-            /* background: linear-gradient(to left, #f46b45, #eea849); */
-        }
-
         .container {
             display: flex;
             align-items: center;
@@ -121,6 +69,62 @@ function user()
             height: 90px;
             padding: 1.2rem 3rem;
         }
+        
+        .Inc {
+            border-radius: 25%;
+            padding: 10px;
+            transition: 0.4s ease;
+        }
+        
+        .Inc:hover {
+            transform: scale(1.5);
+            /* transform: translateX(15px); */
+        }
+        
+        body {
+            font-family: inherit;
+            /* background-color: var(--white); */
+            color: var(--dark-grey);
+            letter-spacing: -0.4px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: inherit;
+        }
+        
+        /* .btn {
+            display: block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 0.6rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+        } */
+
+        .logo {
+            margin-right: 1.5rem;
+            z-index: 6;
+        }
+
+        #nav-menu {
+            border-bottom: var(--border);
+            /* background: linear-gradient(to left, #f46b45, #eea849); */
+        }
+        
 
         /* .menu {
   position: relative;
@@ -159,15 +163,55 @@ function user()
             color: var(--primary-color);
         }
 
-        .btn-donate {
-            background-color: orange;
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
+        /* Donate Button */
+        .Donate-btn-wrapper {
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background-image: linear-gradient(to bottom right, #edbf5a, #ffae00);
+            border: none;
+            border-radius: 40px;
+            box-shadow: 0px 4px 0px #ffae00;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .Donate-btn-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 0px #ffae00;
+        }
+
+        .Donate-btn-wrapper:active {
+            transform: translateY(0px);
+            box-shadow: none;
+            background-image: linear-gradient(to bottom right, #ffae00, #edbf5a);
+        }
+
+        .Donate-btn-wrapper:before,
+        .Donate-btn-wrapper:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .Donate-btn-wrapper:before {
+            top: -3px;
+            left: -3px;
+            border-radius: 40px;
+            border-top: 3px solid #fff;
+            border-left: 3px solid #fff;
+        }
+
+        .Donate-btn-wrapper:after {
+            bottom: -3px;
+            right: -3px;
+            border-radius: 40px;
+            border-bottom: 3px solid #fff;
+            border-right: 3px solid #fff;
         }
 
         .span-donate {
@@ -417,6 +461,11 @@ function user()
                 </li>
                 <li>
                     <button class="nav-link">
+                        <a href="../children/children.html">Children?</a>
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-link">
                         Contact Us
                     </button>
                 </li>
@@ -436,12 +485,11 @@ function user()
                     <?php echo user() ?>
                 </span>
                 <a href="#profile">
-                    <img src="../assests/Hopefo.jpg" width="30" height="30" alt="user image" />
+                    <!-- <img src="../assests/Hopefo.jpg" width="30" height="30" alt="user image" /> -->
                 </a>
-                <a href="#Donate">
-                    <button class="btn-donate">
-                        <span class="span-donate">Donate</span>
-                        <img src="../assests/Donate.png" width="30" height="30" alt="Donate" />
+                <a href="../Donate/Donate.php">
+                    <button class="Donate-btn-wrapper">
+                        <span class="span-donate">Donate ❤️</span>
                     </button>
                 </a>
             </div>

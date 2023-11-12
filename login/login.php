@@ -7,14 +7,17 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbar/nav2.css">
-
-    <!-- NavBar load-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
-
-    <div w3-include-html="../navbar/nav.php"></div>
+    <!-- Nav Bar Load -->
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000;">
+    </div>
+    <!-- NavBar Scripts -->
+    <script src="../navbar/nav.js"></script>
+    <script>
+        includeHTML();
+    </script>
 
 
     <!--Navigation bar-->
@@ -45,13 +48,6 @@
         </p>
     </div>
 
-    <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
-    <!-- <script async src="../navbar/script.js"></script> -->
-    <script>
-        includeHTML();
-    </script>
-
 </body>
 
 </html>
@@ -70,10 +66,11 @@ if (isset($_POST['submit'])) {
 
     // $data = mysqli_query($conn, $query);
 
+    
     // $total = mysqli_num_rows($data);
-
+    
     if (mysqli_num_rows(mysqli_query($conn, $query)) == 1) {
-        $_SESSION['username'] = $username;
+            $_SESSION['username'] = $username;
         header('Location: ../Main/index.html');
     } else {
         echo "<script> alert('Login Failed'); </script>";
