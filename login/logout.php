@@ -10,6 +10,5 @@ $email = "";
 $dob = "";
 $fname = "";
 
-
-echo "Session Logged Out";
+header("Location: ../Main/index.html")
 ?>
