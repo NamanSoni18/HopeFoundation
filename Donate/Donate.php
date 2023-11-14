@@ -14,7 +14,8 @@
                 location.replace("../login/login.php");
             }
             else {
-                return false;
+                location.replace("../Main/index.html");
+                // return false;
             }
         }
     </script>

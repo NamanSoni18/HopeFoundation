@@ -532,7 +532,7 @@ function user()
 
                         <div class="menu-profile" id="menu-profile">
                             <ul>
-                                <li><a href="#"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
+                                <li><a href="../navbar/profile.php"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
                                 <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
                                 <li><a href="#"><i class="ph-bold ph-gear-six"></i>&nbsp;Settings</a></li>
                                 <li><a href="#"><i class="ph-bold ph-question"></i>&nbsp;Help</a></li>
@@ -543,7 +543,7 @@ function user()
                 <?php } ?>
                 <a href="../Donate/Donate.php">
                     <button class="Donate-btn-wrapper">
-                        <span class="span-donate">Donate ❤️</span>
+                        <span class="span-donate">Donate❤️</span>
                     </button>
                 </a>
             </div>

@@ -1,93 +1,118 @@
-* {
-    padding: 0;
-    margin: 0
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container-profile {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-color: #0605F9
+.main-profile-div {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  box-shadow: 30px 30px 100px #dedede, -30px -30px 100px #ffffff;
+  background: #ec8b3c;
+  margin: 20px;
+  padding: 20px;
 }
 
-.profile {
-    position: relative;
-    text-align: center;
-    margin-top: 60px
+.h1-head {
+  text-align: center;
 }
 
-.profile img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid red;
-    cursor: pointer
+#manage-profile {
+  font-size: 40px;
+  display: inline-block;
+  margin-top: 50px;
+  width: auto;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ec8b3c;
+  
+  /* text-align: center; */
+}
+.profile-div2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  /* align-items: center; */
 }
 
-.dropdown-content-profile {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    transition:all 2s;
+.input[type="text"] {
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  padding: 20px;
+  /* font-size: 20px; */
+  /* font-size: auto; */
+  margin: 10px 0;
 }
 
-.dropdown-content-profile a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block
+.input {
+  font-family: monospace;
+  /* max-width: 190px; */
+  outline: none;
+  border: 1px solid #dadada;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f3f7fe;
+  transition: .3s;
+  color: #3b82f6;
 }
 
-.dropdown-content-profile a:hover {
-    background-color: #ddd
+.input:focus {
+  border: 2px solid rgb(12, 94, 227);
+  box-shadow: 0 0 0 4px #3b83f65f
 }
 
-.dropdown-profile:hover .dropdown-content-profile {
-    display: block
+.label {
+  /* font-size: 20px; */
+  font-weight: 900;
+  font-size: 25px;
+  /* background-color: #000; */
 }
 
-.profile ul {
-    background-color: #fff;
-    width: 200px;
-    height: 190px;
-    border-radius: 10px;
-    right: 25px;
-    top: 7px;
-    position: absolute;
-    padding: 8px;
-    transition: all 0.5s;
-    z-index: 1
+/* Submit Button */
+.submit-button-profile {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  /* width: 100%; */
+  margin: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #2c9caf;
+}
+.submit-button-profile:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+.submit-button-profile::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2c9caf;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+.submit-button-profile:hover::before {
+  width: 250%;
 }
 
-.profile ul::before {
-    content: '';
-    position: absolute;
-    background-color: #fff;
-    height: 10px;
-    width: 10px;
-    top: -5px;
-    transform: rotate(45deg)
-}
-
-.profile ul li {
-    list-style: none;
-    text-align: left;
-    font-size: 15px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    transition: all 0.5s;
-    cursor: pointer;
-    border-radius: 4px
-}
-
-.profile ul li:hover {
-    background-color: #eee
-}
-
-.profile ul li i {
-    margin-right: 7px
+.main-profile-div .submit {
+  background-color: transparent;
+  border: transparent;
+  font-size: 20px;
 }

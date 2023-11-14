@@ -69,9 +69,15 @@ if (isset($_POST['submit'])) {
     
     // $total = mysqli_num_rows($data);
     
-    if (mysqli_num_rows(mysqli_query($conn, $query)) == 1) {
-            $_SESSION['username'] = $username;
-        header('Location: ../Main/index.html');
+    if ($result = mysqli_query($conn, $query)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['password'] = $row['password'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['fname'] = $row['fname'];
+            $_SESSION['dob'] = $row['dob'];
+        }
+    header('Location: ../Main/index.html');
     } else {
         echo "<script> alert('Login Failed'); </script>";
     }

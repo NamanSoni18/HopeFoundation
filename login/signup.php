@@ -73,6 +73,7 @@
             Already have an account?<span class="sign-up-link">Log in</span>
         </p>
 
+
     </div>
 
     <!-- <script async src="../navbar/script.js"></script> -->
@@ -90,7 +91,7 @@ session_start();
 
 $username = $pwd = $fname = $dob = $email = "";
 
-$exists = false;
+// $exists = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -115,6 +116,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result == 1) {
             $_SESSION['username'] = $username;
+            $_SESSION['fname'] = $fname;
+            $_SESSION['dob'] = $dob;
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $pwd;
             header('Location: ../Main/index.html');
         } else {
             echo "<script> alert('Login Failed'); </script>";
