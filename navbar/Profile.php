@@ -1,8 +1,33 @@
 <?php
 include "../login/connection.php";
 session_start();
-?>
 
+function user()
+{
+    if (!(isset($_COOKIE["user"]))) {
+        // echo "hehe";
+        echo "<script>retVal()</script>";
+    }
+}
+
+user();
+
+if (isset($_COOKIE["user"])) {
+    $username = $_COOKIE['user'];
+    $query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+
+    if($result) {
+        while( $row = mysqli_fetch_assoc($result)) {
+            $_SESSION['username'] = $row["username"];
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["password"] = $row["password"];
+            $_SESSION["fname"] = $row["fname"];
+            $_SESSION["dob"] = $row["dob"];
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,16 +95,6 @@ session_start();
 </body>
 
 </html>
-<?php function user()
-{
-    if (!$_SESSION['username']) {
-        // echo "hehe";
-        echo "<script>retVal()</script>";
-    }
-}
-
-user();
-?>
 
 <?php
 $username = $pwd = $fname = $dob = $email = "";
@@ -111,6 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result == 1) {
             $_SESSION['username'] = $up_username;
+            setcookie("user", $up_username, time() + (30 * 24 * 3600), "/");
             $_SESSION['email'] = $up_email;
             $_SESSION['password'] = $up_pwd;
             $_SESSION['dob'] = $up_dob;

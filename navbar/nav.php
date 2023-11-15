@@ -6,9 +6,11 @@ $userprofile = "";
 
 function user()
 {
-    if (isset($_SESSION['username'])) {
-        $userprofile = $_SESSION['username'];
-        return $userprofile;
+    if (isset($_COOKIE['user'])) {
+        // Retrieve the username from the cookie
+        $username = $_COOKIE['user'];
+        return $username;
+        // Use $username as needed
     }
 }
 
@@ -506,13 +508,13 @@ function user()
             <div class="right-container">
 
                 <?php
-                if (!$_SESSION['username']) { ?>
+                if (!(isset($_COOKIE['user']))) { ?>
                     <a href="../login/login.php">
                         <button class="login-btn-wrapper">
                             Log in
                         </button>
                     </a>
-                <?php } else {
+                <?php } if(isset($_COOKIE["user"])) {
                     genprofile();
                 } ?>
                 <?php function genprofile()

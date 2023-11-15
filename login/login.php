@@ -11,7 +11,8 @@
 
 <body>
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000;">
+    <div w3-include-html="../navbar/nav.php"
+        style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000;">
     </div>
     <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
@@ -35,8 +36,12 @@
     <div class="form-container">
         <p class="title">Login into your Account</p>
         <form class="form" method="post" action="" autocomplete="off">
-            <input type="text" name="username" class="input" placeholder="Username">
-            <input type="password" name="password" class="input" placeholder="Password">
+            <input type="text" name="username" class="input flex" placeholder="Username">
+            <input type="password" name="password" class="input flex" placeholder="Password">
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
             <p class="page-link">
                 <span class="page-link-label">Forgot Password?</span>
             </p>
@@ -54,7 +59,6 @@
 
 <?php
 include "connection.php";
-session_start();
 
 $username = $pwd = "";
 
@@ -64,12 +68,11 @@ if (isset($_POST['submit'])) {
 
     $query = "SELECT * FROM user WHERE username = '$username' AND password = '$pwd'";
 
-    // $data = mysqli_query($conn, $query);
+    $result = mysqli_query($conn, $query);
 
-    
-    // $total = mysqli_num_rows($data);
-    
-    if ($result = mysqli_query($conn, $query)) {
+
+    if ($result) {
+        session_start();
         while ($row = mysqli_fetch_assoc($result)) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['password'] = $row['password'];
@@ -77,7 +80,11 @@ if (isset($_POST['submit'])) {
             $_SESSION['fname'] = $row['fname'];
             $_SESSION['dob'] = $row['dob'];
         }
-    header('Location: ../Main/index.html');
+        if (isset($_POST["remember"])) {
+            // Set a cookie with a long expiration time
+            setcookie("user", $username, time() + (30 * 24 * 3600), "/");
+        }
+        header("Location: secure_page.php");
     } else {
         echo "<script> alert('Login Failed'); </script>";
     }

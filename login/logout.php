@@ -2,17 +2,18 @@
 
 include "connection.php";
 session_start();
-session_unset();
-$_SESSION['username'] = "";
-$_SESSION['fname'] = "";
-$_SESSION["password"] = "";
-$_SESSION["email"] = "";
-$_SESSION["dob"] = "";
+$_SESSION = array();
+
+session_destroy();
+
+if (isset($_COOKIE["user"])) {
+    setcookie("user", "", time() - 3600, "/");
+}
 $username = "";
 $password = "";
 $email = "";
 $dob = "";
 $fname = "";
 
-header("Location: ../Main/index.html")
+header("Location: login.php")
 ?>
