@@ -2,23 +2,13 @@
 include "../login/connection.php";
 session_start();
 
-function user()
-{
-    if (!(isset($_COOKIE["user"]))) {
-        // echo "hehe";
-        echo "<script>retVal()</script>";
-    }
-}
-
-user();
-
 if (isset($_COOKIE["user"])) {
     $username = $_COOKIE['user'];
     $query = "SELECT * FROM user WHERE username = '$username'";
     $result = mysqli_query($conn, $query);
 
-    if($result) {
-        while( $row = mysqli_fetch_assoc($result)) {
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
             $_SESSION['username'] = $row["username"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["password"];
@@ -36,6 +26,16 @@ if (isset($_COOKIE["user"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <!-- Nav Bar Load -->
+    <div w3-include-html="nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000">
+    </div>
+    <script src="nav.js"></script>
+    <script>
+        includeHTML();
+    </script>
     <script>
         function retVal() {
             var retVal = confirm("You Have not logged in. Want to Login?");
@@ -47,16 +47,6 @@ if (isset($_COOKIE["user"])) {
                 // return false;
             }
         }
-    </script>
-</head>
-
-<body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000">
-    </div>
-    <script src="nav.js"></script>
-    <script>
-        includeHTML();
     </script>
 
     <div class="h1-head">
@@ -95,8 +85,17 @@ if (isset($_COOKIE["user"])) {
 </body>
 
 </html>
-
 <?php
+
+function user()
+{
+    if (!(isset($_COOKIE["user"]))) {
+        echo "<script>retVal();</script>";
+    }
+}
+
+user();
+
 $username = $pwd = $fname = $dob = $email = "";
 $up_username = $up_pwd = $up_fname = $up_dob = $up_email = "";
 
@@ -113,31 +112,100 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $up_email = $_POST['up_email'];
     $up_pwd = $_POST['up_pwd'];
 
-    $query = "Select * from user where username = '$username'";
+    function updateProfile($username, $up_username, $up_email)
+    {
 
-    $result = mysqli_query($conn, $query);
+        global $conn;
+        // current username
+        global $username, $pwd, $email, $dob, $fname;
+        //Updated one
+        global $up_username, $up_email, $up_fname, $up_dob, $up_pwd;
+        // global $up_email;
+        // global $up_pwd;
+        // global $up_fname;
+        // global $up_dob;
 
-    $num = mysqli_num_rows($result);
+        // Check if the new username is already taken
+        $checkUsernameQuery = "SELECT * FROM user WHERE username = '$up_username' AND username != '$username'";
+        $result = mysqli_query($conn, $checkUsernameQuery);
 
-    if ($num == 1) {
-        $query2 = "UPDATE user SET username = '$up_username', fname = '$up_fname', email = '$up_email', password = '$up_pwd', dob = '$up_dob' WHERE username = '$username'";
+        if (mysqli_num_rows($result) > 0) {
+            die('<script>alert("Username already Exist")</script>');
+        }
 
-        $result = mysqli_query($conn, $query2);
+        // Update the user profile
+        $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname' WHERE username = '$username'";
 
-        if ($result == 1) {
+        if (mysqli_query($conn, $updateProfileQuery)) {
             $_SESSION['username'] = $up_username;
             setcookie("user", $up_username, time() + (30 * 24 * 3600), "/");
             $_SESSION['email'] = $up_email;
             $_SESSION['password'] = $up_pwd;
             $_SESSION['dob'] = $up_dob;
             $_SESSION['fname'] = $up_fname;
+            echo '<script>alert("Profile updated successfully!")</script>';
             header('Location: Profile.php');
         } else {
-            echo "<script> alert('Update Failed'); </script>";
+            echo "Error updating profile: " . mysqli_error($conn);
         }
-    } else {
-        echo "<script> alert('Update failed.'); </script>";
     }
 
+    // Example usage
+    updateProfile($username, $up_username, $up_email);
+
+    // Close connection
+    mysqli_close($conn);
+
+    // // Check for duplicate username or email
+    // $dupCheckQuery = "SELECT username,email FROM user WHERE username = '$up_username' OR email = '$up_email'";
+
+    // $dupCheckResult = mysqli_query($conn, $dupCheckQuery);
+
+    // if ($dupCheckResult) {
+    //     while ($row = mysqli_fetch_assoc($dupCheckResult)) {
+    //         $existingUsername = $row['username'];
+    //         $existingEmail = $row['email'];
+
+    //         if ($existingUsername == $up_username) {
+    //             echo "<script>alert('Username already taken');</script>";
+    //             header("Location: Profile.php");
+    //             exit();
+    //         }
+
+    //         if ($existingEmail == $up_email) {
+    //             echo "<script>alert('Email already in use');</script>";
+    //             header("Location: Profile.php");
+    //             exit();
+    //         }
+    //     }
+    // }
+
+    // $query = "SELECT * FROM user WHERE username = '$username'";
+
+    // $result = mysqli_query($conn, $query);
+
+    // if ($result) {
+
+    //     // Update user information
+    //     $updateQuery = "UPDATE user SET username = '$up_username', fname = '$up_fname', email = '$up_email', password = '$up_pwd', dob = '$up_dob'";
+
+    //     $updateResult = mysqli_query($conn, $updateQuery);
+
+    //     if ($updateResult) {
+    //         // Update session variables and redirect
+    //         $_SESSION['username'] = $up_username;
+    //         setcookie("user", $up_username, time() + (30 * 24 * 3600), "/");
+    //         $_SESSION['email'] = $up_email;
+    //         $_SESSION['password'] = $up_pwd;
+    //         $_SESSION['dob'] = $up_dob;
+    //         $_SESSION['fname'] = $up_fname;
+    //         header('Location: Profile.php');
+    //         exit();
+    //     } else {
+    //         echo "<script>alert('Update Failed');</script>";
+    //         header("Location: Profile.php");
+    //         exit();
+    //     }
+    // }
 }
 ?>

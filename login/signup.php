@@ -67,6 +67,10 @@
             <input type="date" name="dob" class="input" placeholder="Date of Birth">
             <input type="email" name="email" class="input" placeholder="Email">
             <input type="password" name="password" class="input" placeholder="Password">
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
             <button class="form-btn"><input type="submit" name="submit" class="submit" value="Create account"></button>
         </form>
         <p class="sign-up-label">
@@ -102,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // echo $username;
 
-    $query = "Select * from user where username = '$username'";
+    $query = "Select * from user where username = '$username' and password = '$pwd' and email = '$email' and dob = '$dob' and fname = '$fname'";
 
     $result = mysqli_query($conn, $query);
 
@@ -120,6 +124,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['dob'] = $dob;
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $pwd;
+            if (isset($_POST["remember"])) {
+                // Set a cookie with a long expiration time
+                setcookie("user", $username, time() + (30 * 24 * 3600), "/");
+            }
             header('Location: ../Main/index.html');
         } else {
             echo "<script> alert('Login Failed'); </script>";
