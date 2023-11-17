@@ -104,9 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $pwd = $_POST['password'];
 
-    // echo $username;
+    // Hash the password
+    $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
 
-    $query = "Select * from user where username = '$username' and password = '$pwd' and email = '$email' and dob = '$dob' and fname = '$fname'";
+    $query = "SELECT * FROM user WHERE username = '$username' OR password = '$pwd' OR email = '$email' OR dob = '$dob' OR fname = '$fname'";
 
     $result = mysqli_query($conn, $query);
 
@@ -114,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($num == 0) {
 
-        $query = "INSERT INTO user VALUES('$username', '$pwd', '$fname', '$email', '$dob');";
+        $query = "INSERT INTO user VALUES('$username', '$hashedPassword', '$fname', '$email', '$dob');";
 
         $result = mysqli_query($conn, $query);
 
@@ -123,10 +124,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['fname'] = $fname;
             $_SESSION['dob'] = $dob;
             $_SESSION['email'] = $email;
-            $_SESSION['password'] = $pwd;
+            $_SESSION['password'] = $hashedPassword;
             if (isset($_POST["remember"])) {
                 // Set a cookie with a long expiration time
-                setcookie("user", $username, time() + (30 * 24 * 3600), "/");
+                setcookie("user", $_SESSION['username'], time() + (30 * 24 * 3600), "/");
             }
             header('Location: ../Main/index.html');
         } else {
@@ -141,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // $num = mysqli_num_rows($result);
         // if()
-        echo "<script> alert('Username is already taken.'); </script>";
+        echo "<script> alert('Username or email is already taken.'); </script>";
     }
 }
 ?>

@@ -7,6 +7,11 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbar/nav2.css">
+    <!-- <script>
+        function loggedin() {
+            alert("Login Successfull");
+        }
+    </script> -->
 </head>
 
 <body>
@@ -19,6 +24,7 @@
     <script>
         includeHTML();
     </script>
+
 
 
     <!--Navigation bar-->
@@ -36,7 +42,7 @@
     <div class="form-container">
         <p class="title">Login into your Account</p>
         <form class="form" method="post" action="" autocomplete="off">
-            <input type="text" name="username" class="input flex" placeholder="Username">
+            <input type="text" name="username" class="input flex" placeholder="Enter your Username or email ID">
             <input type="password" name="password" class="input flex" placeholder="Password">
             <div class="remember">
                 <input type="checkbox" id="remember" name="remember">
@@ -66,27 +72,32 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $pwd = $_POST['password'];
 
-    $query = "SELECT * FROM user WHERE username = '$username' AND password = '$pwd'";
+    // Retrieve the hashed password from the database based on the username
+    $query = "SELECT * FROM user WHERE username = '$username' OR email = '$username'";
 
     $result = mysqli_query($conn, $query);
 
 
     if ($result) {
-        session_start();
-        while ($row = mysqli_fetch_assoc($result)) {
+        $row = mysqli_fetch_assoc($result);
+        $hashedPassword = $row['password'];
+
+        if (password_verify($password, $hashedPassword)) {
+            session_start();
             $_SESSION['username'] = $row['username'];
-            $_SESSION['password'] = $row['password'];
+            $_SESSION['password'] = $hashedPassword;
             $_SESSION['email'] = $row['email'];
             $_SESSION['fname'] = $row['fname'];
             $_SESSION['dob'] = $row['dob'];
         }
         if (isset($_POST["remember"])) {
             // Set a cookie with a long expiration time
-            setcookie("user", $username, time() + (30 * 24 * 3600), "/");
+            setcookie("user", $row['username'], time() + (30 * 24 * 3600), "/");
         }
-        header("Location: secure_page.php");
+        
+        header("Location: ../Main/index.html");
     } else {
-        echo "<script> alert('Login Failed'); </script>";
+        echo '<script> alert("Login Failed"); </script>';
     }
 }
 ?>

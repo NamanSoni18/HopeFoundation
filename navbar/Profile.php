@@ -26,6 +26,16 @@ if (isset($_COOKIE["user"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .password-toggle {
+            position: absolute;
+            right: 19px;
+            top: 64%;    
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,7 +57,23 @@ if (isset($_COOKIE["user"])) {
                 // return false;
             }
         }
+
+        function togglePasswordVisibility(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = document.querySelector('.password-toggle');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
     </script>
+
 
     <div class="h1-head">
         <h1 id="manage-profile">Manage your Profile</h1>
@@ -71,8 +97,8 @@ if (isset($_COOKIE["user"])) {
             </div>
             <div class="profile-div2">
                 <label for="up_pwd" class="label">Edit your Password</label>
-                <input type="password" class="input" id="up_pwd" name="up_pwd"
-                    value="<?php echo $_SESSION['password']; ?>">
+                <input type="password" class="input" id="up_pwd" name="up_pwd">
+                    <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('up_pwd')"></i>
             </div>
             <div class="profile-div2">
                 <label for="up_dob" class="label">Edit your Date of Birth</label>
@@ -112,12 +138,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $up_email = $_POST['up_email'];
     $up_pwd = $_POST['up_pwd'];
 
+    $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
+
     function updateProfile($username, $up_username, $up_email)
     {
 
         global $conn;
         // current username
         global $username, $pwd, $email, $dob, $fname;
+
+        global $hashedPassword;
         //Updated one
         global $up_username, $up_email, $up_fname, $up_dob, $up_pwd;
         // global $up_email;
@@ -134,13 +164,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Update the user profile
-        $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname' WHERE username = '$username'";
+        $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$hashedPassword', email = '$up_email', dob = '$up_dob', fname = '$up_fname' WHERE username = '$username'";
 
         if (mysqli_query($conn, $updateProfileQuery)) {
             $_SESSION['username'] = $up_username;
             setcookie("user", $up_username, time() + (30 * 24 * 3600), "/");
             $_SESSION['email'] = $up_email;
-            $_SESSION['password'] = $up_pwd;
+            $_SESSION['password'] = $hashedPassword;
             $_SESSION['dob'] = $up_dob;
             $_SESSION['fname'] = $up_fname;
             echo '<script>alert("Profile updated successfully!")</script>';
