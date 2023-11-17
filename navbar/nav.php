@@ -494,7 +494,7 @@ function user()
                 </li>
                 <li>
                     <button class="nav-link">
-                        Contact Us
+                        <a href="../News/News.php">News</a>
                     </button>
                 </li>
                 <li>

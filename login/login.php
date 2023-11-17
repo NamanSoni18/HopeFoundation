@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbar/nav2.css">
+    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <!-- <script>
         function loggedin() {
             alert("Login Successfull");

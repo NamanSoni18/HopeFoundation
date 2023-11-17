@@ -7,6 +7,7 @@
     <title>Signup</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbar/nav2.css">
+    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
 
     <!-- NavBar Load-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
@@ -74,7 +75,7 @@
             <button class="form-btn"><input type="submit" name="submit" class="submit" value="Create account"></button>
         </form>
         <p class="sign-up-label">
-            Already have an account?<span class="sign-up-link">Log in</span>
+            Already have an account?<span class="sign-up-link"><a href="login.php">Log in</a></span>
         </p>
 
 
