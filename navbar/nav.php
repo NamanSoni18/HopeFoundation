@@ -72,6 +72,7 @@ function user()
 
         .container {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             max-width: 1600px;
@@ -79,6 +80,15 @@ function user()
             column-gap: 2rem;
             height: 90px;
             padding: 1.2rem 3rem;
+            margin-bottom: 37px;
+            padding: 54px 20px;
+        }
+
+        .container .left-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
         }
 
         .Inc {
@@ -120,10 +130,6 @@ function user()
             z-index: 6;
         }
 
-        #nav-menu {
-            border-bottom: var(--border);
-        }
-
         .menu-bar .nav-link {
             font-size: 18px;
             font-weight: 500;
@@ -141,7 +147,7 @@ function user()
 
         /* Donate Button */
         .Donate-btn-wrapper {
-            display: inline-block;
+            display: block;
             padding: 12px 28px;
             margin: 10px;
             font-size: 24px;
@@ -268,6 +274,10 @@ function user()
             transform: rotate(-405deg);
         }
 
+        .donate-button {
+            display: none;
+        }
+
         @media (max-width: 1100px) {
             .menu-button-container {
                 display: flex;
@@ -282,6 +292,10 @@ function user()
                 width: 100%;
                 justify-content: center;
                 align-items: center;
+            }
+            
+            .donate-button {
+                display: block;
             }
 
             #menu-toggle~.menu li {
@@ -317,9 +331,11 @@ function user()
                 border-bottom: 1px solid #444;
             }
 
+            .Donate-btn-wrapper {
+                display: none;
+            }
+
         }
-
-
 
         /* Profile Code */
         .profile-div {
@@ -473,37 +489,44 @@ function user()
 <body>
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
-            <a class="logo" href="../Main/index.html">
-                <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
-                    class="Inc Logo" />
-            </a>
-            <input id="menu-toggle" type="checkbox" />
-            <label class='menu-button-container' for="menu-toggle">
-                <div class='menu-button'></div>
-            </label>
-            <ul class="menu-bar menu">
-                <li>
-                    <button class="nav-link">
-                        Programs
-                    </button>
-                </li>
-                <li>
-                    <button class="nav-link">
-                        <a href="../children/children.html">Children?</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="nav-link">
-                        <a href="../News/News.php">News</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="nav-link">
-                        Get Involved
-                    </button>
-                </li>
-                <li><button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button></li>
-            </ul>
+            <div class="left-container">
+                <a class="logo" href="../Main/index.html">
+                    <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
+                        class="Inc Logo" />
+                </a>
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                    <div class='menu-button'></div>
+                </label>
+                <ul class="menu-bar menu">
+                    <li>
+                        <button class="nav-link">
+                            Programs
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-link">
+                            <a href="../children/children.html">Children?</a>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-link">
+                            <a href="../News/News.php">News</a>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-link">
+                            <a href="../connect/contact.php">Contact Us</a>
+                        </button>
+                    </li>
+                    <li class="donate-button">
+                        <button class="nav-link donate-button">
+                            Donate ❤️
+                        </button>
+                    </li>
+                    <li><button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button></li>
+                </ul>
+            </div>
 
             <div class="right-container">
 
@@ -514,7 +537,8 @@ function user()
                             Log in
                         </button>
                     </a>
-                <?php } if(isset($_COOKIE["user"])) {
+                <?php }
+                if (isset($_COOKIE["user"])) {
                     genprofile();
                 } ?>
                 <?php function genprofile()

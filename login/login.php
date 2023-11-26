@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbar/nav2.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <style>
+        body {
+            background: url("../assests/Blob/blob.svg") no-repeat;
+            background-size: 1100px;
+            background-position: top -80px left 50%;
+        }
+
+    </style>
     <!-- <script>
         function loggedin() {
             alert("Login Successfull");
@@ -17,8 +25,7 @@
 
 <body>
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php"
-        style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000;">
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
     <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
@@ -93,7 +100,7 @@ if (isset($_POST['submit'])) {
         }
         if (isset($_POST["remember"])) {
             // Set a cookie with a long expiration time
-            setcookie("user", $row['username'], time() + (30 * 24 * 3600), "/");
+            setcookie("user", $row['username'], time() + (30 * 24 * 60 * 60), "/");
         }
         
         header("Location: ../Main/index.html");

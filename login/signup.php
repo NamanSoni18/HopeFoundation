@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../navbar/nav2.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
 
     <!-- NavBar Load-->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <style>
+        body {
+            background: url("../assests/Blob/blob.svg") no-repeat;
+            background-size: 1100px;
+            background-position: top -80px left 50%;
+        }
         .form-container {
             width: 500px;
             height: max-content;
@@ -37,28 +41,13 @@
 <body>
 
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000">
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
     <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
     <script>
         includeHTML();
     </script>
-
-
-
-    <!--Navigation bar-->
-    <!-- <div id="nav-placeholder">
-
-    </div>
-
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("/nav.html");
-        });
-    </script> -->
-    <!--end of Navigation bar-->
-
 
     <div class="form-container">
         <p class="title">Create account</p>

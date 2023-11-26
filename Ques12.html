@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form id="nameForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="John">
+        <button onclick="enter()">Enter</button>
+    </form>
+    <div id="welcome"></div>
+    <button id="reset" onclick="reset()">Reset</button>
+    <script>
+        function enter() {
+            document.getElementById('nameForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value;
+                document.getElementById('welcome').innerHTML = '<h1>Welcome ' + name + "!!</h1>";
+            });
+        }
+
+        function reset() {
+            document.getElementById('reset').addEventListener('click', function () {
+                document.getElementById('welcome').innerHTML = '';
+                document.getElementById('name').value = '100';
+            });
+
+        }
+    </script>
+</body>
+
+</html>

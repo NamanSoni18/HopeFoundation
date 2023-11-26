@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url("dog.webp") repeat-x;
+        }
+
+        .navbar {
+            padding: 10px;
+            background-color: red;
+            margin-top: 20px;
+        }
+
+        .vertical {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .horizontal {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navbar a {
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .navbar:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar vertical">
+        <a href="#home" class="item">Home</a>
+        <a href="#about" class="item">About</a>
+        <a href="#contact" class="item">Contact</a>
+    </div>
+
+    <div class="navbar horizontal">
+        <a href="#home" class="item">Home</a>
+        <a href="#about" class="item">About</a>
+        <a href="#contact" class="item">Contact</a>
+    </div>
+
+    <h2>Interactive Vertical Navigation Bar</h2>
+    <p>Hover over the navigation bar to change its color and background image.</p>
+
+    <script>
+        document.querySelector('.navbar').addEventListener('mouseover', function () {
+            document.body.style.backgroundImage = 'url("dog.webp")';
+        });
+
+        document.querySelector('.navbar').addEventListener('mouseout', function () {
+            document.body.style.backgroundImage = 'url("human.webp")';
+        });
+    </script>
+</body>
+
+</html>

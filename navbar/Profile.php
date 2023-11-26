@@ -41,7 +41,7 @@ if (isset($_COOKIE["user"])) {
 
 <body>
     <!-- Nav Bar Load -->
-    <div w3-include-html="nav.php" style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000">
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
     <script src="nav.js"></script>
     <script>

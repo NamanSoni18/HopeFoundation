@@ -1,0 +1,84 @@
+.inbox-layout {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  background: rgba(217, 217, 217, 0.58);
+  border: 2px solid rgb(224, 107, 12);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: bolder;
+  color: black;
+}
+
+.inbox-layout {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 10px;
+  margin: auto 30px;
+  margin-top: 20px;
+}
+
+.inbox-layout:hover {
+  transform: scale(1.01);
+}
+
+.item {
+  padding: 0 10px;
+  /* background-color:   #3d405b; */
+}
+
+.message {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Item Flex */
+.grow2 { flex-grow: 2; }
+
+
+/* Button */
+.button-inbox {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(210, 95, 19);
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-inbox span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-inbox span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.button-inbox:hover span {
+  padding-right: 15px;
+}
+
+.button-inbox:hover span:after {
+  opacity: 1;
+  right: 0;
+}

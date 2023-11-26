@@ -28,8 +28,7 @@ mysqli_close($conn);
 </head>
 
 <body>
-    <div w3-include-html="../navbar/nav.php"
-        style="position: sticky; top: 0; background-color: #F2994A; z-index: 1000;">
+    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
     <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
@@ -39,7 +38,7 @@ mysqli_close($conn);
 
     <!-- News Container -->
     <?php foreach ($posts as $post): ?>
-    <div class="news-card">
+        <div class="news-card">
             <div class="news-card-container">
                 <div class="header">
                     <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
@@ -57,7 +56,7 @@ mysqli_close($conn);
                 <button type="button" class="news-more-info">More Info</button>
             </div>
         </div>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
 </body>
 
 </html>
