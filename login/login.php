@@ -10,11 +10,10 @@
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
         body {
-            background: url("../assests/Blob/blob.svg") no-repeat;
+            background: url("../assests/backgrounds/background7.svg") no-repeat;
             background-size: 1100px;
             background-position: top -80px left 50%;
         }
-
     </style>
     <!-- <script>
         function loggedin() {
@@ -82,27 +81,26 @@ if (isset($_POST['submit'])) {
 
     // Retrieve the hashed password from the database based on the username
     $query = "SELECT * FROM user WHERE username = '$username' OR email = '$username'";
-
     $result = mysqli_query($conn, $query);
-
 
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        $hashedPassword = $row['password'];
 
-        if (password_verify($password, $hashedPassword)) {
-            session_start();
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['password'] = $hashedPassword;
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['fname'] = $row['fname'];
-            $_SESSION['dob'] = $row['dob'];
-        }
+        session_start();
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['password'] = $row['password'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['fname'] = $row['fname'];
+        $_SESSION['dob'] = $row['dob'];
+
         if (isset($_POST["remember"])) {
-            // Set a cookie with a long expiration time
+            // Set the username in a cookie
             setcookie("user", $row['username'], time() + (30 * 24 * 60 * 60), "/");
+        } else {
+            // If "Remember Me" is not checked, set the username in the session
+            $_SESSION['user'] = $row['username'];
         }
-        
+
         header("Location: ../Main/index.html");
     } else {
         echo '<script> alert("Login Failed"); </script>';

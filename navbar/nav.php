@@ -2,17 +2,24 @@
 include "../login/connection.php";
 session_start();
 
-$userprofile = "";
+// // Check if the "remember me" checkbox is selected
+// if (isset($_COOKIE['user']) && !isset($_SESSION['username'])) {
+//     // If selected, set $_SESSION with the user's information
+//     $_SESSION['username'] = $_COOKIE['user'];
+// }
 
 function user()
 {
-    if (isset($_COOKIE['user'])) {
-        // Retrieve the username from the cookie
-        $username = $_COOKIE['user'];
-        return $username;
-        // Use $username as needed
+    $userprofile = "";
+    if (isset($_SESSION['username']) || isset($_COOKIE['user'])) {
+        // Display the username based on whether the session or cookie is set
+        $userprofile = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+        return $userprofile;
+    } else {
+        return $userprofile;
     }
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -293,7 +300,7 @@ function user()
                 justify-content: center;
                 align-items: center;
             }
-            
+
             .donate-button {
                 display: block;
             }
@@ -529,18 +536,16 @@ function user()
             </div>
 
             <div class="right-container">
-
-                <?php
-                if (!(isset($_COOKIE['user']))) { ?>
+                <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
                     <a href="../login/login.php">
                         <button class="login-btn-wrapper">
                             Log in
                         </button>
                     </a>
-                <?php }
-                if (isset($_COOKIE["user"])) {
+                <?php } elseif ((isset($_COOKIE["user"]) || (isset($_SESSION['username'])))) {
                     genprofile();
                 } ?>
+
                 <?php function genprofile()
                 { ?>
                     <div class="profile-div">
@@ -548,11 +553,11 @@ function user()
                         <label for="profileToggle" id="profile" class="profile">
                             <div class="user">
                                 <h3><span>
-                                        <?php echo user() ?>
+                                        <?php echo user(); ?>
                                     </span></h3>
                             </div>
                             <div class="img-box">
-                                <img src="https://i.postimg.cc/BvNYhMHS/user-img.jpg" alt="some user image">
+                                <img src="../assests/icons/icons8-user-94.png" alt="some user image">
                             </div>
                         </label>
 
@@ -567,12 +572,14 @@ function user()
                         </div>
                     </div>
                 <?php } ?>
+
                 <a href="../Donate/Donate.php">
                     <button class="Donate-btn-wrapper">
                         <span class="span-donate">Donate❤️</span>
                     </button>
                 </a>
             </div>
+
         </div>
     </header>
 </body>

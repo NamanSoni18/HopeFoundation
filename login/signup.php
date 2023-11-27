@@ -12,8 +12,9 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <style>
         body {
-            background: url("../assests/Blob/blob.svg") no-repeat;
-            background-size: 1100px;
+            background: url("../assests/backgrounds/background6.svg") no-repeat;
+            background-size: 100%;
+            object-fit: cover;
             background-position: top -80px left 50%;
         }
         .form-container {
