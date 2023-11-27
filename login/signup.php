@@ -17,6 +17,7 @@
             object-fit: cover;
             background-position: top -80px left 50%;
         }
+
         .form-container {
             width: 500px;
             height: max-content;
@@ -52,7 +53,8 @@
 
     <div class="form-container">
         <p class="title">Create account</p>
-        <form class="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form class="form" method="POST" action="" enctype="multipart/form-data">
+            <input type="file" name="image" class="input" accept="image/*">
             <input type="text" name="username" class="input" placeholder="Username">
             <input type="text" name="fname" class="input" placeholder="Full Name">
             <input type="date" name="dob" class="input" placeholder="Date of Birth">
@@ -62,7 +64,7 @@
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember Me</label>
             </div>
-            <button class="form-btn"><input type="submit" name="submit" class="submit" value="Create account"></button>
+            <button class="form-btn submit" type="submit" name="submit">Create Account</button>
         </form>
         <p class="sign-up-label">
             Already have an account?<span class="sign-up-link"><a href="login.php">Log in</a></span>
@@ -86,54 +88,37 @@ session_start();
 
 $username = $pwd = $fname = $dob = $email = "";
 
-// $exists = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST["submit"])) {
     $username = $_POST['username'];
     $fname = $_POST['fname'];
     $dob = $_POST['dob'];
     $email = $_POST['email'];
     $pwd = $_POST['password'];
 
-    // Hash the password
-    $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
-
-    $query = "SELECT * FROM user WHERE username = '$username' OR password = '$pwd' OR email = '$email' OR dob = '$dob' OR fname = '$fname'";
+    if (isset($_FILES['image']['tmp_name']) && !empty($_FILES['image']['tmp_name'])) {
+        $up_image = $_FILES['image']['tmp_name'];
+        $imageData = addslashes(file_get_contents($image));
+        $query = "INSERT INTO user(username, password, fname, email, dob, image) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageData') where username = '$username'";
+    } else {
+        $query = "INSERT INTO user(username, password, fname, email, dob) VALUES('$username', '$pwd', '$fname', '$email', '$dob')";
+    }
 
     $result = mysqli_query($conn, $query);
 
-    $num = mysqli_num_rows($result);
+    if ($result) {
+        $_SESSION['username'] = $username;
+        $_SESSION['fname'] = $fname;
+        $_SESSION['dob'] = $dob;
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $pwd;
 
-    if ($num == 0) {
-
-        $query = "INSERT INTO user VALUES('$username', '$hashedPassword', '$fname', '$email', '$dob');";
-
-        $result = mysqli_query($conn, $query);
-
-        if ($result == 1) {
-            $_SESSION['username'] = $username;
-            $_SESSION['fname'] = $fname;
-            $_SESSION['dob'] = $dob;
-            $_SESSION['email'] = $email;
-            $_SESSION['password'] = $hashedPassword;
-            if (isset($_POST["remember"])) {
-                // Set a cookie with a long expiration time
-                setcookie("user", $_SESSION['username'], time() + (30 * 24 * 3600), "/");
-            }
-            header('Location: ../Main/index.html');
-        } else {
-            echo "<script> alert('Login Failed'); </script>";
+        if (isset($_POST["remember"])) {
+            setcookie("user", $_SESSION['username'], time() + (30 * 24 * 3600), "/");
         }
 
-    }
-    if ($num > 0) {
-        // $query = "Select * from user where password = '$pwd'";
-
-        // $result = mysqli_query($conn, $query);
-
-        // $num = mysqli_num_rows($result);
-        // if()
-        echo "<script> alert('Username or email is already taken.'); </script>";
+        header('Location: ../Main/index.html');
+    } else {
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
     }
 }
 ?>

@@ -8,6 +8,10 @@ session_start();
 //     $_SESSION['username'] = $_COOKIE['user'];
 // }
 
+if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
+    $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+}
+
 function user()
 {
     $userprofile = "";
@@ -19,6 +23,22 @@ function user()
         return $userprofile;
     }
 }
+
+function getProfileImage()
+{
+    global $conn, $username;
+
+    $query = "SELECT image FROM user WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        return isset($row['image']) ? $row['image'] : '';
+    }
+
+    return '';
+}
+
 
 
 ?>
@@ -491,6 +511,12 @@ function user()
             top: 2px;
         }
     </style>
+    <script>
+        // JavaScript to set default image if the profile image is not available
+        document.getElementById('profile-image').onerror = function () {
+            this.src = '../assests/icons/icons8-user-94.png'; // Set the path to your default image
+        };
+    </script>
 </head>
 
 <body>
@@ -557,13 +583,22 @@ function user()
                                     </span></h3>
                             </div>
                             <div class="img-box">
-                                <img src="../assests/icons/icons8-user-94.png" alt="some user image">
+                                <?php
+                                $profileImage = getProfileImage();
+                                $profileImageData = base64_encode($profileImage);
+
+                                if ($profileImage) {
+                                    echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="">';
+                                } else {
+                                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
+                                }
+                                ?>
                             </div>
                         </label>
 
                         <div class="menu-profile" id="menu-profile">
                             <ul>
-                                <li><a href="../navbar/profile.php"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
+                                <li><a href="../Profile/profile.php"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
                                 <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
                                 <li><a href="#"><i class="ph-bold ph-gear-six"></i>&nbsp;Settings</a></li>
                                 <li><a href="#"><i class="ph-bold ph-question"></i>&nbsp;Help</a></li>

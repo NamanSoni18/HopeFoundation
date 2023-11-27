@@ -58,8 +58,7 @@
             <p class="page-link">
                 <span class="page-link-label">Forgot Password?</span>
             </p>
-            <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit">
-            </button>
+            <button class="form-btn submit" name="submit" type="submit">Login</button>
         </form>
         <p class="sign-up-label">
             Don't have an account?<a href="signup.php"><span class="sign-up-link">Sign up</span></a>
@@ -100,7 +99,6 @@ if (isset($_POST['submit'])) {
             // If "Remember Me" is not checked, set the username in the session
             $_SESSION['user'] = $row['username'];
         }
-
         header("Location: ../Main/index.html");
     } else {
         echo '<script> alert("Login Failed"); </script>';
