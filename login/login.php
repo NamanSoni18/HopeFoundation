@@ -58,7 +58,7 @@
                 <label for="remember">Remember Me</label>
             </div>
             <p class="page-link">
-                <span class="page-link-label">Forgot Password?</span>
+                <a href="../Forgot Password/forgot_password.php"><span class="page-link-label">Forgot Password?</span></a>
             </p>
             <button class="form-btn submit" name="submit" type="submit">Login</button>
         </form>
