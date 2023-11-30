@@ -46,7 +46,9 @@
     </script> -->
     <!--end of Navigation bar-->
 
-    <div class="form-container">
+    <!-- <div class="login-page">
+        <div class="left-image"></div> -->
+    <div class="form-container right-image">
         <p class="title">Login into your Account</p>
         <form class="form" method="post" action="" autocomplete="off">
             <input type="text" name="username" class="input flex" placeholder="Enter your Username or email ID">
@@ -64,6 +66,7 @@
             Don't have an account?<a href="signup.php"><span class="sign-up-link">Sign up</span></a>
         </p>
     </div>
+    <!-- </div> -->
 
 </body>
 

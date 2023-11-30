@@ -557,7 +557,11 @@ function getProfileImage()
                             Donate ❤️
                         </button>
                     </li>
-                    <li><button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button></li>
+                    <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
+                    <li>
+                        <button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button>
+                    </li>
+                    <?php } ?>
                 </ul>
             </div>
 

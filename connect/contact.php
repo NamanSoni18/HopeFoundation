@@ -55,10 +55,7 @@
             </label>
 
             <button class="fancy">
-                <span class="top-key"></span>
                 <span class="text"><input type="submit" name="submit" class="submit" value="Contact Us"></span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
             </button>
         </form>
     </div>

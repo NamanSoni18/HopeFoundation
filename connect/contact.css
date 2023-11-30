@@ -107,24 +107,22 @@
 .fancy {
   background-color: white;
   border: 2px solid #916335;
-  border-radius: 0px;
-  box-sizing: border-box;
+  /* border-radius: 0px; */
+  /* box-sizing: border-box; */
   color: #916335;
   cursor: pointer;
   display: inline-block;
-  font-weight: 390;
-  letter-spacing: 2px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
+  /* font-weight: 390; */
+  /* letter-spacing: 2px; */
+  /* margin: 0; */
   padding: 8px 30px;
   position: relative;
-  text-align: center;
-  text-decoration: none;
+  /* text-align: center; */
+  /* text-decoration: none; */
   text-transform: none;
   transition: all 0.3s ease-in-out;
-  user-select: none;
-  font-size: 13px;
+  /* user-select: none; */
+  /* font-size: 13px; */
 }
 
 .fancy::before {
@@ -154,36 +152,6 @@
   transform: translateX(30%);
 }
 
-.fancy .top-key {
-  height: 2px;
-  width: 1.5625rem;
-  top: -2px;
-  left: 0.625rem;
-  position: absolute;
-  background: #916335;
-  transition: width 0.5s ease-out, left 0.3s ease-out;
-}
-
-.fancy .bottom-key-1 {
-  height: 2px;
-  width: 1.5625rem;
-  right: 1.875rem;
-  bottom: -2px;
-  position: absolute;
-  background: #916335;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
-}
-
-.fancy .bottom-key-2 {
-  height: 2px;
-  width: 0.625rem;
-  right: 0.625rem;
-  bottom: -2px;
-  position: absolute;
-  background: #916335;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
-}
-
 .fancy:hover {
   color: #916335;
   background: #a9835f;
@@ -197,15 +165,4 @@
 .fancy:hover .text {
   color: white;
   padding-left: 1.5em;
-}
-
-.fancy:hover .top-key {
-  left: -2px;
-  width: 0px;
-}
-
-.fancy:hover .bottom-key-1,
-.fancy:hover .bottom-key-2 {
-  right: 0;
-  width: 0;
 }
