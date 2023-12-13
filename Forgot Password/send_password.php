@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->setFrom('hopefoundation134@gmail.com', 'Hope Foundation');
                 $mail->addAddress($email, 'Hope Foundation');
                 $mail->Subject = "Your Password";
-                $mail->Body = "Your Password for " . $email . " is: $password";
+                $mail->Body = "Your Password for " . $username . " is: $password";
 
                 // Attempt to send the email
                 $mail->send();
