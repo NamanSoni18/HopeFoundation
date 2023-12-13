@@ -1,13 +1,6 @@
 <?php
 include "../login/connection.php";
 session_start();
-
-// // Check if the "remember me" checkbox is selected
-// if (isset($_COOKIE['user']) && !isset($_SESSION['username'])) {
-//     // If selected, set $_SESSION with the user's information
-//     $_SESSION['username'] = $_COOKIE['user'];
-// }
-
 if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }
@@ -63,7 +56,6 @@ function getProfileImage()
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* font-family: "Inter", sans-serif; */
         }
 
         header {

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../navbar/nav2.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
         body {
@@ -15,11 +14,6 @@
             background-position: top -80px left 50%;
         }
     </style>
-    <!-- <script>
-        function loggedin() {
-            alert("Login Successfull");
-        }
-    </script> -->
 </head>
 
 <body>
@@ -32,27 +26,11 @@
         includeHTML();
     </script>
 
-
-
-    <!--Navigation bar-->
-    <!-- <div id="nav-placeholder">
-
-    </div>
-
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("/nav.html");
-        });
-    </script> -->
-    <!--end of Navigation bar-->
-
-    <!-- <div class="login-page">
-        <div class="left-image"></div> -->
     <div class="form-container right-image">
         <p class="title">Login into your Account</p>
         <form class="form" method="post" action="" autocomplete="off">
-            <input type="text" name="username" class="input flex" placeholder="Enter your Username or email ID">
-            <input type="password" name="password" class="input flex" placeholder="Password">
+            <input type="text" name="username" class="input" placeholder="Enter your Username or email ID">
+            <input type="password" name="password" class="input" placeholder="Password">
             <div class="remember">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember Me</label>
@@ -66,7 +44,6 @@
             Don't have an account?<a href="signup.php"><span class="sign-up-link">Sign up</span></a>
         </p>
     </div>
-    <!-- </div> -->
 
 </body>
 

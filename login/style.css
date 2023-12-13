@@ -1,11 +1,13 @@
 .form-container {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: max-content;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 20px 30px;
+  padding: 20px 15px; 
+    margin: 20px auto;
   /* position: absolute; */
   /* margin: auto; */
   margin: 220px auto;
@@ -114,4 +116,20 @@
   font-weight: 800;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 1100px) {
+    .form-container {
+        padding: 20px 10px; /* Adjusted padding for smaller screens */
+    }
+    .title {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+    }
+    .form-btn {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+    .sign-up-label {
+        font-size: 9px; /* Adjusted font size for smaller screens */
+    }
+    /* Add more styles as needed for smaller screens */
 }
