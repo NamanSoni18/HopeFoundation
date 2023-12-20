@@ -550,9 +550,9 @@ function getProfileImage()
                         </button>
                     </li>
                     <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
-                    <li>
-                        <button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button>
-                    </li>
+                        <li>
+                            <button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button>
+                        </li>
                     <?php } ?>
                 </ul>
             </div>
@@ -595,7 +595,13 @@ function getProfileImage()
                         <div class="menu-profile" id="menu-profile">
                             <ul>
                                 <li><a href="../Profile/profile.php"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
-                                <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
+                                <?php
+                                // Check if admin is logged in
+                                if ($_SESSION['user_role'] == 'admin') {
+
+                                    ?>
+                                    <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
+                                <?php } ?>
                                 <li><a href="#"><i class="ph-bold ph-gear-six"></i>&nbsp;Settings</a></li>
                                 <li><a href="#"><i class="ph-bold ph-question"></i>&nbsp;Help</a></li>
                                 <li><a href="../login/logout.php"><i class="ph-bold ph-sign-out"></i>&nbsp;Sign Out</a></li>

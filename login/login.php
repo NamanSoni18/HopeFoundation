@@ -36,7 +36,8 @@
                 <label for="remember">Remember Me</label>
             </div>
             <p class="page-link">
-                <a href="../Forgot Password/forgot_password.php"><span class="page-link-label">Forgot Password?</span></a>
+                <a href="../Forgot Password/forgot_password.php"><span class="page-link-label">Forgot
+                        Password?</span></a>
             </p>
             <button class="form-btn submit" name="submit" type="submit">Login</button>
         </form>
@@ -55,8 +56,8 @@ include "connection.php";
 $username = $pwd = "";
 
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $pwd = $_POST['password'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $pwd = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Retrieve the hashed password from the database based on the username
     $query = "SELECT * FROM user WHERE username = '$username' OR email = '$username'";
@@ -65,21 +66,28 @@ if (isset($_POST['submit'])) {
     if ($result) {
         $row = mysqli_fetch_assoc($result);
 
-        session_start();
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['password'] = $row['password'];
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['fname'] = $row['fname'];
-        $_SESSION['dob'] = $row['dob'];
+        // Check if entered password matches the stored password
+        if ($pwd === $row['password']) {
+            session_start();
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['password'] = $row['password'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['fname'] = $row['fname'];
+            $_SESSION['dob'] = $row['dob'];
+            $_SESSION['user_role'] = $row['role'];
 
-        if (isset($_POST["remember"])) {
-            // Set the username in a cookie
-            setcookie("user", $row['username'], time() + (30 * 24 * 60 * 60), "/");
+            if (isset($_POST["remember"])) {
+                // Set the username in a cookie
+                setcookie("user", $row['username'], time() + (30 * 24 * 60 * 60), "/");
+            } else {
+                // If "Remember Me" is not checked, set the username in the session
+                $_SESSION['user'] = $row['username'];
+            }
+            echo '<script>alert("Logged in Successfully");</script>';
+            header("Location: ../Main/index.html");
         } else {
-            // If "Remember Me" is not checked, set the username in the session
-            $_SESSION['user'] = $row['username'];
+            echo '<script> alert("Login Failed"); </script>';
         }
-        header("Location: ../Main/index.html");
     } else {
         echo '<script> alert("Login Failed"); </script>';
     }

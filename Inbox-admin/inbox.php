@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
+    echo '<script>alert("You are not an Admin");';
+    echo 'window.location.href = "../Main/index.html";</script>';
+}
+
 include "../login/connection.php";
 $email = $message = "";
 $time;
@@ -14,8 +23,6 @@ if ($result) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,18 +62,43 @@ mysqli_close($conn);
             </div>
             <div class="grow1 item">
                 <button class="delete detail button-inbox">
-                    <a href="contact_detail.php?email=<?php echo $post['email'];?>">
+                    <a href="contact_detail.php?email=<?php echo $post['email']; ?>">
                         <span>Get Detail</span>
                     </a>
                 </button>
             </div>
             <div class="grow1 item">
-                <button class="delete detail button-inbox">
-                    <span>Delete</span>
-                </button>
+                <form method="post" action="">
+                    <input type="hidden" name="email" value="<?php echo $post['email']; ?>">
+                    <button type="submit" class="delete detail button-inbox" name="delete_message">
+                        <span>Delete</span>
+                    </button>
+                </form>
             </div>
         </section>
     <?php endforeach; ?>
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST['delete_message'])) {
+    $emailToDelete = $_POST['email'];
+
+    // Perform the deletion query
+    $deleteQuery = "DELETE FROM contact WHERE email = '$emailToDelete'";
+    $deleteResult = mysqli_query($conn, $deleteQuery);
+
+    if ($deleteResult) {
+        echo '<script>';
+        echo 'alert("Message deleted successfully.");';
+        echo 'window.location.href = "inbox.php";';
+        echo '</script>';
+    } else {
+        echo "Error deleting message: " . mysqli_error($conn);
+    }
+}
+
+mysqli_close($conn);
+?>
