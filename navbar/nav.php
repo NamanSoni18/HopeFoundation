@@ -5,6 +5,10 @@ if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }
 
+if(isset($_COOKIE['role'])) {
+    $_SESSION['user_role'] = $_COOKIE['role'];
+}
+
 function user()
 {
     $userprofile = "";

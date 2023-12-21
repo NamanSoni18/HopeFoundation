@@ -16,7 +16,7 @@ $input;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_SESSION['email_forgot'];
     $username = $_SESSION['username_forgot'];
-    $input = $_POST['input1'] . $_POST['input2'] . $_POST['input3'] . $_POST['input4'] . $_POST['input5'] . $_POST['input6'];
+    $input = $_POST['input1'];
 
 
     // Check if the OTP is valid
@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Attempt to send the email
                 $mail->send();
+
+                $query = "UPDATE user SET otp = 0 WHERE email = '$email'";
                 echo "<script>alert('Your Password is sent to your Mail Successfully')</script>";
                 echo '<script>window.location.href="../Main/index.html";</script>';
             } catch (Exception $e) {

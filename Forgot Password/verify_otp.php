@@ -34,14 +34,10 @@ $email = $_SESSION['email_forgot'];
     <form class="form" action="send_password.php" method="post">
         <div class="title">OTP</div>
         <div class="title">Verification Code</div>
-        <p class="message">We have sent a verification code to your mobile number</p>
-        <div class="inputs">
-            <input id="input1" name="input1" type="text" maxlength="1" required>
-            <input id="input2" name="input2" type="text" maxlength="1" required>
-            <input id="input3" name="input3" type="text" maxlength="1" required>
-            <input id="input4" name="input4" type="text" maxlength="1" required>
-            <input id="input5" name="input5" type="text" maxlength="1" required>
-            <input id="input6" name="input6" type="text" maxlength="1" required>
+        <p class="message">We have sent a verification code to your Email ID</p>
+        <div class="form-card-input-wrapper">
+            <input class="form-card-input" id="input1" name="input1" placeholder="______" maxlength="6" type="text">
+            <div class="form-card-input-bg"></div>
         </div>
         <button class="action" type="submit">Verify Me</button>
     </form>

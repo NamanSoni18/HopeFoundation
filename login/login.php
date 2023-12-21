@@ -79,6 +79,7 @@ if (isset($_POST['submit'])) {
             if (isset($_POST["remember"])) {
                 // Set the username in a cookie
                 setcookie("user", $row['username'], time() + (30 * 24 * 60 * 60), "/");
+                setcookie("role", $row['role'], time() + (30 * 24 * 3600), "/");
             } else {
                 // If "Remember Me" is not checked, set the username in the session
                 $_SESSION['user'] = $row['username'];
