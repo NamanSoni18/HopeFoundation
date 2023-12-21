@@ -45,6 +45,7 @@ function getProfileImage()
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
     <!-- <link rel="stylesheet" href="nav2.css"> -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
     <style>
@@ -594,17 +595,17 @@ function getProfileImage()
 
                         <div class="menu-profile" id="menu-profile">
                             <ul>
-                                <li><a href="../Profile/profile.php"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
+                                <li><a href="../Profile/profile.php">Profile</a></li>
                                 <?php
-                                // Check if admin is logged in
+                                // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin') {
-
-                                    ?>
-                                    <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
-                                <?php } ?>
-                                <li><a href="#"><i class="ph-bold ph-gear-six"></i>&nbsp;Settings</a></li>
-                                <li><a href="#"><i class="ph-bold ph-question"></i>&nbsp;Help</a></li>
-                                <li><a href="../login/logout.php"><i class="ph-bold ph-sign-out"></i>&nbsp;Sign Out</a></li>
+                                    echo '<li><a href="../Inbox-admin/inbox.php">Inbox</a></li>';
+                                    echo '<li><a href="../Admin/Admin.php">Admin Panel</a></li>';
+                                }
+                                ?>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="../login/logout.php">Sign Out</a></li>
                             </ul>
                         </div>
                     </div>

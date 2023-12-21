@@ -34,11 +34,11 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     
     <form action="" method="post" enctype="multipart/form-data">
         <label for="image">Choose an image:</label>
-        <input type="file" name="image" id="image" accept="image/*">
+        <input type="file" name="image" id="image" accept="image/*" required>
         <label for="title">Enter title</label>
-        <textarea name="title" id="title" cols="30" rows="10"></textarea>
+        <textarea name="title" id="title" cols="30" rows="10" required></textarea>
         <label for="paragraph">Enter paragraph</label>
-        <textarea name="paragraph" id="paragraph" cols="30" rows="10"></textarea>
+        <textarea name="paragraph" id="paragraph" cols="30" rows="10" required></textarea>
 
 
         <button type="submit" name="submit">Upload</button>
