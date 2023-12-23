@@ -10,16 +10,15 @@
   transition: all 0.5s;
   font-weight: bolder;
   color: black;
-}
 
-.inbox-layout {
-  /* width: 100%; */
+  /* Adjusted styles for a cleaner layout */
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   gap: 16px;
   padding: 10px;
-  margin: auto 30px;
+  margin: auto 15px;
   margin-top: 20px;
 }
 
@@ -27,20 +26,33 @@
   transform: scale(1.01);
 }
 
-.item {
-  padding: 0 10px;
-  /* background-color:   #3d405b; */
+.item1 {
+  /* Adjusted padding for better spacing */
+  padding: 0 5px;
+  /* flex: 1; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  /* justify-content: center; */
+  width: 10%;
+}
+
+.time {
+  text-align: center;
 }
 
 .message {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 70%;
 }
 
 /* Item Flex */
-.grow2 { flex-grow: 2; }
-
+.grow2 {
+  flex-grow: 1;
+}
 
 /* Button */
 .button-inbox {
@@ -56,6 +68,7 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  width: 100px;
 }
 
 .button-inbox span {
@@ -70,12 +83,12 @@
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -15px;
+  right: -10px;
   transition: 0.5s;
 }
 
 .button-inbox:hover span {
-  padding-right: 15px;
+  padding-right: 10px;
 }
 
 .button-inbox:hover span:after {

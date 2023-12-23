@@ -49,25 +49,25 @@ if ($result) {
 
     <?php foreach ($posts as $post): ?>
         <section class="inbox-layout">
-            <div class="grow1 item item1">
+            <div class="grow2 item item1">
                 <?php
                 echo $post['email'];
                 ?>
             </div>
-            <div class="grow1 item item1">
+            <div class="grow2 item item1 time">
                 <?php echo $post['time']; ?>
             </div>
-            <div class="grow2 item message">
+            <div class="grow2 item message item1">
                 <?php echo $post['message']; ?>
             </div>
-            <div class="grow1 item">
+            <div class="grow1 item2">
                 <button class="delete detail button-inbox">
                     <a href="contact_detail.php?email=<?php echo $post['email']; ?>">
                         <span>Get Detail</span>
                     </a>
                 </button>
             </div>
-            <div class="grow1 item">
+            <div class="grow1 item2">
                 <form method="post" action="">
                     <input type="hidden" name="email" value="<?php echo $post['email']; ?>">
                     <button type="submit" class="delete detail button-inbox" name="delete_message">
