@@ -43,17 +43,13 @@ function getProfileImage()
 <html lang="en">
 
 <head>
-    <!-- <meta http-equiv="refresh" content="5"> -->
-    <!-- Nav Bar Components -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
-    <!-- <link rel="stylesheet" href="nav2.css"> -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
     <style>
-        /* style.css */
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
 
@@ -71,9 +67,7 @@ function getProfileImage()
             position: sticky;
             top: 0;
             z-index: 1000;
-            /* background: var(--nav-gradient); */
             font-family: "Biryani";
-            /* background-color: #349f4b; */
         }
 
         :root {
@@ -123,12 +117,10 @@ function getProfileImage()
 
         .Inc:hover {
             transform: scale(1.5);
-            /* transform: translateX(15px); */
         }
 
         body {
             font-family: inherit;
-            /* background-color: var(--white); */
             color: var(--dark-grey);
             letter-spacing: -0.4px;
         }
@@ -459,11 +451,9 @@ function getProfileImage()
 
         .menu-profile.active {
             display: block;
-            /* Display the menu-profile when active */
         }
 
         .menu-profile ul {
-            /* position: relative; */
             display: flex;
             flex-direction: column;
             z-index: 10;
