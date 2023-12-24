@@ -7,6 +7,14 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <style>
+        body {
+            background: url("../assests/backgrounds/background7.svg") no-repeat;
+            background-size: 1100px;
+            background-position: top -80px left 50%;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -80,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = mysqli_query($conn, $query);
 
-    if($result) {
+    if ($result) {
         header("Location: ../connect/contact.php");
     }
 
