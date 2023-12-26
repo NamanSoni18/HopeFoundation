@@ -95,30 +95,41 @@ if (isset($_POST["submit"])) {
     $email = $_POST['email'];
     $pwd = $_POST['password'];
 
-    if (isset($_FILES['image']['tmp_name']) && !empty($_FILES['image']['tmp_name'])) {
-        $up_image = $_FILES['image']['tmp_name'];
-        $imageData = addslashes(file_get_contents($image));
-        $query = "INSERT INTO user(username, password, fname, email, dob, image) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageData') where username = '$username'";
+    // Check if username or email already exists
+    $checkQuery = "SELECT * FROM user WHERE username = '$username' OR email = '$email'";
+    $checkResult = mysqli_query($conn, $checkQuery);
+
+    if (mysqli_num_rows($checkResult) > 0) {
+        // Username or email already exists
+        echo "<script>alert('Username or email already exists. Please choose a different one.');</script>";
     } else {
-        $query = "INSERT INTO user(username, password, fname, email, dob) VALUES('$username', '$pwd', '$fname', '$email', '$dob')";
-    }
-
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        $_SESSION['username'] = $username;
-        $_SESSION['fname'] = $fname;
-        $_SESSION['dob'] = $dob;
-        $_SESSION['email'] = $email;
-        $_SESSION['password'] = $pwd;
-
-        if (isset($_POST["remember"])) {
-            setcookie("user", $_SESSION['username'], time() + (30 * 24 * 3600), "/");
+        if (isset($_FILES['image']['tmp_name']) && !empty($_FILES['image']['tmp_name'])) {
+            $up_image = $_FILES['image']['tmp_name'];
+            $imageData = addslashes(file_get_contents($up_image));
+            $query = "INSERT INTO user(username, password, fname, email, dob, image, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageData', 'user')";
+        } else {
+            $query = "INSERT INTO user(username, password, fname, email, dob, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', 'user')";
         }
 
-        header('Location: ../Main/index.html');
-    } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            $_SESSION['username'] = $username;
+            $_SESSION['fname'] = $fname;
+            $_SESSION['dob'] = $dob;
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $pwd;
+            $_SESSION['user_role'] = 'user';
+
+            if (isset($_POST["remember"])) {
+                setcookie("user", $_SESSION['username'], time() + (30 * 24 * 3600), "/");
+                setcookie("role", 'user', time() + (30 * 24 * 3600), "/");
+            }
+
+            header('Location: ../Main/index.html');
+        } else {
+            echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        }
     }
 }
 ?>

@@ -36,8 +36,6 @@ function getProfileImage()
     return '';
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -598,7 +596,7 @@ function getProfileImage()
                                     echo '<li><a href="../Admin/Admin.php">Admin Panel</a></li>';
                                 }
                                 ?>
-                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Delete Your Account</a></li>
                                 <li>
                                     <a href="../connect/contact.php">Contact Us</a>
                                 </li>
