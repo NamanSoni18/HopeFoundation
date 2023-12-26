@@ -70,6 +70,14 @@
     font-size: 50px;
 }
 
-.Donate-btn-wrapper {
- 
+.mission-images-div {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  margin: 40px;
+}
+
+.mission-img {
+  width: 200px;
+  height: 200px;
 }
