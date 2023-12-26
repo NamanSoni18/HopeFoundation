@@ -534,6 +534,11 @@ function getProfileImage()
                             <a href="../News/News.php">News</a>
                         </button>
                     </li>
+                    <li>
+                        <button class="nav-link">
+                            <a href="../About Us/about_us.html">About Us</a>
+                        </button>
+                    </li>
 
                     <li class="donate-button">
                         <button class="nav-link donate-button">

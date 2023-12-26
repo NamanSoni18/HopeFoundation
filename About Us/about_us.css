@@ -1,0 +1,82 @@
+.color {
+  background-color: #253d5a;
+  padding: 40px;
+  color: whitesmoke;
+}
+
+.welcome {
+  text-align: center;
+  margin: 50px;
+}
+
+.welcome h2 {
+  text-align: center;
+}
+
+.welcome p {
+  text-align: justify;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.welcome h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  font-size: 20px;
+}
+
+#line {
+  width: 98%;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.about_us {
+  padding: 50px;
+}
+
+.about-head {
+    text-align: center;
+}
+
+.about_us h1 {
+  font-size: 40px;
+  text-align: center;
+  display: inline-flex;
+  width: auto;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.about_us h3 {
+  margin: 30px 0;
+  font-size: 30px;
+}
+
+.about_us p {
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+.join {
+    margin: 30px;
+    padding: 30px;
+    text-align: center;    
+}
+
+.join h2 {
+    font-size: 50px;
+}
+
+/* .join p {
+    text-align: justify;
+    width: 40%;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+.join h5 {
+    font-size: 30px;
+} */
