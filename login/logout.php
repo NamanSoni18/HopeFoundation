@@ -9,6 +9,8 @@ session_destroy();
 if (isset($_COOKIE["user"])) {
     setcookie("user", "", time() - 3600, "/");
 }
+setcookie("role", "", time() + (30 * 24 * 3600), "/");
+
 $username = "";
 $password = "";
 $email = "";

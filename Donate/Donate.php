@@ -24,16 +24,16 @@
 
 <body>
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-    </div>
+    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    </div> -->
     <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
+    <!-- <script src="../navbar/nav.js"></script>
     <script>
         includeHTML();
-    </script>
+    </script> -->
 
 
-    <div class="form-container">
+    <!-- <div class="form-container">
         <p class="title">Donate</p>
         <form class="form" method="post" action="" autocomplete="off">
             <input type="text" name="username" class="input" placeholder="Username">
@@ -41,13 +41,12 @@
             <p class="page-link">
                 <span class="page-link-label">Forgot Password?</span>
             </p>
-            <button class="form-btn"><input type="submit" name="submit" value="Log in" class="submit">
-            </button>
+            <button class="form-btn submit" name="submit" type="submit">Login</button>
         </form>
         <p class="sign-up-label">
             Don't have an account?<a href="signup.php"><span class="sign-up-link">Sign up</span></a>
         </p>
-    </div>
+    </div> -->
 </body>
 
 </html>
@@ -55,13 +54,10 @@
 include "../login/connection.php";
 session_start();
 
-$userprofile = "";
-
 function user()
 {
-    if (!$_SESSION['username']) {
-        echo "hehe";
-        echo "<script>retVal()</script>";
+    if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+        echo "<script>retVal();</script>";
     }
 }
 

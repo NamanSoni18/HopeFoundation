@@ -5,7 +5,7 @@ if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }
 
-if(isset($_COOKIE['role'])) {
+if (isset($_COOKIE['role'])) {
     $_SESSION['user_role'] = $_COOKIE['role'];
 }
 
@@ -521,7 +521,7 @@ function getProfileImage()
                 <ul class="menu-bar menu">
                     <li>
                         <button class="nav-link">
-                            Programs
+                            <a href="../Programs/programs.html">Programs</a>
                         </button>
                     </li>
                     <li>
@@ -534,11 +534,7 @@ function getProfileImage()
                             <a href="../News/News.php">News</a>
                         </button>
                     </li>
-                    <li>
-                        <button class="nav-link">
-                            <a href="../connect/contact.php">Contact Us</a>
-                        </button>
-                    </li>
+
                     <li class="donate-button">
                         <button class="nav-link donate-button">
                             Donate ❤️
@@ -598,6 +594,9 @@ function getProfileImage()
                                 }
                                 ?>
                                 <li><a href="#">Settings</a></li>
+                                <li>
+                                    <a href="../connect/contact.php">Contact Us</a>
+                                </li>
                                 <li><a href="#">Help</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>
                             </ul>

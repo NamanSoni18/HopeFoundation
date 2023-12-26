@@ -3,12 +3,12 @@
 } */
 
 /* Section1 */
-.section1 {
+.section1-children-head {
   text-align: center;
   background: url("../assests/indian-boy-running-holding-indian-flag.png") no-repeat center;
   height: 1000px;
 }
-.section1 h1.children {
+h1.section1-children {
   display: inline-block;
   margin-top: 50px;
   width: auto;
@@ -18,12 +18,12 @@
   border-bottom: 2px solid rgb(0, 0, 0);
 }
 
-.section1 p.children {
+p.section1-children {
   font-size: 20px;
 }
 
 @media (max-width: 1100px) {
-  .section1 {
+  .section1-children-head {
     background: none;
     height: auto;
     margin-bottom: 10px;
@@ -156,6 +156,8 @@
   font-size: 40px;
   font-weight: 900;
 }
+
+/* Section 4 */
 .section4-paragraph {
   margin: 0 30px;
   text-align: center;
@@ -164,7 +166,7 @@
 }
 
 .section4 {
-  background-color: #F23363;
+  background-color: #Ff7b3e;
   color: white;
   padding: 10px;
   padding-top: 30px;
@@ -226,4 +228,22 @@
 
 .subtopic h2, span, p {
   padding: 10px;
+}
+
+/* Child Donation */
+.child-donation {
+  text-align: center;
+}
+
+.child-donation h2 {
+  font-size: 40px;
+}
+
+.child-donation p {
+  font-size: 20px;
+}
+
+.child-donation button {
+  margin: 10px auto;
+  margin-bottom: 100px;
 }

@@ -1,0 +1,36 @@
+/* Programs Head */
+.programs {
+    text-align: center;
+}
+
+.programs h1 {
+    font-size: 50px;
+}
+
+.header {
+    background-color: #D36d3e;
+    color: white;
+    padding: 30px;
+}
+
+.animals-div {
+    margin: 30px 10px;
+    
+}
+
+.programs-animals {
+    font-size: 40px;
+    display: inline-flex;
+    width: auto;
+    border-bottom: 2px solid #FFF;
+    padding-bottom: 10px;
+    margin: 0 30px;
+}
+
+.subtopics-animals {
+    margin: 30px 0;
+}
+
+.topics-head {
+    font-size: 30px;
+}
