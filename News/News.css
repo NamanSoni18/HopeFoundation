@@ -72,8 +72,10 @@ body {
   border: 1px solid rgb(236 239 241);
   display: flex;
   /* text-align: right; */
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  margin: 0 auto;
+  gap: 30px;
   /* justify-content: right; */
   background-color: rgba(0, 140, 255, 0.082);
 }

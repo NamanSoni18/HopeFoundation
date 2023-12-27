@@ -13,8 +13,6 @@ if ($result) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +23,12 @@ mysqli_close($conn);
     <title>News</title>
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" type="image/png">
     <link rel="stylesheet" href="News.css">
+    <script>
+        function msgDelete() {
+            alert("Message Deleted Successfull");
+            window.location.href = 'News.php';
+        }
+    </script>
 </head>
 
 <body>
@@ -41,7 +45,7 @@ mysqli_close($conn);
         <div class="news-card">
             <div class="news-card-container">
                 <div class="header">
-                    <img src="data:image/*;base64,<?php echo base64_encode($post['image']);?>" alt="News Image">
+                    <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
                 </div>
                 <div class="news-info">
                     <h1 class="title">
@@ -53,10 +57,36 @@ mysqli_close($conn);
                 </div>
             </div>
             <div class="footer">
-                <button type="button" class="news-more-info">More Info</button>
+                <form method="post" action="">
+                    <button type="button" class="news-more-info">More Info</button>
+                </form>
+
+                <form method="post" action="">
+                    <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
+                    <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
+                </form>
             </div>
         </div>
     <?php endforeach; ?>
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST['delete_message'])) {
+    $newsToDelete = $_POST['title'];
+
+    // Perform the deletion query
+    $deleteQuery = "DELETE FROM news WHERE title = '$newsToDelete'";
+    $deleteResult = mysqli_query($conn, $deleteQuery);
+
+    if ($deleteResult) {
+        echo '<script>msgDelete()</script>';
+    } else {
+        echo "Error deleting message: " . mysqli_error($conn);
+    }
+}
+
+mysqli_close($conn);
+?>
