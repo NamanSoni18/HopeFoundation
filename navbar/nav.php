@@ -537,6 +537,12 @@ function getProfileImage()
                             <a href="../About Us/about_us.html">About Us</a>
                         </button>
                     </li>
+                    <li>
+
+                        <button class="nav-link">
+                            <a href="../connect/contact.php">Contact Us</a>
+                        </button>
+                    </li>
 
                     <li class="donate-button">
                         <button class="nav-link donate-button">
@@ -593,13 +599,10 @@ function getProfileImage()
                                 // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin') {
                                     echo '<li><a href="../Inbox-admin/inbox.php">Inbox</a></li>';
-                                    echo '<li><a href="../Admin/Admin.php">Admin Panel</a></li>';
+                                    echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
                                 }
                                 ?>
                                 <li><a href="#">Delete Your Account</a></li>
-                                <li>
-                                    <a href="../connect/contact.php">Contact Us</a>
-                                </li>
                                 <li><a href="#">Help</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>
                             </ul>

@@ -15,12 +15,15 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload</title>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
+    <link rel="stylesheet" href="news_upload.css">
+    <link rel="stylesheet" href="../login/style.css">
+    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <script>
+        function news_uploaded() {
+            alert("News Uploaded");
+            window.location.href = "news_upload.php";
         }
-    </style>
+    </script>
 </head>
 
 <body>
@@ -31,18 +34,27 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     <script>
         includeHTML();
     </script>
-    
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="image">Choose an image:</label>
-        <input type="file" name="image" id="image" accept="image/*" required>
-        <label for="title">Enter title</label>
-        <textarea name="title" id="title" cols="30" rows="10" required></textarea>
-        <label for="paragraph">Enter paragraph</label>
-        <textarea name="paragraph" id="paragraph" cols="30" rows="10" required></textarea>
 
+    <div class="news">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="image-news-div news_up">
+                <label for="image" class="news-label">Choose an image:</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </div>
 
-        <button type="submit" name="submit">Upload</button>
-    </form>
+            <div class="title-news-div news_up">
+                <label for="title" class="news-label">Enter title</label>
+                <textarea name="title" id="title" cols="30" rows="10" required></textarea>
+            </div>
+
+            <div class="paragraph-news-div news_up">
+                <label for="paragraph" class="news-label">Enter paragraph</label>
+                <textarea name="paragraph" id="paragraph" cols="30" rows="10" required></textarea>
+            </div>
+
+            <button type="submit" class="form-btn submit" name="submit">Upload</button>
+        </form>
+    </div>
 </body>
 
 </html>
@@ -66,7 +78,7 @@ if ($result) {
 
         if (mysqli_query($conn, $sql)) {
             echo "Image uploaded successfully.";
-            header("Location: Admin.php");
+            echo "<script>news_uploaded();</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
