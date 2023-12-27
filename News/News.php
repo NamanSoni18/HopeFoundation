@@ -1,7 +1,7 @@
 <?php
 include("../login/connection.php");
 
-$sql = "SELECT * FROM news"; // Fetch all rows from the 'news' table
+$sql = "SELECT * FROM news ORDER BY created_at DESC"; // Fetch all rows from the 'news' table
 $result = mysqli_query($conn, $sql);
 
 $posts = array();

@@ -543,6 +543,13 @@ function getProfileImage()
                             <a href="../connect/contact.php">Contact Us</a>
                         </button>
                     </li>
+                    
+                    <li>
+
+                        <button class="nav-link">
+                            <a href="../FAQ/FAQ.php">FAQ</a>
+                        </button>
+                    </li>
 
                     <li class="donate-button">
                         <button class="nav-link donate-button">

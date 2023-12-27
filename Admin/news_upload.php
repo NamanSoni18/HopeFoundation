@@ -74,7 +74,7 @@ if ($result) {
 
         $imageData = addslashes(file_get_contents($image));
 
-        $sql = "INSERT INTO news(image, title, paragraph) VALUES('$imageData', '$title', '$paragraph');";
+        $sql = "INSERT INTO news(image, title, paragraph, created_at) VALUES('$imageData', '$title', '$paragraph', NOW());";
 
         if (mysqli_query($conn, $sql)) {
             echo "Image uploaded successfully.";
