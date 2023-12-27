@@ -1,0 +1,38 @@
+.content {
+  margin: 30px;
+  text-align: center;
+  /* color: ; */
+}
+
+.content h1 {
+  font-size: 40px;
+  padding: 20px 0;
+}
+
+.content p {
+  font-size: 20px;
+}
+
+.faq {
+  margin: 30px;
+  padding: 15px 30px;
+}
+
+.ques-section {
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  margin: 40px auto;
+  width: 90%;
+}
+
+.faq-ques {
+  font-size: 25px;
+  font-weight: 900;
+  padding: 10px 0;
+}
+
+.faq-ans {
+  font-size: 20px;
+  text-align: justify;
+}
