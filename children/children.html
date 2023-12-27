@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="../Main/style.css">
     <link rel="stylesheet" href="children.css">
     <link rel="stylesheet" href="../Donate/Donate.css">
+    <link rel="stylesheet" href="../backtotop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
 <body>
+    <section id="backtotop"></section>
     <!-- Nav Bar Load -->
     <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
@@ -20,6 +24,20 @@
     <script>
         includeHTML();
     </script>
+
+
+    <section class="back-section-div">
+        <a href="#backtotop">
+            <div id="backtotop-div">
+                <div>Back to Top</div>
+                <!-- <img src="../assests/icons/system-regular-11-arrow-up.svg" alt="" width="50px" height="50px"> -->
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </a>
+    </section>
+
+
+
     <div class="section1-children-head">
         <h1 class="section1-children">Why Children?</h1>
         <p class="section1-children">Children are the foundation of the future of our country.<br>So that kids might
@@ -304,7 +322,8 @@
 
     <div class="child-donation">
         <h2>How do you want to help children today?</h2>
-        <p>Even the smallest gift has a significant impact on children's lives. For us to be able to <br> truly transform the
+        <p>Even the smallest gift has a significant impact on children's lives. For us to be able to <br> truly
+            transform the
             lives of the children of India, we rely on the kindness of people like you!</p>
         <a href="../Donate/Donate.php">
             <button class="Donate-btn-wrapper content-wrapper">Donate for Children ❤️</button></a>

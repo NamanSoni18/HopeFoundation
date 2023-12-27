@@ -23,6 +23,8 @@ if ($result) {
     <title>News</title>
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" type="image/png">
     <link rel="stylesheet" href="News.css">
+    <link rel="stylesheet" href="../backtotop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         function msgDelete() {
             alert("Message Deleted Successfull");
@@ -32,6 +34,9 @@ if ($result) {
 </head>
 
 <body>
+
+    <section id="backtotop"></section>
+
     <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
     <!-- NavBar Scripts -->
@@ -39,6 +44,16 @@ if ($result) {
     <script>
         includeHTML();
     </script>
+
+    <section class="back-section-div">
+        <a href="#backtotop">
+            <div id="backtotop-div">
+                <div>Back to Top</div>
+                <!-- <img src="../assests/icons/system-regular-11-arrow-up.svg" alt="" width="50px" height="50px"> -->
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </a>
+    </section>
 
     <!-- News Container -->
     <?php foreach ($posts as $post): ?>

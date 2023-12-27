@@ -19,7 +19,13 @@
         includeHTML();
     </script>
 
-
+    <div class="faq-main">
+        <div class="content">
+            <h1>Frequently Asked Questions</h1>
+            <p>Here are some common questions that you might have. If you don't find what you're
+                looking for, please  <a href="../connect/contact.php">write to us</a> and we'll be happy to address your query!</p>
+        </div>
+    </div>
 </body>
 
 </html>

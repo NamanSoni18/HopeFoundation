@@ -1,0 +1,22 @@
+#backtotop-div {
+  position: fixed;
+  background-color: #010101;
+  padding: 15px;
+  border-radius: 34px;
+  bottom: 34px;
+  right: 34px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #f1f1f1;
+  font-weight: 900;
+  font-size: 20px;
+  gap: 10px;
+  z-index: 999;
+}
+
+/* Back to Top */
+html {
+  scroll-behavior: smooth;
+}
