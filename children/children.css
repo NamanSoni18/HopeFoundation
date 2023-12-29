@@ -5,7 +5,8 @@
 /* Section1 */
 .section1-children-head {
   text-align: center;
-  background: url("../assests/indian-boy-running-holding-indian-flag.png") no-repeat center;
+  background: url("../assests/indian-boy-running-holding-indian-flag.png")
+    no-repeat center;
   height: 1000px;
 }
 h1.section1-children {
@@ -20,6 +21,9 @@ h1.section1-children {
 
 p.section1-children {
   font-size: 20px;
+  font-family: quatro, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
 @media (max-width: 1100px) {
@@ -166,7 +170,7 @@ p.section1-children {
 }
 
 .section4 {
-  background-color: #Ff7b3e;
+  background-color: #ff7b3e;
   color: white;
   padding: 10px;
   padding-top: 30px;
@@ -184,7 +188,8 @@ p.section1-children {
   margin: 30px;
 }
 
-.section4-text .sec4-head, .sec4-para {
+.section4-text .sec4-head,
+.sec4-para {
   margin: 30px;
 }
 
@@ -226,7 +231,9 @@ p.section1-children {
   font-size: 20px;
 }
 
-.subtopic h2, span, p {
+.subtopic h2,
+span,
+p {
   padding: 10px;
 }
 
