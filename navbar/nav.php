@@ -619,7 +619,7 @@ function getProfileImage()
 
                 <a href="../Donate/Donate.php">
                     <button class="Donate-btn-wrapper">
-                        <span class="span-donate">Donate❤️</span>
+                        <span class="span-donate">Donate ❤️</span>
                     </button>
                 </a>
             </div>
