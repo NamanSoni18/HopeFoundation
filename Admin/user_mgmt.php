@@ -136,8 +136,6 @@ if (isset($result)) {
                 $rollbackResult = mysqli_query($conn, $rollbackQuery);
 
                 if ($rollbackResult) {
-                    $_SESSION['user_role'] = 'user';
-                    setcookie("role", 'user', time() + (30 * 24 * 3600), "/");
                     echo '<script>rollbackUser()</script>';
                 } else {
                     echo "Error rolling back user: " . mysqli_error($conn);
@@ -150,7 +148,6 @@ if (isset($result)) {
                 $promoteResult = mysqli_query($conn, $promoteQuery);
 
                 if ($promoteResult) {
-                    $_SESSION['user_role'] = 'admin';
                     setcookie("role", 'admin', time() + (30 * 24 * 3600), "/");
                     echo '<script>promoteUser()</script>';
                 } else {
