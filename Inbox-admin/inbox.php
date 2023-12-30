@@ -69,15 +69,22 @@ if ($result) {
                 </button>
             </div>
             <div class="grow1 item2">
-                <form method="post" action="">
+                <form method="post" action="" onsubmit="return confirmDelete()">
                     <input type="hidden" name="email" value="<?php echo $post['email']; ?>">
                     <button type="submit" class="delete detail button-inbox" name="delete_message">
                         <span>Delete</span>
                     </button>
                 </form>
             </div>
+            </div>
         </section>
     <?php endforeach; ?>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this message?");
+        }
+    </script>
 </body>
 
 </html>
@@ -99,7 +106,7 @@ if (isset($_POST['delete_message'])) {
     } else {
         echo "Error deleting message: " . mysqli_error($conn);
     }
-} 
+}
 
 mysqli_close($conn);
 ?>

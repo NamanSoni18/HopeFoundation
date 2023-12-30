@@ -70,12 +70,6 @@ session_start();
                 </label>
                 <input type="number" name="phone_no" id="phone_no" placeholder="Phone Number" required>
             </div>
-            <div class="dob content">
-                <label for="dob">
-                    <h2 class="heading">Enter Your Date of Birth: </h2>
-                </label>
-                <input type="date" name="dob" id="dob" placeholder="Date of Birth" required>
-            </div>
             <div class="address content">
                 <label for="address">
                     <h2 class="heading">Enter Your Address: </h2>
@@ -100,6 +94,18 @@ session_start();
                 </label>
                 <input type="text" name="state" id="state" placeholder="State" required>
             </div>
+            <div class="aadhaar content">
+                <label for="aadhaar">
+                    <h2 class="heading">Enter Your Aadhaar Number: </h2>
+                </label>
+                <input type="number" name="aadhaar" id="aadhaar" placeholder="Aadhaar Number" required>
+            </div>
+            <div class="pan content">
+                <label for="pan">
+                    <h2 class="heading">Enter Your Pan Number: </h2>
+                </label>
+                <input type="text" name="pan" id="pan" placeholder="Pan Number" required>
+            </div>
             <div class="country content">
                 <label for="country">
                     <h2 class="heading">Enter Your Country: </h2>
@@ -112,7 +118,7 @@ session_start();
                 <h2 class="heading">Nationality</h2>
                 <div class="choose-nation inputs">
                     <div class="indian label">
-                        <input type="radio" name="nationality" id="indian" value="Indian" required>
+                        <input type="radio" name="nationality" id="indian" value="Indian" checked required>
                         <label for="indian">Indian</label>
                     </div>
                     <div class="nri label">
@@ -125,7 +131,7 @@ session_start();
                 <h2 class="heading">Focus Area</h2>
                 <div class="choose-focus inputs">
                     <div class="children label">
-                        <input type="radio" name="focus" id="children" value="Children" required>
+                        <input type="radio" name="focus" id="children" value="Children" checked required>
                         <label for="children">Children</label>
                     </div>
                     <div class="elders label">
@@ -142,7 +148,7 @@ session_start();
                 <h2 class="heading">Payment Method</h2>
                 <div class="choose-pay-meth inputs">
                     <div class="one-time label">
-                        <input type="radio" name="pay-meth" id="one-time" value="One-Time Payment" required>
+                        <input type="radio" name="pay-meth" id="one-time" value="One-Time Payment" checked required>
                         <label for="one-time">One-Time Payment</label>
                     </div>
                 </div>
@@ -213,14 +219,15 @@ function user()
 
 user();
 
-$name = $email = $dob = $address = $city = $state = $country = $nationality = $focus = $payment = "";
+$name = $email = $dob = $address = $city = $state = $country = $nationality = $focus = $payment = $pan = "";
 $amount = 100;
 if (isset($_POST['submit'])) {
     $name = $_POST['fname'];
     $email = $_POST['email'];
     $phone_no = $_POST['phone_no'];
-    $dob = $_POST['dob'];
     $address = $_POST['address'];
+    $aadhaar = $_POST['aadhaar'];
+    $pan = $_POST['pan'];
     $zipcode = $_POST['zipcode'];
     $city = $_POST['city'];
     $state = $_POST['state'];
@@ -236,7 +243,7 @@ if (isset($_POST['submit'])) {
         $amount = $_POST['price'];
     }
 
-    $query = "INSERT INTO donation(name, email, phone_no, dob, address, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$email', '$phone_no', '$dob', '$address', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
+    $query = "INSERT INTO donation(name, email, phone_no, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$email', '$phone_no', '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
 
     $result = mysqli_query($conn, $query);
 

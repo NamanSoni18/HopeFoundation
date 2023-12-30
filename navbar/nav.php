@@ -149,11 +149,48 @@ function getProfileImage()
             font-weight: 500;
             font-family: "Biryani", serif;
             letter-spacing: -0.6px;
-            padding: 0.3rem;
+            padding: 0.6rem;
             min-width: 60px;
             margin: 0 0.6rem;
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+            text-align: center;
+            transition: .3s;
+            z-index: 1;
+            font-family: inherit;
         }
+
+        .nav-link a {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .nav-link::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            /* background: #17C3B2; */
+            background-color: white;
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .nav-link:hover::before {
+            width: 105%;
+        }
+
+        .nav-link a:hover {
+            color: #f39c12;
+            font-weight: 800;
+        }
+
 
         .menu-bar .nav-link:hover {
             color: var(--primary-color);
@@ -543,7 +580,7 @@ function getProfileImage()
                             <a href="../connect/contact.php">Contact Us</a>
                         </button>
                     </li>
-                    
+
                     <li>
 
                         <button class="nav-link">
@@ -607,6 +644,7 @@ function getProfileImage()
                                 if ($_SESSION['user_role'] == 'admin') {
                                     echo '<li><a href="../Inbox-admin/inbox.php">Inbox</a></li>';
                                     echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
+                                    echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
                                 }
                                 ?>
                                 <li><a href="#">Delete Your Account</a></li>
