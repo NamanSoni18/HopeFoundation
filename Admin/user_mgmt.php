@@ -31,6 +31,12 @@ if (isset($result)) {
     <title>User Management</title>
     <link rel="stylesheet" href="user_mgmt.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="stylesheet" href="../Inbox-admin/inbox.css">
+    <style>
+        .button-inbox {
+            width: auto;
+        }
+    </style>
     <script>
         function confirmAction(action, username) {
             var confirmation = confirm("Are you sure you want to " + action + " this user?");
@@ -95,7 +101,7 @@ if (isset($result)) {
                         <input type="hidden" name="role" value="<?php echo $post['role']; ?>">
                         <input type="hidden" name="username" value="<?php echo $post['username']; ?>">
                         <button type="button" onclick="confirmAction('rollback', '<?php echo $post['username']; ?>')"
-                            class="user-info promote">Rollback to User</button>
+                            class="user-info promote button-inbox">Rollback to User</button>
                     </form>
                 </td>
 
@@ -104,7 +110,7 @@ if (isset($result)) {
                         <input type="hidden" name="role" value="<?php echo $post['role']; ?>">
                         <input type="hidden" name="username" value="<?php echo $post['username']; ?>">
                         <button type="button" onclick="confirmAction('promote', '<?php echo $post['username']; ?>')"
-                            class="user-info promote">Promote to Admin</button>
+                            class="user-info promote button-inbox">Promote to Admin</button>
                     </form>
                 </td>
 
@@ -112,7 +118,7 @@ if (isset($result)) {
                     <form method="post" action="">
                         <input type="hidden" name="username" value="<?php echo $post['username']; ?>">
                         <button type="button" onclick="confirmAction('delete', '<?php echo $post['username']; ?>')"
-                            class="user-info Delete">Delete User</button>
+                            class="user-info Delete button-inbox">Delete User</button>
                     </form>
                 </td>
             </tr>
