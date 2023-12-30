@@ -187,13 +187,13 @@ function getProfileImage()
         }
 
         .nav-link a:hover {
-            color: #f39c12;
+            color: white;
             font-weight: 800;
         }
 
 
         .menu-bar .nav-link:hover {
-            color: var(--primary-color);
+            color: #e88730;
         }
 
         /* Donate Button */
@@ -555,36 +555,33 @@ function getProfileImage()
                 </label>
                 <ul class="menu-bar menu">
                     <li>
-                        <button class="nav-link">
-                            <a href="../Programs/programs.html">Programs</a>
+                        <button class="nav-link" onclick="window.location.href='../Programs/programs.html';">
+                            Programs
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link">
-                            <a href="../children/children.html">Children?</a>
+                        <button class="nav-link" onclick="window.location.href='../children/children.html';">
+                            Children?
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link">
-                            <a href="../News/News.php">News</a>
+                        <button class="nav-link" onclick="window.location.href='../News/News.php';">
+                            News
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link">
-                            <a href="../About Us/about_us.html">About Us</a>
+                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.html';">
+                            About Us
                         </button>
                     </li>
                     <li>
-
-                        <button class="nav-link">
-                            <a href="../connect/contact.php">Contact Us</a>
+                        <button class="nav-link" onclick="window.location.href='../connect/contact.php';">
+                            Contact Us
                         </button>
                     </li>
-
                     <li>
-
-                        <button class="nav-link">
-                            <a href="../FAQ/FAQ.php">FAQ</a>
+                        <button class="nav-link" onclick="window.location.href='../FAQ/FAQ.php';">
+                            FAQ
                         </button>
                     </li>
 
