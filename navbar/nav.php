@@ -644,8 +644,7 @@ function getProfileImage()
                                     echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
                                 }
                                 ?>
-                                <li><a href="#">Delete Your Account</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="../Admin/delete_ac.php">Delete Your Account</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>
                             </ul>
                         </div>
