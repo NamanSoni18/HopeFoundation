@@ -3,12 +3,16 @@ include "../login/connection.php";
 
 session_start();
 
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
-    echo '<script>alert("You are not an Admin");';
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'staff' && $_SESSION['user_role'] !== 'admin') {
+    echo '<script>alert("You are not an Admin or Staff");';
     echo 'window.location.href = "../Main/index.html";</script>';
 }
 
-$query = "Select username, fname, dob, role from user";
+if($_SESSION['user_role'] == 'staff') {
+    $query = "Select username, fname, dob, role from user where role = 'user'";
+} else {
+    $query = "Select username, fname, dob, role from user where role = 'user' or role = 'staff'";
+}
 
 $result = mysqli_query($conn, $query);
 
@@ -110,7 +114,7 @@ if (isset($result)) {
                         <input type="hidden" name="role" value="<?php echo $post['role']; ?>">
                         <input type="hidden" name="username" value="<?php echo $post['username']; ?>">
                         <button type="button" onclick="confirmAction('promote', '<?php echo $post['username']; ?>')"
-                            class="user-info promote button-inbox">Promote to Admin</button>
+                            class="user-info promote button-inbox">Promote to Staff</button>
                     </form>
                 </td>
 
@@ -144,11 +148,11 @@ if (isset($result)) {
 
             case 'promote':
                 // Perform the promotion query
-                $promoteQuery = "UPDATE user SET role = 'admin' WHERE username = '$username'";
+                $promoteQuery = "UPDATE user SET role = 'staff' WHERE username = '$username'";
                 $promoteResult = mysqli_query($conn, $promoteQuery);
 
                 if ($promoteResult) {
-                    setcookie("role", 'admin', time() + (30 * 24 * 3600), "/");
+                    setcookie("role", 'staff', time() + (30 * 24 * 3600), "/");
                     echo '<script>promoteUser()</script>';
                 } else {
                     echo "Error promoting user: " . mysqli_error($conn);
