@@ -16,16 +16,26 @@
   font-weight: 900;
   margin-top: 150px;
   margin-right: 20px;
+  animation: myAnim 0.8s ease-in-out 0s 1 reverse forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100px);
+  }
 }
 
 .image1 {
   object-fit: cover;
   /* width: 100%; */
-  border: 5px solid #F99417;
+  border: 5px solid #f99417;
   border-radius: 20px;
+  animation: myAnim 0.8s ease-in-out 0s 1 reverse forwards;
 }
-
-
 
 .section2 {
   margin-top: 60px;
@@ -55,7 +65,7 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  
+
   .section2 {
     display: flex;
     flex-direction: column;

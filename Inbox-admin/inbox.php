@@ -3,7 +3,7 @@
 session_start();
 
 // Check if admin is logged in
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'staff' || $_SESSION['user_role'] !== 'admin') {
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'staff' && $_SESSION['user_role'] !== 'admin') {
     echo '<script>alert("You are not an Admin");';
     echo 'window.location.href = "../Main/index.html";</script>';
 }

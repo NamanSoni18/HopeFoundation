@@ -94,13 +94,31 @@ ob_end_clean();
                 icon.classList.add('fa-eye-slash');
             }
         }
+
+        document.getElementById("up_image").addEventListener("change", displayImage);
+
+
+        function displayImage() {
+            const input = document.getElementById("up_image");
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const imageDataUrl = event.target.result;
+                    updateImageSrc(imageDataUrl);
+                };
+                reader.onerror = function (error) {
+                    console.error("Error reading the file:", error);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateImageSrc(src) {
+            const uploadedImage = document.getElementById("uploaded-image");
+            uploadedImage.src = src;
+        }
     </script>
-    <!-- <script>
-        // JavaScript to set default image if the profile image is not available
-        document.querySelector('.profile-image').onerror = function () {
-        this.src = '../assests/icons/icons8-user-94.png'; // Set the path to your default image
-    };
-    </script> -->
 
 
     <div class="background"></div>
@@ -115,7 +133,7 @@ ob_end_clean();
                 $profileImageData = base64_encode($profileImage);
 
                 if ($profileImage) {
-                    echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="">';
+                    echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="" id="uploaded-image">';
                 } else {
                     echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
                 }
@@ -123,7 +141,8 @@ ob_end_clean();
             </div>
             <div class="profile-div2">
                 <label for="up_image" class="label">Edit your Profile Photo</label>
-                <input type="file" id="up_image" name="up_image" class="input profile-photo">
+                <input type="file" id="up_image" accept="image/*" onchange="displayImage()" name="up_image"
+                    class="input profile-photo">
             </div>
             <div class="profile-div2">
                 <label for="up_username" class="label">Edit your Username</label>
@@ -142,7 +161,8 @@ ob_end_clean();
             </div>
             <div class="profile-div2">
                 <label for="up_pwd" class="label">Edit your Password</label>
-                <input type="password" class="input" id="up_pwd" value='<?php echo $_SESSION['password'] ?>' name="up_pwd">
+                <input type="password" class="input" id="up_pwd" value='<?php echo $_SESSION['password'] ?>'
+                    name="up_pwd">
                 <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('up_pwd')"
                     style="color: black;"></i>
             </div>

@@ -160,6 +160,37 @@ function getProfileImage()
             transition: .3s;
             z-index: 1;
             font-family: inherit;
+            animation: myAnim-nav 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s 1 normal backwards;
+        }
+
+        @keyframes myAnim-nav {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
         }
 
         .nav-link a {
@@ -590,11 +621,6 @@ function getProfileImage()
                             Donate ❤️
                         </button>
                     </li>
-                    <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
-                        <li>
-                            <button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button>
-                        </li>
-                    <?php } ?>
                 </ul>
             </div>
 
@@ -603,6 +629,11 @@ function getProfileImage()
                     <a href="../login/login.php">
                         <button class="login-btn-wrapper">
                             Log in
+                        </button>
+                    </a>
+                    <a href="../login/signup.php">
+                        <button class="login-btn-wrapper">
+                            Signup
                         </button>
                     </a>
                 <?php } elseif ((isset($_COOKIE["user"]) || (isset($_SESSION['username'])))) {
@@ -653,7 +684,7 @@ function getProfileImage()
 
                 <a href="../Donate/Donate.php">
                     <button class="Donate-btn-wrapper">
-                        <span class="span-donate">Donate ❤️</span>
+                        <span class="span-donate">Donate❤️</span>
                     </button>
                 </a>
             </div>
