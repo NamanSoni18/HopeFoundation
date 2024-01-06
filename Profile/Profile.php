@@ -135,7 +135,7 @@ ob_end_clean();
                 if ($profileImage) {
                     echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="" id="uploaded-image">';
                 } else {
-                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
+                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="" id="uploaded-image">';
                 }
                 ?>
             </div>
