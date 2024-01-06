@@ -63,19 +63,18 @@ if ($result) {
             </div>
             <div class="grow1 item2">
                 <button class="delete detail button-inbox">
-                    <a href="contact_detail.php?email=<?php echo $post['email']; ?>">
+                    <a href="contact_detail.php?message=<?php echo $post['message']; ?>">
                         <span>Get Detail</span>
                     </a>
                 </button>
             </div>
             <div class="grow1 item2">
                 <form method="post" action="" onsubmit="return confirmDelete()">
-                    <input type="hidden" name="email" value="<?php echo $post['email']; ?>">
+                    <input type="hidden" name="message_del" value="<?php echo $post['message']; ?>">
                     <button type="submit" class="delete detail button-inbox" name="delete_message">
                         <span>Delete</span>
                     </button>
                 </form>
-            </div>
             </div>
         </section>
     <?php endforeach; ?>
@@ -92,15 +91,15 @@ if ($result) {
 <?php
 
 if (isset($_POST['delete_message'])) {
-    $emailToDelete = $_POST['email'];
+    $inboxToDelete = $_POST['message_del'];
 
     // Perform the deletion query
-    $deleteQuery = "DELETE FROM contact WHERE email = '$emailToDelete'";
+    $deleteQuery = "DELETE FROM contact WHERE message = '$inboxToDelete'";
     $deleteResult = mysqli_query($conn, $deleteQuery);
 
     if ($deleteResult) {
         echo '<script>';
-        echo 'alert("Message deleted successfully.");';
+        echo 'alert("Inbox deleted successfully.");';
         echo 'window.location.href = "inbox.php";';
         echo '</script>';
     } else {
