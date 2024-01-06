@@ -669,7 +669,7 @@ function getProfileImage()
                                 <li><a href="../Profile/profile.php">Profile</a></li>
                                 <?php
                                 // Check if user is admin
-                                if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] !== 'admin') {
+                                if ($_SESSION['user_role'] == 'admin') {
                                     echo '<li><a href="../Inbox-admin/inbox.php">Inbox</a></li>';
                                     echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
                                     // echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
