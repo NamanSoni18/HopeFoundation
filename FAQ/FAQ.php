@@ -44,7 +44,7 @@
         <div class="faq">
             <div class="ques-section">
                 <h1 class="faq-ques">How will my small contribution make a difference?</h1>
-                <p class="faq-ans">Leena Sharma, our founder, started Hope Foundation with just Rs. 50. Today, we're an
+                <p class="faq-ans">Naman Soni, our founder, started Hope Foundation with just Rs. 50. Today, we're an
                     organisation that has impacted millions of children across India. But we could never have done this
                     without YOU. Every drop in the ocean counts. No matter how small you think your contribution may be,
                     we assure you that it'll make a big difference to their lives. Donate to NGO to support

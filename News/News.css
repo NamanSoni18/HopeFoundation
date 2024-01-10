@@ -5,11 +5,19 @@ body {
   box-sizing: border-box;
 }
 
+.news-main {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
 .news-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
+  /* flex: 1; */
   height: auto;
   margin: 60px 30px;
   width: auto;
@@ -47,13 +55,20 @@ body {
 
 .news-info .Content {
   padding: 0 25px;
-  font-family: 'Eczar';
+  font-family: "Eczar";
   font-weight: 400;
   text-align: justify;
   font-size: 17px;
+  word-spacing: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Set the desired number of lines before the ellipsis */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  /* text-overflow: ellipsis; */
 }
 
-.news-info .title{
+.news-info .title {
   border: none;
   padding: 1.5rem;
   text-align: center;
@@ -109,7 +124,7 @@ body {
   .news-info {
     width: 900px;
   }
-  .header img{
+  .header img {
     display: none;
   }
 }

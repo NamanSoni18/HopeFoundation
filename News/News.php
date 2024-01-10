@@ -56,33 +56,35 @@ if ($result) {
     </section>
 
     <!-- News Container -->
-    <?php foreach ($posts as $post): ?>
-        <div class="news-card">
-            <div class="news-card-container">
-                <div class="header">
-                    <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
+    <div class="news-main">
+        <?php foreach ($posts as $post): ?>
+            <div class="news-card">
+                <div class="news-card-container">
+                    <div class="header">
+                        <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
+                    </div>
+                    <div class="news-info">
+                        <h1 class="title">
+                            <?php echo $post['title'] ?>
+                        </h1>
+                        <p class="Content">
+                            <?php echo $post['paragraph'] ?>
+                        </p>
+                    </div>
                 </div>
-                <div class="news-info">
-                    <h1 class="title">
-                        <?php echo $post['title'] ?>
-                    </h1>
-                    <p class="Content">
-                        <?php echo $post['paragraph'] ?>
-                    </p>
-                </div>
-            </div>
-            <div class="footer">
-                <form method="post" action="">
-                    <button type="button" class="news-more-info">More Info</button>
-                </form>
+                <div class="footer">
+                    <form method="post" action="">
+                        <button type="button" class="news-more-info">More Info</button>
+                    </form>
 
-                <form method="post" action="">
-                    <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
-                    <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
-                </form>
+                    <form method="post" action="">
+                        <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
+                        <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 </body>
 
 </html>
