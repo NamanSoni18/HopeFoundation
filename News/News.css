@@ -5,6 +5,13 @@ body {
   box-sizing: border-box;
 }
 
+.news-main {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
 .news-card {
   display: flex;
   flex-direction: column;
@@ -47,11 +54,19 @@ body {
 
 .news-info .Content {
   padding: 0 25px;
-  font-family: 'Eczar';
+  font-family: "Eczar";
   font-weight: 400;
   text-align: justify;
   font-size: 17px;
+  word-spacing: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
 }
+
+
 
 .news-info .title{
   border: none;

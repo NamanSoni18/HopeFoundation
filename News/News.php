@@ -56,6 +56,7 @@ if ($result) {
     </section>
 
     <!-- News Container -->
+    <div class="news-main">
     <?php foreach ($posts as $post): ?>
         <div class="news-card">
             <div class="news-card-container">
@@ -83,6 +84,7 @@ if ($result) {
             </div>
         </div>
     <?php endforeach; ?>
+    </div>
 </body>
 
 </html>
