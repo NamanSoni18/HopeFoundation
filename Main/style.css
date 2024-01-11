@@ -131,3 +131,55 @@
   border-bottom: 3px solid #fff;
   border-right: 3px solid #fff;
 }
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ef8400;
+}
+
+.content {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+.send-query input, select, textarea {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px 10px 20px 10px;
+  border: none;
+  background: 0 0;
+  border-bottom: 1px solid #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+textarea {
+  border: 1px solid #fff;
+}
+
+.send-query option {
+  /* background-color: white; */
+  color: black;
+}
+
+.submit {
+  position: relative;
+}
+
+.submit-button-profile {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  right: 50%;
+}

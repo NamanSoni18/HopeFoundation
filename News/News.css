@@ -41,10 +41,6 @@ body {
   height: auto;
   overflow: hidden;
   border-radius: 0.75rem;
-  /* background-color: rgb(33 150 243); */
-  /* box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4),
-    0 4px 6px -4px rgba(33, 150, 243, 0.4); */
-  /* height: 14rem; */
 }
 
 .header img {
@@ -61,11 +57,10 @@ body {
   font-size: 17px;
   word-spacing: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Set the desired number of lines before the ellipsis */
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   white-space: normal;
-  /* text-overflow: ellipsis; */
 }
 
 .news-info .title {
