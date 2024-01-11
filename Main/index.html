@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="../Profile/profile.css">
+    <style>
+        .submit-button-profile {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -96,5 +102,30 @@
         </div>
     </div>
     <br>
+    <div class="contact-us">
+        <div class="content">
+            <h2>Connect with Us</h2>
+        </div>
+        <div class="query">
+            <div class="send-query">
+                <form action="query" class="form" method="post">
+                    <input type="text" class="name" placeholder="Name" name="name">
+                    <input type="number" class="phone" placeholder="phone" name="phone">
+                    <input type="email" class="email" placeholder="Email" name="email">
+                    <select name="query-related" id="query-related">
+                        <option value="query related to" selected>Query Related to</option>
+                        <option value="Donation">Donation</option>
+                        <option value="Volunteering">Volunteering</option>
+                        <option value="Join a campaign">Join a campaign</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <textarea name="message" id="message" cols="2" rows="2" placeholder="Message"></textarea>
+                    <div class="submit">
+                        <button class="submit-button-profile" type="submit" name="submit">Send Query</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
