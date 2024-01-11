@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        echo "Query submitted successfully!";
+        echo "<script>alert('Query Sent');</script>";
         echo "<script>location.href='index.html';</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
