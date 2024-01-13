@@ -58,7 +58,7 @@
   
   .section2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .text1 {
