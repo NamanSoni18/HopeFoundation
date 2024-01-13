@@ -12,7 +12,7 @@
                 location.replace('verify_otp.php');
             }
             else {
-                location.replace("../Main/index.html");
+                location.replace("../Main/index.php");
                 // return false;
             }
         }

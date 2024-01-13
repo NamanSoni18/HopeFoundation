@@ -8,6 +8,6 @@ if (!isset($_SESSION["username"])) {
 }
 
 // Display the secure content
-header("Location: ../Main/index.html");
+header("Location: ../Main/index.php");
 
 ?>
