@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +9,9 @@
     <title>Home</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="slide-wrapper.css">//CSS WALI H//
-    <script src="slide-wrapper.js"></script>//JAVASCRIPT WALI H//
-    <link rel="stylesheet" href="style.css">//style wali h//
+    <link rel="stylesheet" href="slide-wrapper.css"> <!-- CSS WALI H -->
+    <script src="slide-wrapper.js"></script> <!-- JAVASCRIPT WALI H -->
+    <link rel="stylesheet" href="style.css"> <!-- style wali h -->
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="../Profile/profile.css">
@@ -21,15 +24,10 @@
 
 <body>
 
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-    //what is this all above???//
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
-    //what we have written in navbar.js and navbar.php//
 
     <div class="section1">
         <div>

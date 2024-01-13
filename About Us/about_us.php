@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +14,10 @@
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <div class="color">
         <div class="welcome">

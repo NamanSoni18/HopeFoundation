@@ -1,5 +1,6 @@
 <?php
 include "../login/connection.php";
+session_start();
 
 // Retrieve email from the URL parameter
 $message_cookie = $_GET['message'];
@@ -36,6 +37,11 @@ mysqli_close($conn);
 </head>
 
 <body>
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
+    </div>
+
     <div>Name:
         <?php echo "$fname $lname" ?>
     </div>

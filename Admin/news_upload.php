@@ -4,7 +4,7 @@ session_start();
 // Check if admin is logged in
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     echo '<script>alert("You are not an Admin");';
-    echo 'window.location.href = "../Main/index.html";</script>';
+    echo 'window.location.href = "../Main/index.php";</script>';
 }
 ?>
 
@@ -27,13 +27,10 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <div class="news">
         <form action="" method="post" enctype="multipart/form-data">

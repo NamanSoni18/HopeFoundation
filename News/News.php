@@ -1,5 +1,6 @@
 <?php
 include("../login/connection.php");
+session_start();
 
 $sql = "SELECT * FROM news ORDER BY created_at DESC"; // Fetch all rows from the 'news' table
 $result = mysqli_query($conn, $sql);
@@ -37,13 +38,10 @@ if ($result) {
 
     <section id="backtotop"></section>
 
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <section class="back-section-div">
         <a href="#backtotop">

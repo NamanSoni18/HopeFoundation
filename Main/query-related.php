@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result) {
         echo "<script>alert('Query Sent');</script>";
-        echo "<script>location.href='index.html';</script>";
+        echo "<script>location.href='index.php';</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

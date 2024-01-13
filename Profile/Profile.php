@@ -20,21 +20,6 @@ if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     }
 }
 
-function getProfileImage()
-{
-    global $conn, $username;
-
-    $query = "SELECT image FROM user WHERE username = '$username'";
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        return isset($row['image']) ? $row['image'] : '';
-    }
-
-    return '';
-}
-
 ob_end_clean();
 
 
@@ -61,13 +46,11 @@ ob_end_clean();
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
+
     <script>
         function retVal() {
             var retVal = confirm("You Have not logged in. Want to Login?");
@@ -75,7 +58,7 @@ ob_end_clean();
                 location.replace("../login/login.php");
             }
             else {
-                location.replace("../Main/index.html");
+                location.replace("../Main/index.php");
                 // return false;
             }
         }
@@ -157,14 +140,14 @@ ob_end_clean();
 
     <?php
 
-    function user()
+    function profileuser()
     {
         if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
             echo "<script>retVal();</script>";
         }
     }
 
-    user();
+    profileuser();
 
     $username = $pwd = $fname = $dob = $email = "";
     $up_username = $up_pwd = $up_fname = $up_dob = $up_email = "";
@@ -206,7 +189,7 @@ ob_end_clean();
                 $_SESSION['dob'] = $up_dob;
                 $_SESSION['fname'] = $up_fname;
                 echo '<script>alert("Profile updated successfully!")</script>';
-                echo '<script>window.location.href="../Main/index.html";</script>';
+                echo '<script>window.location.href="../Main/index.php";</script>';
                 exit;
             } else {
                 echo "Error updating profile: " . mysqli_error($conn);

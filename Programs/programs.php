@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +13,10 @@
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <div class="header">
         <div class="programs">
@@ -117,20 +116,24 @@
                     <div class="topics">
                         <h2 class="topics-head">Housing and Shelter Support:
                         </h2>
-                        <p class="topics-paragraph">Assisting individuals facing homelessness with temporary shelter and housing solutions.</p>
+                        <p class="topics-paragraph">Assisting individuals facing homelessness with temporary shelter and
+                            housing solutions.</p>
                     </div>
                     <div class="topics">
                         <h2 class="topics-head">Healthcare Access Program:</h2>
-                        <p class="topics-paragraph">Facilitating access to healthcare services, including medical check-ups and treatments.</p>
+                        <p class="topics-paragraph">Facilitating access to healthcare services, including medical
+                            check-ups and treatments.</p>
                     </div>
                     <div class="topics">
                         <h2 class="topics-head">Social Integration and Inclusion:
                         </h2>
-                        <p class="topics-paragraph">Promoting inclusivity and combating discrimination based on socio-economic status.</p>
+                        <p class="topics-paragraph">Promoting inclusivity and combating discrimination based on
+                            socio-economic status.</p>
                     </div>
                     <div class="topics">
                         <h2 class="topics-head">Community Development:</h2>
-                        <p class="topics-paragraph">Implementing projects that improve the overall infrastructure and living conditions in impoverished areas.</p>
+                        <p class="topics-paragraph">Implementing projects that improve the overall infrastructure and
+                            living conditions in impoverished areas.</p>
                     </div>
                     <div class="topics">
                         <h2 class="topics-head">Medical Assurance

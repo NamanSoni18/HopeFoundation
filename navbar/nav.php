@@ -1,6 +1,6 @@
 <?php
 include "../login/connection.php";
-session_start();
+// session_start();
 if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }
@@ -545,7 +545,7 @@ function getProfileImage()
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
             <div class="left-container">
-                <a class="logo" href="../Main/index.html">
+                <a class="logo" href="../Main/index.php">
                     <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
                         class="Inc Logo" />
                 </a>
@@ -555,12 +555,12 @@ function getProfileImage()
                 </label>
                 <ul class="menu-bar menu">
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../Programs/programs.html';">
+                        <button class="nav-link" onclick="window.location.href='../Programs/programs.php';">
                             Programs
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../children/children.html';">
+                        <button class="nav-link" onclick="window.location.href='../children/children.php';">
                             Children?
                         </button>
                     </li>
@@ -570,7 +570,7 @@ function getProfileImage()
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.html';">
+                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.php';">
                             About Us
                         </button>
                     </li>
@@ -585,11 +585,6 @@ function getProfileImage()
                             Donate ❤️
                         </button>
                     </li>
-                    <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
-                        <li>
-                            <button class="nav-link"><a class="nav-link" href="../login/signup.php">Signup</a></button>
-                        </li>
-                    <?php } ?>
                 </ul>
             </div>
 
@@ -598,6 +593,11 @@ function getProfileImage()
                     <a href="../login/login.php">
                         <button class="login-btn-wrapper">
                             Log in
+                        </button>
+                    </a>
+                    <a href="../login/signup.php">
+                        <button class="login-btn-wrapper">
+                            Signup
                         </button>
                     </a>
                 <?php } elseif ((isset($_COOKIE["user"]) || (isset($_SESSION['username'])))) {
