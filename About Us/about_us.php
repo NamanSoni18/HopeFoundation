@@ -11,13 +11,10 @@
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <div class="color">
         <div class="welcome">
@@ -36,9 +33,12 @@
                 <br>
                 <br>
                 <div class="mission-images-div">
-                    <img src="../assests/Programs/Health.jpg" alt="No Health" class="mission-img" width="100px" height="100px">
-                    <img src="../assests/Programs/Education.jpg" alt="No Health" class="mission-img" width="100px" height="100px">
-                    <img src="../assests/Programs/Livelihood.jpg" alt="No Health" class="mission-img" width="100px" height="100px">
+                    <img src="../assests/Programs/Health.jpg" alt="No Health" class="mission-img" width="100px"
+                        height="100px">
+                    <img src="../assests/Programs/Education.jpg" alt="No Health" class="mission-img" width="100px"
+                        height="100px">
+                    <img src="../assests/Programs/Livelihood.jpg" alt="No Health" class="mission-img" width="100px"
+                        height="100px">
                 </div>
             </div>
             <h3>Empowering Lives, Inspiring Hope:</h3>

@@ -18,13 +18,17 @@
 
 <body>
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
-    <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
     <script>
         includeHTML();
-    </script>
+    </script> -->
+
+    <!-- NavBar Reload -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
+    </div>
 
     <div class="form-container right-image">
         <p class="title">Login into your Account</p>
@@ -68,7 +72,6 @@ if (isset($_POST['submit'])) {
 
         // Check if entered password matches the stored password
         if ($pwd === $row['password']) {
-            session_start();
             $_SESSION['username'] = $row['username'];
             $_SESSION['password'] = $row['password'];
             $_SESSION['email'] = $row['email'];
@@ -85,7 +88,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['user'] = $row['username'];
             }
             echo '<script>alert("Logged in Successfully");</script>';
-            header("Location: ../Main/index.html");
+            echo '<script>location.href="../Main/index.php"</script>';
         } else {
             echo '<script> alert("Login Failed"); </script>';
         }

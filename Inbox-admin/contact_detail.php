@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "../login/connection.php";
 
 // Retrieve email from the URL parameter
@@ -15,7 +15,7 @@ $query = "SELECT email, message, time, fname, lname FROM contact WHERE message =
 
 $result = mysqli_query($conn, $query);
 
-if($result) {
+if ($result) {
     $row = mysqli_fetch_array($result);
     $email = $row["email"];
     $message = $row["message"];
@@ -28,15 +28,32 @@ mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
 </head>
+
 <body>
-    <div>Name: <?php echo "$fname $lname" ?></div>
-    <div>Email ID: <?php echo $email ?></div>
-    <div>Time: <?php echo $time ?></div>
-    <div>Message: <?php echo $message ?></div>
+
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
+    </div>
+    
+    <div>Name:
+        <?php echo "$fname $lname" ?>
+    </div>
+    <div>Email ID:
+        <?php echo $email ?>
+    </div>
+    <div>Time:
+        <?php echo $time ?>
+    </div>
+    <div>Message:
+        <?php echo $message ?>
+    </div>
 </body>
+
 </html>

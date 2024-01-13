@@ -15,13 +15,17 @@
 
     <section id="backtotop"></section>
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
-    <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
     <script>
         includeHTML();
-    </script>
+    </script> -->
+
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
+    </div>
 
     <section class="back-section-div">
         <a href="#backtotop">

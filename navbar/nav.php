@@ -586,12 +586,12 @@ function getProfileImage()
                 </label>
                 <ul class="menu-bar menu">
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../Programs/programs.html';">
+                        <button class="nav-link" onclick="window.location.href='../Programs/programs.php';">
                             Programs
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../children/children.html';">
+                        <button class="nav-link" onclick="window.location.href='../children/children.php';">
                             Children?
                         </button>
                     </li>
@@ -601,7 +601,7 @@ function getProfileImage()
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.html';">
+                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.php';">
                             About Us
                         </button>
                     </li>

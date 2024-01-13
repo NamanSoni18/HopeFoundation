@@ -43,13 +43,16 @@
 <body>
 
     <!-- Nav Bar Load -->
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
     </div>
-    <!-- NavBar Scripts -->
     <script src="../navbar/nav.js"></script>
     <script>
         includeHTML();
-    </script>
+    </script> -->
+
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
+    </div>
 
     <div class="form-container">
         <p class="title">Create account</p>
@@ -84,7 +87,7 @@
 
 <?php
 include "connection.php";
-session_start();
+// session_start();
 
 $username = $pwd = $fname = $dob = $email = "";
 
@@ -126,7 +129,7 @@ if (isset($_POST["submit"])) {
                 setcookie("role", 'user', time() + (30 * 24 * 3600), "/");
             }
 
-            header('Location: ../Main/index.html');
+            echo '<script>location.href="../Main/index.php"</script>';
         } else {
             echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
         }
