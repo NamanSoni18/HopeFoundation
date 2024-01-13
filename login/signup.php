@@ -29,15 +29,11 @@ session_start();
             border-radius: 10px;
             box-sizing: border-box;
             padding: 20px 30px;
-            /* position: absolute; */
             margin: auto;
 
             /* Center a div */
             position: absolute;
             top: 20%;
-            /* left: 50%; */
-            /* right: 0;
-            bottom: 0; */
         }
     </style>
 
@@ -71,12 +67,6 @@ session_start();
 
 
     </div>
-
-    <!-- <script async src="../navbar/script.js"></script> -->
-
-    <!-- <script>
-    function </style> -->
-
 </body>
 
 </html>

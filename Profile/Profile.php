@@ -78,13 +78,6 @@ ob_end_clean();
             }
         }
     </script>
-    <!-- <script>
-        // JavaScript to set default image if the profile image is not available
-        document.querySelector('.profile-image').onerror = function () {
-        this.src = '../assests/icons/icons8-user-94.png'; // Set the path to your default image
-    };
-    </script> -->
-
 
     <div class="background"></div>
     <div class="h1-head">
