@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,7 @@
                 location.replace("../login/login.php");
             }
             else {
-                location.replace("../Main/index.html");
+                location.replace("../Main/index.php");
                 // return false;
             }
         }

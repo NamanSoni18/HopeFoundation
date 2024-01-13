@@ -1,5 +1,6 @@
 <?php
 include "../login/connection.php";
+session_start();
 
 // Retrieve email from the URL parameter
 $message_cookie = $_GET['message'];

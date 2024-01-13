@@ -1,6 +1,6 @@
 <?php
 include "../login/connection.php";
-// session_start();
+session_start();
 
 ob_start();
 
@@ -58,7 +58,7 @@ ob_end_clean();
                 location.replace("../login/login.php");
             }
             else {
-                location.replace("../Main/index.html");
+                location.replace("../Main/index.php");
                 // return false;
             }
         }
@@ -209,7 +209,7 @@ ob_end_clean();
                 $_SESSION['dob'] = $up_dob;
                 $_SESSION['fname'] = $up_fname;
                 echo '<script>alert("Profile updated successfully!")</script>';
-                echo '<script>window.location.href="../Main/index.html";</script>';
+                echo '<script>window.location.href="../Main/index.php";</script>';
                 exit;
             } else {
                 echo "Error updating profile: " . mysqli_error($conn);

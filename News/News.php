@@ -1,5 +1,6 @@
 <?php
 include("../login/connection.php");
+session_start();
 
 $sql = "SELECT * FROM news ORDER BY created_at DESC"; // Fetch all rows from the 'news' table
 $result = mysqli_query($conn, $sql);

@@ -1,6 +1,6 @@
 <?php
 include "../login/connection.php";
-session_start();
+// session_start();
 if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }
@@ -576,7 +576,7 @@ function getProfileImage()
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
             <div class="left-container">
-                <a class="logo" href="../Main/index.html">
+                <a class="logo" href="../Main/index.php">
                     <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
                         class="Inc Logo" />
                 </a>

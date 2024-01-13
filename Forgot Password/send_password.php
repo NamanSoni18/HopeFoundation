@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $query = "UPDATE user SET otp = 0 WHERE email = '$email'";
                 mysqli_query($conn, $query);
                 echo "<script>alert('Your Password is sent to your Mail Successfully')</script>";
-                echo '<script>window.location.href="../Main/index.html";</script>';
+                echo '<script>window.location.href="../Main/index.php";</script>';
             } catch (Exception $e) {
                 echo "<script>alert('Error: Invalid OTP')</script>";
             }
