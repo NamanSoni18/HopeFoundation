@@ -575,11 +575,6 @@ function getProfileImage()
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../connect/contact.php';">
-                            Contact Us
-                        </button>
-                    </li>
-                    <li>
                         <button class="nav-link" onclick="window.location.href='../FAQ/FAQ.php';">
                             FAQ
                         </button>
