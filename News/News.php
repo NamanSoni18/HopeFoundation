@@ -47,7 +47,6 @@ if ($result) {
         <a href="#backtotop">
             <div id="backtotop-div">
                 <div>Back to Top</div>
-                <!-- <img src="../assests/icons/system-regular-11-arrow-up.svg" alt="" width="50px" height="50px"> -->
                 <i class="fa-solid fa-arrow-up"></i>
             </div>
         </a>

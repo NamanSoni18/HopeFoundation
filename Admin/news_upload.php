@@ -27,14 +27,6 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
 </head>
 
 <body>
-    <!-- Nav Bar Load -->
-    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-    </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script> -->
-
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
         <?php require_once("../navbar/nav.php") ?>

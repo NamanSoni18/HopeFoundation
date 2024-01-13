@@ -1,14 +1,13 @@
 <?php
 include "../login/connection.php";
-
 session_start();
 
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     echo '<script>alert("You are not an Admin or Staff");';
-    echo 'window.location.href = "../Main/index.html";</script>';
+    echo 'window.location.href = "../Main/index.php";</script>';
 }
 
-if($_SESSION['user_role'] == 'staff') {
+if ($_SESSION['user_role'] == 'staff') {
     $query = "Select username, fname, dob, role from user where role = 'user'";
 } else {
     $query = "Select username, fname, dob, role from user where role = 'user' or role = 'staff'";
@@ -67,14 +66,10 @@ if (isset($result)) {
 </head>
 
 <body>
-
-    <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+    <!-- NavBar Load -->
+    <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
+        <?php require_once("../navbar/nav.php") ?>
     </div>
-    <!-- NavBar Scripts -->
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script>
 
     <table style="width: 80%">
         <tr class="row">

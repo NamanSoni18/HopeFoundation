@@ -1,6 +1,5 @@
 <?php
 include "../login/connection.php";
-// session_start();
 if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,9 +10,6 @@ session_start();
     <title>Signup</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
-
-    <!-- NavBar Load-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <style>
         body {
             background: url("../assests/backgrounds/background6.svg") no-repeat;
@@ -29,15 +26,11 @@ session_start();
             border-radius: 10px;
             box-sizing: border-box;
             padding: 20px 30px;
-            /* position: absolute; */
             margin: auto;
 
             /* Center a div */
             position: absolute;
             top: 20%;
-            /* left: 50%; */
-            /* right: 0;
-            bottom: 0; */
         }
     </style>
 
@@ -45,14 +38,7 @@ session_start();
 
 <body>
 
-    <!-- Nav Bar Load -->
-    <!-- <div w3-include-html="../navbar/nav.php" style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-    </div>
-    <script src="../navbar/nav.js"></script>
-    <script>
-        includeHTML();
-    </script> -->
-
+    <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
         <?php require_once("../navbar/nav.php") ?>
     </div>
@@ -78,19 +64,12 @@ session_start();
 
 
     </div>
-
-    <!-- <script async src="../navbar/script.js"></script> -->
-
-    <!-- <script>
-    function </style> -->
-
 </body>
 
 </html>
 
 <?php
 include "connection.php";
-// session_start();
 
 $username = $pwd = $fname = $dob = $email = "";
 
