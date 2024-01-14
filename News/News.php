@@ -58,7 +58,7 @@ if ($result) {
             <div class="news-card">
                 <div class="news-card-container">
                     <div class="header">
-                        <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
+                        <img src="../assests/News_Image/<?php echo $post["image"];?>" alt="News Image">
                     </div>
                     <div class="news-info">
                         <h1 class="title">

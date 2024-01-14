@@ -35,8 +35,8 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     <div class="news">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="image-news-div news_up">
-                <label for="image" class="news-label">Choose an image:</label>
-                <input type="file" name="image" id="image" accept="image/*" required>
+                <label for="image" class="news-label">Type the Image Name:</label>
+                <input type="text" name="image" id="image" required>
             </div>
 
             <div class="title-news-div news_up">
@@ -65,13 +65,11 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
 
     if (isset($_POST['submit'])) {
-        $image = $_FILES['image']['tmp_name'];
+        $image = $_POST['image'];
         $title = $_POST['title'];
         $paragraph = $_POST['paragraph'];
 
-        $imageData = addslashes(file_get_contents($image));
-
-        $sql = "INSERT INTO news(image, title, paragraph, created_at) VALUES('$imageData', '$title', '$paragraph', NOW());";
+        $sql = "INSERT INTO news(image, title, paragraph, created_at) VALUES('$image', '$title', '$paragraph', NOW());";
 
         if (mysqli_query($conn, $sql)) {
             echo "Image uploaded successfully.";
