@@ -50,7 +50,7 @@ ob_end_clean();
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
         <?php require_once("../navbar/nav.php") ?>
     </div>
-    
+
     <script>
         function retVal() {
             var retVal = confirm("You Have not logged in. Want to Login?");
@@ -113,10 +113,10 @@ ob_end_clean();
             <div class="profile-div-img">
                 <?php
                 $profileImage = getProfileImage();
-                $profileImageData = base64_encode($profileImage);
-
+                // $profileImageData = base64_encode($profileImage);
+                
                 if ($profileImage) {
-                    echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="" id="uploaded-image">';
+                    echo '<img src="../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                 } else {
                     echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="" id="uploaded-image">';
                 }
@@ -193,10 +193,11 @@ ob_end_clean();
                 die('<script>alert("Username already Exist")</script>');
             }
 
-            if (isset($_FILES['up_image']['tmp_name']) && !empty($_FILES['up_image']['tmp_name'])) {
-                $up_image = $_FILES['up_image']['tmp_name'];
-                $imageData = addslashes(file_get_contents($up_image));
-                $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname', image = '$imageData' WHERE username = '$username'";
+
+            if (isset($_FILES["up_image"]) && $_FILES["up_image"]["error"] == 0) {
+                $uploadedFile = $_FILES["up_image"];
+                $imageName = $uploadedFile["name"];
+                $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname', image = '$imageName' WHERE username = '$username'";
             } else {
                 $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname' WHERE username = '$username'";
             }

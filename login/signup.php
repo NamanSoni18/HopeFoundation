@@ -33,6 +33,9 @@ session_start();
             top: 20%;
         }
     </style>
+    <script>
+        alert("Save your Profile Image on assests/ProfileImage/");
+    </script>
 
 </head>
 
@@ -88,10 +91,10 @@ if (isset($_POST["submit"])) {
         // Username or email already exists
         echo "<script>alert('Username or email already exists. Please choose a different one.');</script>";
     } else {
-        if (isset($_FILES['image']['tmp_name']) && !empty($_FILES['image']['tmp_name'])) {
-            $up_image = $_FILES['image']['tmp_name'];
-            $imageData = addslashes(file_get_contents($up_image));
-            $query = "INSERT INTO user(username, password, fname, email, dob, image, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageData', 'user')";
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+            $uploadedFile = $_FILES["image"];
+            $imageName = $uploadedFile["name"];
+            $query = "INSERT INTO user(username, password, fname, email, dob, image, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageName', 'user')";
         } else {
             $query = "INSERT INTO user(username, password, fname, email, dob, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', 'user')";
         }
