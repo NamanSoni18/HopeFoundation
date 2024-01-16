@@ -94,6 +94,7 @@ if (isset($_POST["submit"])) {
         if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
             $uploadedFile = $_FILES["image"];
             $imageName = $uploadedFile["name"];
+
             $query = "INSERT INTO user(username, password, fname, email, dob, image, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', '$imageName', 'user')";
         } else {
             $query = "INSERT INTO user(username, password, fname, email, dob, role) VALUES('$username', '$pwd', '$fname', '$email', '$dob', 'user')";

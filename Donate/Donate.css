@@ -109,3 +109,7 @@
 #country option[value="Indian"] {
   padding: 5px; /* You can adjust the padding value according to your preference */
 }
+
+input {
+  text-transform: uppercase;
+}
