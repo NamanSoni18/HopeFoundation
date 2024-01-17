@@ -22,56 +22,36 @@ session_start();
         }
     </style>
     <script>
-        function retVal() {
-            var retVal = confirm("You Have not logged in. Want to Login?");
-            if (retVal == true) {
-                location.replace("../login/login.php");
-            }
-            else {
-                location.replace("../Main/index.php");
-                // return false;
-            }
-        }
-
-        document.getElementById('donateButton').onclick = function () {
-            var amount = <?php if (isset($_POST['price']) && $_POST['price'] == 'Other') {
-                echo $_POST['otheramount'];
-            } else {
-                echo $_POST['price'];
-            } ?>;
+        function pay() {
+            var amount = <?php echo $amount; ?>;
 
             var options = {
-                key: 'YOUR_RAZORPAY_KEY', // Replace with your actual Razorpay API Key
-                amount: amount * 100, // Amount is in currency subunits (in this case, paisa)
-                name: 'Your Organization Name',
-                description: 'Donation for a cause',
+                key: "rzp_test_ES7EePC7FYjHNI", // Replace with your actual Razorpay API Key
+                amount: amount * 100,
+                name: "Hope Foundation",
+                description: "<?php echo $focus; ?>",
                 handler: function (response) {
-                    // Set the Razorpay payment ID in the hidden field
-                    document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
-
-                    // Continue with form submission
-                    document.getElementById('donateForm').submit();
+                    document.getElementById("razorpay_payment_id").value = response.razorpay_payment_id;
                 },
                 prefill: {
-                    name: '<?php echo $name; ?>',
-                    email: '<?php echo $email; ?>',
-                    contact: '<?php echo $phone_no; ?>'
+                    name: "<?php echo $name; ?>",
+                    email: "<?php echo $email; ?>",
+                    contact: "<?php echo $phone_no; ?>"
                 },
                 notes: {
-                    address: '<?php echo $address; ?>',
-                    pan: '<?php echo $pan; ?>',
-                    aadhaar: '<?php echo $aadhaar; ?>'
+                    address: "<?php echo $address; ?>",
+                    pan: "<?php echo $pan; ?>",
+                    aadhaar: "<?php echo $aadhaar; ?>"
                 },
                 theme: {
-                    color: '#e88730'
+                    color: "#e88730"
                 }
             };
 
             var rzp = new Razorpay(options);
             rzp.open();
-        };
+        }
     </script>
-
 </head>
 
 
@@ -86,7 +66,7 @@ session_start();
     </div>
     <div class="form-container2">
         <p class="title">Donate</p>
-        <form class="form" method="post" action="" autocomplete="off">
+        <form class="form" method="post" action="" autocomplete="off" id="donateForm" name="submit">
             <div class="name content">
                 <label for="name">
                     <h2 class="heading">Enter Your Name: </h2>
@@ -234,18 +214,16 @@ session_start();
                     required>
             </div>
             <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
-            <button type="submit" class="form-btn submit" id="donateButton">Donate ❤️</button>
+            <button type="submit" class="form-btn submit" id="donateButton" name="submit">Donate ❤️</button>
         </form>
     </div>
 
     <script src="script.js" defer></script>
-
 </body>
 
 </html>
 <?php
 include "../login/connection.php";
-// session_start();
 
 function donateuser()
 {
@@ -286,9 +264,12 @@ if (isset($_POST['submit'])) {
 
     if ($result == 1) {
         echo '<script>alert("Donation Successfull");';
-        echo 'window.location.href="Donate.php";</script>';
+        // echo 'window.location.href="Donate.php";</script>';
     } else {
         echo '<script>alert("Donation Unsuccessfull");</script>';
     }
+
+    // JavaScript block moved inside the PHP block
+    echo '<script>pay();</script>';
 }
 ?>
