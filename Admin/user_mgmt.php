@@ -2,7 +2,7 @@
 include "../login/connection.php";
 session_start();
 
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
+if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin')) {
     echo '<script>alert("You are not an Admin or Staff");';
     echo 'window.location.href = "../Main/index.php";</script>';
 }
