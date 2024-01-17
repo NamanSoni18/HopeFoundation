@@ -119,7 +119,7 @@ session_start();
                 <label for="pan">
                     <h2 class="heading">Enter Your Pan Number: </h2>
                 </label>
-                <input type="text" name="pan" id="pan" placeholder="Pan Number" required>
+                <input type="text" name="pan" id="pan" class="uppercase" placeholder="Pan Number" required>
             </div>
             <div class="country content">
                 <label for="country">
@@ -227,7 +227,7 @@ include "../login/connection.php";
 
 function donateuser()
 {
-    if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+    if (!(isset($_COOKIE["username"]) || isset($_SESSION['username']))) {
         echo "<script>retVal();</script>";
     }
 }
@@ -238,6 +238,7 @@ $name = $email = $dob = $address = $city = $state = $country = $nationality = $f
 $amount = 100;
 if (isset($_POST['submit'])) {
     $name = $_POST['fname'];
+    $username = $_COOKIE['username'];
     $email = $_POST['email'];
     $phone_no = $_POST['phone_no'];
     $address = $_POST['address'];
@@ -258,7 +259,7 @@ if (isset($_POST['submit'])) {
         $amount = $_POST['price'];
     }
 
-    $query = "INSERT INTO donation(name, email, phone_no, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$email', '$phone_no', '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
+    $query = "INSERT INTO donation(name, username, email, phone_no, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$username', '$email', '$phone_no', '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
 
     $result = mysqli_query($conn, $query);
 

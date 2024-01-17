@@ -1,7 +1,7 @@
 <?php
 include "../login/connection.php";
-if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
-    $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+if (isset($_COOKIE["username"]) || isset($_SESSION['username'])) {
+    $username = isset($_COOKIE['username']) ? $_COOKIE['username'] : $_SESSION['username'];
 }
 
 if (isset($_COOKIE['role'])) {
@@ -11,9 +11,9 @@ if (isset($_COOKIE['role'])) {
 function user()
 {
     $userprofile = "";
-    if (isset($_SESSION['username']) || isset($_COOKIE['user'])) {
+    if (isset($_SESSION['username']) || isset($_COOKIE['username'])) {
         // Display the username based on whether the session or cookie is set
-        $userprofile = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+        $userprofile = isset($_COOKIE['username']) ? $_COOKIE['username'] : $_SESSION['username'];
         return $userprofile;
     } else {
         return $userprofile;
@@ -36,8 +36,7 @@ function getProfileImage()
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -619,7 +618,7 @@ function getProfileImage()
             </div>
 
             <div class="right-container">
-                <?php if (!(isset($_COOKIE['user']) || isset($_SESSION['username']))) { ?>
+                <?php if (!(isset($_COOKIE['username']) || isset($_SESSION['username']))) { ?>
                     <a href="../login/login.php">
                         <button class="login-btn-wrapper">
                             Log in
@@ -630,7 +629,7 @@ function getProfileImage()
                             Signup
                         </button>
                     </a>
-                <?php } elseif ((isset($_COOKIE["user"]) || (isset($_SESSION['username'])))) {
+                <?php } elseif ((isset($_COOKIE["username"]) || (isset($_SESSION['username'])))) {
                     genprofile();
                 } ?>
 
