@@ -54,12 +54,12 @@ if (isset($result)) {
         }
 
         function rollbackUser() {
-            alert("User role to user Successfull");
+            alert("Staff role to user Successfull");
             window.location.href = 'user_mgmt.php';
         }
 
         function promoteUser() {
-            alert("User promoted to Admin Successfull");
+            alert("User promoted to Staff Successfull");
             window.location.href = 'user_mgmt.php';
         }
     </script>
