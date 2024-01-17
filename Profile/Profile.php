@@ -4,8 +4,8 @@ session_start();
 
 ob_start();
 
-if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
-    $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+if (isset($_COOKIE["username"]) || isset($_SESSION['username'])) {
+    $username = isset($_COOKIE['username']) ? $_COOKIE['username'] : $_SESSION['username'];
     $query = "SELECT * FROM user WHERE username = '$username'";
     $result = mysqli_query($conn, $query);
 
@@ -162,7 +162,7 @@ ob_end_clean();
 
     function profileuser()
     {
-        if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+        if (!(isset($_COOKIE["username"]) || isset($_SESSION['username']))) {
             echo "<script>retVal();</script>";
         }
     }
@@ -204,7 +204,8 @@ ob_end_clean();
 
             if (mysqli_query($conn, $updateProfileQuery)) {
                 $_SESSION['username'] = $up_username;
-                setcookie("user", $up_username, time() + (30 * 24 * 3600), "/");
+                setcookie("username", "", time() - 3600, "/");
+                setcookie("username", $up_username, time() + (30 * 24 * 3600), "/");
                 $_SESSION['email'] = $up_email;
                 $_SESSION['password'] = $up_pwd;
                 $_SESSION['dob'] = $up_dob;

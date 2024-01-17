@@ -207,7 +207,7 @@ include "../login/connection.php";
 
 function donateuser()
 {
-    if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+    if (!(isset($_COOKIE["username"]) || isset($_SESSION['username']))) {
         echo "<script>retVal();</script>";
     }
 }
