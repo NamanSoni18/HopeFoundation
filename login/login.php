@@ -22,7 +22,7 @@ session_start();
 <body>
     <!-- NavBar Reload -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php include_once("../navbar/nav.php") ?>
+        <?php require_once("../navbar/nav.php") ?>
     </div>
 
     <div class="form-container right-image">

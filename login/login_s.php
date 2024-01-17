@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 
         // Check if entered password matches the stored password
         if ($pwd === $row['password']) {
-            // session_start();
+            session_start();
             $_SESSION['username'] = $row['username'];
             $_SESSION['password'] = $row['password'];
             $_SESSION['email'] = $row['email'];
