@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,8 @@ session_start();
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../login/style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <style>
         body {
             background: url("../assests/backgrounds/background7.svg") no-repeat;
@@ -30,6 +32,44 @@ session_start();
                 // return false;
             }
         }
+
+        document.getElementById('donateButton').onclick = function () {
+            var amount = <?php if (isset($_POST['price']) && $_POST['price'] == 'Other') {
+                echo $_POST['otheramount'];
+            } else {
+                echo $_POST['price'];
+            } ?>;
+
+            var options = {
+                key: 'YOUR_RAZORPAY_KEY', // Replace with your actual Razorpay API Key
+                amount: amount * 100, // Amount is in currency subunits (in this case, paisa)
+                name: 'Your Organization Name',
+                description: 'Donation for a cause',
+                handler: function (response) {
+                    // Set the Razorpay payment ID in the hidden field
+                    document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+
+                    // Continue with form submission
+                    document.getElementById('donateForm').submit();
+                },
+                prefill: {
+                    name: '<?php echo $name; ?>',
+                    email: '<?php echo $email; ?>',
+                    contact: '<?php echo $phone_no; ?>'
+                },
+                notes: {
+                    address: '<?php echo $address; ?>',
+                    pan: '<?php echo $pan; ?>',
+                    aadhaar: '<?php echo $aadhaar; ?>'
+                },
+                theme: {
+                    color: '#e88730'
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        };
     </script>
 
 </head>
@@ -190,9 +230,11 @@ session_start();
                 </div>
             </div>
             <div class="hidden">
-                <input type="text" name="price" id="otheramount" class="hidden-input" placeholder="Enter amount" required>
+                <input type="text" name="price" id="otheramount" class="hidden-input" placeholder="Enter amount"
+                    required>
             </div>
-            <button type="submit" class="form-btn submit" name="submit">Donate ❤️</button>
+            <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+            <button type="submit" class="form-btn submit" id="donateButton">Donate ❤️</button>
         </form>
     </div>
 
