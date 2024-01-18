@@ -15,7 +15,7 @@ session_start();
     <script src="slide-wrapper.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="../Profile/profile.css">
     <style>
         .submit-button-profile {

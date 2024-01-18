@@ -35,6 +35,7 @@ if (isset($result)) {
     <link rel="stylesheet" href="user_mgmt.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../Inbox-admin/inbox.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <style>
         .button-inbox {
             width: auto;

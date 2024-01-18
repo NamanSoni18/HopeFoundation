@@ -17,6 +17,7 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
     <title>News Upload</title>
     <link rel="stylesheet" href="news_upload.css">
     <link rel="stylesheet" href="../login/style.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <script>
         function news_uploaded() {

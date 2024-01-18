@@ -11,6 +11,7 @@ session_start();
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="FAQ.css">
     <link rel="stylesheet" href="../backtotop.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
