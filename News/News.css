@@ -9,7 +9,20 @@ body {
   display: grid;
   grid-template-rows: repeat(auto-fit, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  animation: myAnim-news 1s ease 0s 1 normal forwards;
   gap: 8px;
+}
+
+@keyframes myAnim-news {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .news-card {
