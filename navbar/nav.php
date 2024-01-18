@@ -42,13 +42,6 @@ function getProfileImage()
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
-    <!-- <script src="https://cdn.lordicon.com/lordicon.js"></script> -->
-    
-<!-- 
-
-    <style>
-       
-    </style> -->
     <script>
         // JavaScript to set default image if the profile image is not available
         document.getElementById('profile-image').onerror = function () {

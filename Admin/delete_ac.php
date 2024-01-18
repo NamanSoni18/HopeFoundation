@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
-        // User confirmed the account deletion
         deleteAccount($username);
     }
 }
@@ -24,7 +23,6 @@ function deleteAccount($username)
         header("Location: ../login/logout.php"); // Redirect to logout for a clean logout experience
         exit();
     } else {
-        // Handle the case where deletion fails
         echo "Error deleting account. Please try again.";
     }
 }
@@ -67,7 +65,6 @@ function deleteAccount($username)
         function confirmDelete() {
             var result = confirm("Are you sure you want to delete your account?");
             if (result) {
-                // User confirmed, submit the form
                 document.getElementById("deleteForm").submit();
             }
         }
