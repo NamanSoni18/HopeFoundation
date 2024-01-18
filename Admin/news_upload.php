@@ -20,6 +20,8 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
     <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <script>
+        alert("Save your Profile Image on assests/News_Image/");
+
         function news_uploaded() {
             alert("News Uploaded");
             window.location.href = "news_upload.php";

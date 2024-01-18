@@ -155,6 +155,10 @@ function getProfileImage()
                                     echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
                                     echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
                                 }
+                                
+                                if ($_SESSION['user_role'] == 'admin') {
+                                    echo '<li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation">Database</a></li>';
+                                }
                                 ?>
                                 <li><a href="../Admin/delete_ac.php">Delete Your Account</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>
