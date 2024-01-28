@@ -28,7 +28,7 @@ session_start();
 
     <div class="form-container right-image">
         <p class="title">Login into your Account</p>
-        <form class="form" method="post" action="login_s.php" autocomplete="off">
+        <form class="form" method="post" action="" autocomplete="off">
             <input type="text" name="username" class="input" placeholder="Enter your Username or email ID">
             <input type="password" name="password" class="input" placeholder="Password">
             <div class="remember">

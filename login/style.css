@@ -6,13 +6,11 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 20px 15px;
-  margin: 20px auto;
+  padding: 20px 15px; 
+    margin: 20px auto;
   /* position: absolute; */
   /* margin: auto; */
   margin: 220px auto;
-  /* animation: myAnim 1s ease-in-out 0s 1 normal backwards; */
-  animation: myAnim 2s ease 0s 1 normal forwards;
 
   /* Center a div */
   position: absolute;
@@ -20,28 +18,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-@keyframes myAnim-exit {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-}
-
-@keyframes myAnim {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 .title {
@@ -143,17 +119,17 @@
 }
 
 @media (max-width: 1100px) {
-  .form-container {
-    padding: 20px 10px; /* Adjusted padding for smaller screens */
-  }
-  .title {
-    font-size: 24px; /* Adjusted font size for smaller screens */
-  }
-  .form-btn {
-    font-size: 14px; /* Adjusted font size for smaller screens */
-  }
-  .sign-up-label {
-    font-size: 9px; /* Adjusted font size for smaller screens */
-  }
-  /* Add more styles as needed for smaller screens */
+    .form-container {
+        padding: 20px 10px; /* Adjusted padding for smaller screens */
+    }
+    .title {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+    }
+    .form-btn {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+    .sign-up-label {
+        font-size: 9px; /* Adjusted font size for smaller screens */
+    }
+    /* Add more styles as needed for smaller screens */
 }

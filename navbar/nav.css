@@ -70,14 +70,9 @@ button {
   color: inherit;
 }
 
-.logo {
-  margin-right: 1.5rem;
-  z-index: 6;
-}
-
 .menu-bar .nav-link {
   font-size: 18px;
-  font-weight: 500;
+  /* font-weight: 500; */
   font-family: "Biryani", serif;
   letter-spacing: -0.6px;
   padding: 0.6rem;
@@ -260,7 +255,7 @@ button {
 
 #menu-toggle:checked + .menu-button-container .menu-button::after {
   margin-top: 0px;
-  transform: rotate(-405deg);
+  transform: rotate(405deg);
 }
 
 .donate-button {
