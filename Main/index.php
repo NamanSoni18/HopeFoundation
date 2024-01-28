@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,6 @@ session_start();
     <title>Home</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="slide-wrapper.css">
-    <script src="slide-wrapper.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../navbar/nav.css">
@@ -49,57 +47,37 @@ session_start();
                 children's lives. We count on the generosity of people like you to be able to create real change for
                 India's children!</p>
             <a href="../Donate/Donate.php">
-                <button class="Donate-btn-wrapper content-wrapper">Donate ❤️</button></a>
+                <button class="Donate-btn-wrapper content-wrapper" style="margin: 20px auto;">Donate ❤️</button></a>
         </div>
         <div class="part2">
-            <div class="container-slideshow">
-                <div class="slider-wrapper">
-                    <button id="prev-slide" class="slide-button material-symbols-rounded">
-                        chevron_left
-                    </button>
-                    <ul class="image-list">
-                        <div class="wrapper-slideshow-image image-item">
-                            <img class="image-item-list list-item"
-                                src="../assests/Donate/Poor-children-in-school-donate.jpg" alt="img-1" />
-                            <h1 class="list-item">Send Children Back to School</h1>
-                            <p class="list-item">If not now they might never return</p>
-                        </div>
-                        <div class="wrapper-slideshow-image image-item">
-                            <img class="image-item-list list-item" src="../assests/Donate/stop-child-labour.jpg"
-                                alt="img-1" />
-                            <h1 class="list-item">Stop Child Labour</h1>
-                            <p class="list-item">Help children go to school instead</p>
-                        </div>
-                        <div class="wrapper-slideshow-image image-item">
-                            <img class="image-item-list list-item" src="../assests/Donate/Unpreviliged-Mother.jpg"
-                                alt="img-1" />
-                            <h1 class="list-item">Help Underprivileged Mothers</h1>
-                            <p class="list-item">Provide them the nutritional care</p>
-                        </div>
-                        <div class="wrapper-slideshow-image image-item">
-                            <img class="image-item-list list-item" src="../assests/Donate/Education-Gap.jpg"
-                                alt="img-1" />
-                            <h1 class="list-item">Bridge The Education Gap</h1>
-                            <p class="list-item">Through academic support centres</p>
-                        </div>
-                        <div class="wrapper-slideshow-image image-item">
-                            <img class="image-item-list list-item" src="../assests/Donate/Kitchen-Garden.jpg"
-                                alt="img-1" />
-                            <h1 class="list-item">Support Kitchen Gardens</h1>
-                            <p class="list-item">Give children sustainable nutrition</p>
-                        </div>
-                    </ul>
-                    <button id="next-slide" class="slide-button material-symbols-rounded">
-                        chevron_right
-                    </button>
-                </div>
-                <div class="slider-scrollbar">
-                    <div class="scrollbar-track">
-                        <div class="scrollbar-thumb"></div>
-                    </div>
-                </div>
+            <div class="card-section3">
+                <img class="image-grid" src="../assests/Donate/Poor-children-in-school-donate.jpg" alt="img-1"
+                   width="400px" height="300px"/>
+                <h1 class="list-item">Send Children Back to School</h1>
+                <p class="list-item">If not now they might never return</p>
+            </div>
+            <div class="card-section3">
+                <img class="image-grid" src="../assests/Donate/stop-child-labour.jpg" alt="img-1" width="400px" height="300px"/>
+                <h1 class="list-item">Stop Child Labour</h1>
+                <p class="list-item">Help children go to school instead</p>
+            </div>
+            <div class="card-section3">
+                <img class="image-grid" src="../assests/Donate/Unpreviliged-Mother.jpg" alt="img-1" width="400px" height="300px"/>
+                <h1 class="list-item">Help Underprivileged Mothers</h1>
+                <p class="list-item">Provide them the nutritional care</p>
+            </div>
+            <div class="card-section3">
+                <img class="image-grid" src="../assests/Donate/Education-Gap.jpg" alt="img-1" width="400px" height="300px"/>
+                <h1 class="list-item">Bridge The Education Gap</h1>
+                <p class="list-item">Through academic support centres</p>
+            </div>
+            <div class="card-section3">
+                <img class="image-grid" src="../assests/Donate/Kitchen-Garden.jpg" alt="img-1" width="400px" height="300px"/>
+                <h1 class="list-item">Support Kitchen Gardens</h1>
+                <p class="list-item">Give children sustainable nutrition</p>
             </div>
         </div>
+    </div>
     </div>
     <br>
     <div class="contact-us">
