@@ -2,6 +2,11 @@
 include "../connection/connection.php";
 session_start();
 
+if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff'))) {
+    echo '<script>alert("You are not an Admin or staff");';
+    echo 'window.location.href = "../../User-Panel/Main/index.php";</script>';
+}
+
 // Retrieve email from the URL parameter
 $message_cookie = $_GET['message'];
 

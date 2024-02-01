@@ -2,9 +2,9 @@
 include "../connection/connection.php";
 session_start();
 
-if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin')) {
-    echo '<script>alert("You are not an Admin or Staff");';
-    echo 'window.location.href = "../Main-Admin/index.php";</script>';
+if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff'))) {
+    echo '<script>alert("You are not an Admin or staff");';
+    echo 'window.location.href = "../../User-Panel/Main/index.php";</script>';
 }
 
 if ($_SESSION['user_role'] == 'staff') {

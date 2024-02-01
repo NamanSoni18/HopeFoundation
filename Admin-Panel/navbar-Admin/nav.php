@@ -78,6 +78,11 @@ function getProfileImage()
                             Inbox
                         </button>
                     </li>
+                    <li>
+                        <button class="nav-link" onclick="window.location.href='http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation';">
+                            Database
+                        </button>
+                    </li>
                     <li class="donate-button">
                         <button class="nav-link donate-button">
                             Donate ❤️
@@ -117,6 +122,7 @@ function getProfileImage()
                         <div class="menu-profile" id="menu-profile">
                             <ul>
                                 <li><a href="../../User-Panel/Profile/Profile.php">Profile</a></li>
+                                <li><a href="../../User-Panel/Main/index.php">User Panel</a></li>
                                 <li><a href="../../User-Panel/login/logout.php">Sign Out</a></li>
                             </ul>
                         </div>

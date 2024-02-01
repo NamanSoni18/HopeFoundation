@@ -22,37 +22,6 @@ session_start();
             background-position: top -80px left 50%;
         }
     </style>
-    <!-- <script>
-        function pay() {
-            var amount = <?php echo $amount; ?>;
-
-            var options = {
-                key: "rzp_test_ES7EePC7FYjHNI", // Replace with your actual Razorpay API Key
-                amount: amount * 100,
-                name: "Hope Foundation",
-                description: "<?php echo $focus; ?>",
-                handler: function (response) {
-                    document.getElementById("razorpay_payment_id").value = response.razorpay_payment_id;
-                },
-                prefill: {
-                    name: "<?php echo $name; ?>",
-                    email: "<?php echo $email; ?>",
-                    contact: "<?php echo $phone_no; ?>"
-                },
-                notes: {
-                    address: "<?php echo $address; ?>",
-                    pan: "<?php echo $pan; ?>",
-                    aadhaar: "<?php echo $aadhaar; ?>"
-                },
-                theme: {
-                    color: "#e88730"
-                }
-            };
-
-            var rzp = new Razorpay(options);
-            rzp.open();
-        }
-    </script> -->
 </head>
 
 
@@ -239,6 +208,9 @@ $name = $email = $dob = $address = $city = $state = $country = $nationality = $f
 $amount = 100;
 if (isset($_POST['submit'])) {
     $name = $_POST['fname'];
+    $invoice_number = generateInvoiceNumber();
+    $today_date = date("Y-m-d");
+    // $current_time = date("H:i:s");
     $username = $_COOKIE['username'];
     $email = $_POST['email'];
     $phone_no = $_POST['phone_no'];
@@ -260,18 +232,24 @@ if (isset($_POST['submit'])) {
         $amount = $_POST['price'];
     }
 
-    $query = "INSERT INTO donation(name, username, email, phone_no, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$username', '$email', '$phone_no', '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
+    $query = "INSERT INTO donation(invoice_num, name, username, email, phone_no, donate_date, time, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$invoice_number','$name', '$username', '$email', '$phone_no', '$today_date', NOW() , '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
 
     $result = mysqli_query($conn, $query);
 
     if ($result == 1) {
-        echo '<script>alert("Donation Successfull");';
-        echo 'window.location.href="Donate.php";</script>';
+        echo '<script>alert("Donation Successfull");</script>';
+        echo '<script>window.location.href="invoice-donate.php?invoice_number=' . $invoice_number . '";</script>';
     } else {
         echo '<script>alert("Donation Unsuccessfull");</script>';
     }
 
     // JavaScript block moved inside the PHP block
     // echo '<script>pay();</script>';
+}
+
+function generateInvoiceNumber() {
+    // Implement your logic to generate a unique invoice number here
+    // You can use a combination of timestamp, random numbers, or any other method that ensures uniqueness
+    return 'INV' . date('YmdHis') . rand(1000, 9999); // Example: INV202401312359591234
 }
 ?>
