@@ -54,7 +54,7 @@ function getProfileImage()
     <header id="nav-menu" aria-label="navigation bar">
         <div class="container">
             <div class="left-container">
-                <a href="../Main/index.php">
+                <a href="../Main-Admin/index.php">
                     <img alt="Inc Logo" src="../../assests/Hope_Foundation_logo2.svg" width="100" height="100"
                         class="Inc Logo" />
                 </a>
@@ -64,31 +64,20 @@ function getProfileImage()
                 </label>
                 <ul class="menu-bar menu">
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../Programs/programs.php';">
-                            Programs
+                        <button class="nav-link" onclick="window.location.href='../Admin/news_upload.php';">
+                        News Upload
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../children/children.php';">
-                            Children?
+                        <button class="nav-link" onclick="window.location.href='../Admin/user_mgmt.php';">
+                            User Management
                         </button>
                     </li>
                     <li>
-                        <button class="nav-link" onclick="window.location.href='../News/News.php';">
-                            News
+                        <button class="nav-link" onclick="window.location.href='../Inbox-admin/inbox.php';">
+                            Inbox
                         </button>
                     </li>
-                    <li>
-                        <button class="nav-link" onclick="window.location.href='../About Us/about_us.php';">
-                            About Us
-                        </button>
-                    </li>
-                    <li>
-                        <button class="nav-link" onclick="window.location.href='../FAQ/FAQ.php';">
-                            FAQ
-                        </button>
-                    </li>
-
                     <li class="donate-button">
                         <button class="nav-link donate-button">
                             Donate ❤️
@@ -98,20 +87,9 @@ function getProfileImage()
             </div>
 
             <div class="right-container">
-                <?php if (!(isset($_COOKIE['username']) || isset($_SESSION['username']))) { ?>
-                    <a href="../login/login.php">
-                        <button class="login-btn-wrapper">
-                            Log in
-                        </button>
-                    </a>
-                    <a href="../login/signup.php">
-                        <button class="login-btn-wrapper">
-                            Signup
-                        </button>
-                    </a>
-                <?php } elseif ((isset($_COOKIE["username"]) || (isset($_SESSION['username'])))) {
-                    genprofile();
-                } ?>
+                <?php
+                genprofile();
+                ?>
 
                 <?php function genprofile()
                 { ?>
@@ -126,10 +104,8 @@ function getProfileImage()
                             <div class="img-box">
                                 <?php
                                 $profileImage = getProfileImage();
-                                // $profileImageData = base64_encode($profileImage);
                             
                                 if ($profileImage) {
-                                    // echo "<img src="'../assests/profileImage/' . $profileImage; . '" class="profile-img" alt="No Image">";
                                     echo '<img src="../../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                                 } else {
                                     echo '<img src="../../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
@@ -140,27 +116,14 @@ function getProfileImage()
 
                         <div class="menu-profile" id="menu-profile">
                             <ul>
-                                <li><a href="../Profile/profile.php">Profile</a></li>
-                                <?php
-                                // Check if user is admin
-                                if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff') {
-                                    echo '<li><a href="../../Admin-Panel/Main-Admin/index.php">Admin Panel</a></li>';
-                                    // echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
-                                    // echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
-                                }
-
-                                // if ($_SESSION['user_role'] == 'admin') {
-                                //     echo '<li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation">Database</a></li>';
-                                // }
-                                ?>
-                                <li><a href="../Admin/delete_ac.php">Delete Your Account</a></li>
-                                <li><a href="../login/logout.php">Sign Out</a></li>
+                                <li><a href="../../User-Panel/Profile/Profile.php">Profile</a></li>
+                                <li><a href="../../User-Panel/login/logout.php">Sign Out</a></li>
                             </ul>
                         </div>
                     </div>
                 <?php } ?>
 
-                <a href="../Donate/Donate.php">
+                <a href="../../User-Panel/Donate/Donate.php">
                     <button class="Donate-btn-wrapper">
                         <span class="span-donate">Donate❤️</span>
                     </button>

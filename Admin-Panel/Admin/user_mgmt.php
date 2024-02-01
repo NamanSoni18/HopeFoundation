@@ -1,10 +1,10 @@
 <?php
-include "../login/connection.php";
+include "../connection/connection.php";
 session_start();
 
 if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin')) {
     echo '<script>alert("You are not an Admin or Staff");';
-    echo 'window.location.href = "../Main/index.php";</script>';
+    echo 'window.location.href = "../Main-Admin/index.php";</script>';
 }
 
 if ($_SESSION['user_role'] == 'staff') {
@@ -33,9 +33,9 @@ if (isset($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
     <link rel="stylesheet" href="user_mgmt.css">
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../Inbox-admin/inbox.css">
-    <link rel="stylesheet" href="../navbar/nav.css">
+    <link rel="stylesheet" href="../navbar-Admin/nav.css">
     <style>
         .button-inbox {
             width: auto;
@@ -69,7 +69,7 @@ if (isset($result)) {
 <body>
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php require_once("../navbar/nav.php") ?>
+        <?php require_once("../navbar-Admin/nav.php") ?>
     </div>
 
     <table style="width: 80%">

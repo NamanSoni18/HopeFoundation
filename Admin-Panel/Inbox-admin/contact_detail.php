@@ -1,5 +1,5 @@
 <?php
-include "../login/connection.php";
+include "../connection/connection.php";
 session_start();
 
 // Retrieve email from the URL parameter
@@ -33,14 +33,14 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
-    <link rel="stylesheet" href="../navbar/nav.css">
+    <link rel="stylesheet" href="../../navbar-Admin/nav.css">
 </head>
 
 <body>
 
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php require_once("../navbar/nav.php") ?>
+        <?php require_once("../navbar-Admin/nav.php") ?>
     </div>
     
     <div>Name:

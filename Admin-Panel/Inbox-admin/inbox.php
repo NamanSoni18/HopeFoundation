@@ -5,10 +5,10 @@ session_start();
 // Check if admin is logged in
 if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff')) {
     echo '<script>alert("You are not an Admin or staff");';
-    echo 'window.location.href = "../Main/index.php";</script>';
+    echo 'window.location.href = "../Main-Admin/index.php";</script>';
 }
 
-include "../login/connection.php";
+include "../connection/connection.php";
 $email = $message = "";
 $time;
 $query = "SELECT email, message, time FROM contact";
@@ -32,14 +32,14 @@ if ($result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inbox</title>
     <link rel="stylesheet" href="inbox.css">
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
-    <link rel="stylesheet" href="../navbar/nav.css">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="stylesheet" href="../navbar-Admin/nav.css">
 </head>
 
 <body>
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php require_once("../navbar/nav.php") ?>
+        <?php require_once("../navbar-Admin/nav.php") ?>
     </div>
 
     <div>

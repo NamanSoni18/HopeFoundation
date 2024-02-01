@@ -126,10 +126,8 @@ function getProfileImage()
                             <div class="img-box">
                                 <?php
                                 $profileImage = getProfileImage();
-                                // $profileImageData = base64_encode($profileImage);
                             
                                 if ($profileImage) {
-                                    // echo "<img src="'../assests/profileImage/' . $profileImage; . '" class="profile-img" alt="No Image">";
                                     echo '<img src="../../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                                 } else {
                                     echo '<img src="../../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
@@ -145,15 +143,9 @@ function getProfileImage()
                                 // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff') {
                                     echo '<li><a href="../../Admin-Panel/Main-Admin/index.php">Admin Panel</a></li>';
-                                    // echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
-                                    // echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
                                 }
-
-                                // if ($_SESSION['user_role'] == 'admin') {
-                                //     echo '<li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation">Database</a></li>';
-                                // }
                                 ?>
-                                <li><a href="../Admin/delete_ac.php">Delete Your Account</a></li>
+                                <li><a href="../Delete_ac/delete_ac.php">Delete Your Account</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>
                             </ul>
                         </div>

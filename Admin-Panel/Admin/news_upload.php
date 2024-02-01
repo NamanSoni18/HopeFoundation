@@ -4,7 +4,7 @@ session_start();
 // Check if admin is logged in
 if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff')) {
     echo '<script>alert("You are not an Admin or staff");';
-    echo 'window.location.href = "../Main/index.php";</script>';
+    echo 'window.location.href = "../Main-Admin/index.php";</script>';
 }
 ?>
 
@@ -16,9 +16,9 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Upload</title>
     <link rel="stylesheet" href="news_upload.css">
-    <link rel="stylesheet" href="../login/style.css">
-    <link rel="stylesheet" href="../navbar/nav.css">
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="stylesheet" href="../../User-Panel/login/style.css">
+    <link rel="stylesheet" href="../navbar-Admin/nav.css">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <script>
         alert("Save your Profile Image on assests/News_Image/");
 
@@ -32,7 +32,7 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
 <body>
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php require_once("../navbar/nav.php") ?>
+        <?php require_once("../navbar-Admin/nav.php") ?>
     </div>
 
     <div class="news">
@@ -59,7 +59,7 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
 
 </html>
 <?php
-include "../login/connection.php";
+include "../connection/connection.php";
 
 $sql = "SELECT * FROM news";
 
