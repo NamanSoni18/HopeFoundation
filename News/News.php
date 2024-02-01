@@ -25,6 +25,7 @@ if ($result) {
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" type="image/png">
     <link rel="stylesheet" href="News.css">
     <link rel="stylesheet" href="../backtotop.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         function msgDelete() {

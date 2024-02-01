@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
-        // User confirmed the account deletion
         deleteAccount($username);
     }
 }
@@ -24,7 +23,6 @@ function deleteAccount($username)
         header("Location: ../login/logout.php"); // Redirect to logout for a clean logout experience
         exit();
     } else {
-        // Handle the case where deletion fails
         echo "Error deleting account. Please try again.";
     }
 }
@@ -37,6 +35,7 @@ function deleteAccount($username)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account</title>
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
         body {
@@ -66,7 +65,6 @@ function deleteAccount($username)
         function confirmDelete() {
             var result = confirm("Are you sure you want to delete your account?");
             if (result) {
-                // User confirmed, submit the form
                 document.getElementById("deleteForm").submit();
             }
         }

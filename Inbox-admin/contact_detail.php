@@ -12,7 +12,7 @@ $fname = $lname = "";
 // Sanitization from SQL injection
 $message = mysqli_real_escape_string($conn, $message_cookie);
 
-$query = "SELECT email, message, time, fname, lname FROM contact WHERE message = '$message'";
+$query = "SELECT email, message, time, name FROM contact WHERE message = '$message'";
 
 $result = mysqli_query($conn, $query);
 
@@ -21,8 +21,7 @@ if ($result) {
     $email = $row["email"];
     $message = $row["message"];
     $time = $row["time"];
-    $fname = $row["fname"];
-    $lname = $row["lname"];
+    $name = $row["name"];
 }
 
 mysqli_close($conn);
@@ -34,6 +33,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Details</title>
+    <link rel="stylesheet" href="../navbar/nav.css">
 </head>
 
 <body>
@@ -44,7 +44,7 @@ mysqli_close($conn);
     </div>
     
     <div>Name:
-        <?php echo "$fname $lname" ?>
+        <?php echo "$name" ?>
     </div>
     <div>Email ID:
         <?php echo $email ?>

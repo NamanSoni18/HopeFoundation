@@ -3,9 +3,9 @@
 session_start();
 
 // Check if admin is logged in
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
-    echo '<script>alert("You are not an Admin");';
-    echo 'window.location.href = "../Main/index.html";</script>';
+if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff')) {
+    echo '<script>alert("You are not an Admin or staff");';
+    echo 'window.location.href = "../Main/index.php";</script>';
 }
 
 include "../login/connection.php";
@@ -33,6 +33,7 @@ if ($result) {
     <title>Inbox</title>
     <link rel="stylesheet" href="inbox.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="stylesheet" href="../navbar/nav.css">
 </head>
 
 <body>

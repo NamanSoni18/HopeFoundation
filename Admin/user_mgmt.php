@@ -2,7 +2,7 @@
 include "../login/connection.php";
 session_start();
 
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
+if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin')) {
     echo '<script>alert("You are not an Admin or Staff");';
     echo 'window.location.href = "../Main/index.php";</script>';
 }
@@ -35,6 +35,7 @@ if (isset($result)) {
     <link rel="stylesheet" href="user_mgmt.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../Inbox-admin/inbox.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <style>
         .button-inbox {
             width: auto;
@@ -54,12 +55,12 @@ if (isset($result)) {
         }
 
         function rollbackUser() {
-            alert("User role to user Successfull");
+            alert("Staff role to user Successfull");
             window.location.href = 'user_mgmt.php';
         }
 
         function promoteUser() {
-            alert("User promoted to Admin Successfull");
+            alert("User promoted to Staff Successfull");
             window.location.href = 'user_mgmt.php';
         }
     </script>
