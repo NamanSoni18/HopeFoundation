@@ -22,7 +22,7 @@ if ($result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" type="image/png">
     <link rel="stylesheet" href="News.css">
     <link rel="stylesheet" href="../backtotop.css">
     <link rel="stylesheet" href="../navbar/nav.css">
@@ -59,7 +59,7 @@ if ($result) {
             <div class="news-card">
                 <div class="news-card-container">
                     <div class="header">
-                        <img src="../assests/News_Image/<?php echo $post["image"];?>" alt="News Image">
+                        <img src="../../assests/News_Image/<?php echo $post["image"];?>" alt="News Image">
                     </div>
                     <div class="news-info">
                         <h1 class="title">

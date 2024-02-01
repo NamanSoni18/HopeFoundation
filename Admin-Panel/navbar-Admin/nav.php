@@ -1,5 +1,5 @@
 <?php
-include "../login/connection.php";
+include "../connection/connection.php";
 if (isset($_COOKIE["username"]) || isset($_SESSION['username'])) {
     $username = isset($_COOKIE['username']) ? $_COOKIE['username'] : $_SESSION['username'];
 }
@@ -45,7 +45,7 @@ function getProfileImage()
     <script>
         // JavaScript to set default image if the profile image is not available
         document.getElementById('profile-image').onerror = function () {
-            this.src = '../assests/icons/icons8-user-94.png'; // Set the path to your default image
+            this.src = '../../assests/icons/icons8-user-94.png'; // Set the path to your default image
         };
     </script>
 </head>
@@ -55,7 +55,7 @@ function getProfileImage()
         <div class="container">
             <div class="left-container">
                 <a href="../Main/index.php">
-                    <img alt="Inc Logo" src="../assests/Hope_Foundation_logo2.svg" width="100" height="100"
+                    <img alt="Inc Logo" src="../../assests/Hope_Foundation_logo2.svg" width="100" height="100"
                         class="Inc Logo" />
                 </a>
                 <input id="menu-toggle" type="checkbox" />
@@ -130,9 +130,9 @@ function getProfileImage()
                             
                                 if ($profileImage) {
                                     // echo "<img src="'../assests/profileImage/' . $profileImage; . '" class="profile-img" alt="No Image">";
-                                    echo '<img src="../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
+                                    echo '<img src="../../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                                 } else {
-                                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
+                                    echo '<img src="../../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
                                 }
                                 ?>
                             </div>
@@ -144,14 +144,14 @@ function getProfileImage()
                                 <?php
                                 // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff') {
-                                    echo '<li><a href="../Inbox-admin/inbox.php">Inbox</a></li>';
-                                    echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
-                                    echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
+                                    echo '<li><a href="../../Admin-Panel/Main-Admin/index.php">Admin Panel</a></li>';
+                                    // echo '<li><a href="../Admin/news_upload.php">News Upload</a></li>';
+                                    // echo '<li><a href="../Admin/user_mgmt.php">User Management</a></li>';
                                 }
 
-                                if ($_SESSION['user_role'] == 'admin') {
-                                    echo '<li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation">Database</a></li>';
-                                }
+                                // if ($_SESSION['user_role'] == 'admin') {
+                                //     echo '<li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation">Database</a></li>';
+                                // }
                                 ?>
                                 <li><a href="../Admin/delete_ac.php">Delete Your Account</a></li>
                                 <li><a href="../login/logout.php">Sign Out</a></li>

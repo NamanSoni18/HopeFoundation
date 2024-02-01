@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="about_us.css">
     <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="../Donate/Donate.css">
@@ -37,11 +37,11 @@ session_start();
                 <br>
                 <br>
                 <div class="mission-images-div">
-                    <img src="../assests/Programs/Health.jpg" alt="No Health" class="mission-img" width="100px"
+                    <img src="../../assests/Programs/Health.jpg" alt="No Health" class="mission-img" width="100px"
                         height="100px">
-                    <img src="../assests/Programs/Education.jpg" alt="No Health" class="mission-img" width="100px"
+                    <img src="../../assests/Programs/Education.jpg" alt="No Health" class="mission-img" width="100px"
                         height="100px">
-                    <img src="../assests/Programs/Livelihood.jpg" alt="No Health" class="mission-img" width="100px"
+                    <img src="../../assests/Programs/Livelihood.jpg" alt="No Health" class="mission-img" width="100px"
                         height="100px">
                 </div>
             </div>

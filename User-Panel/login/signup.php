@@ -9,11 +9,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../navbar/nav.css">
     <style>
         body {
-            background: url("../assests/backgrounds/background6.svg") no-repeat;
+            background: url("../../assests/backgrounds/background6.svg") no-repeat;
             background-size: 100%;
             object-fit: cover;
             background-position: top -80px left 50%;

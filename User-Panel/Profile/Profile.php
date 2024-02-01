@@ -34,7 +34,7 @@ ob_end_clean();
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
         .password-toggle {
             position: absolute;
@@ -117,9 +117,9 @@ ob_end_clean();
                 // $profileImageData = base64_encode($profileImage);
                 
                 if ($profileImage) {
-                    echo '<img src="../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
+                    echo '<img src="../../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                 } else {
-                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="" id="uploaded-image">';
+                    echo '<img src="../../assests/icons/icons8-user-94.png" class="profile-img" alt="" id="uploaded-image">';
                 }
                 ?>
             </div>

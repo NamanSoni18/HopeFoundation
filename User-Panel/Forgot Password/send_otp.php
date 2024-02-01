@@ -30,9 +30,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PhpMailer/Exception.php';
-require '../PhpMailer/PHPMailer.php';
-require '../PhpMailer/SMTP.php';
+require '../../PhpMailer/Exception.php';
+require '../../PhpMailer/PHPMailer.php';
+require '../../PhpMailer/SMTP.php';
 
 include '../login/connection.php';
 

@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Children</title>
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../Main/style.css">
     <link rel="stylesheet" href="children.css">
     <link rel="stylesheet" href="../Donate/Donate.css">
@@ -45,16 +45,16 @@ session_start();
             grow up
             to be tomorrow's scientists, legislators, athletes,<br> journalists, and teachers, let's invest in their
             potential today!</p>
-        <!-- <div>
-                <img class="children" src="assests/school-children-holding-an-indian-flag.jpg" alt="Error....">
-            </div> -->
+        <div>
+                <img class="children" src="../../assests/school-children-holding-an-indian-flag.jpg" alt="Error....">
+            </div>
     </div>
 
     <br>
 
     <div class="card-section2 shadow-section2 section2">
         <div>
-            <img src="../assests/Student-india-map.svg" alt="Error">
+            <img src="../../assests/Student-india-map.svg" alt="Error">
         </div>
         <div>
             <h1>Children make up 472 million of India's population, or 40% of the total.</h1>
@@ -109,7 +109,7 @@ session_start();
             the rights of India's children and so, work on 4 key programmatic areas.</p>
 
         <div class="section4-part1">
-            <img src="../assests/Children/A_young_girl_in_a_rural.jpg" alt="No Image" width="500px" height="500px">
+            <img src="../../assests/Children/A_young_girl_in_a_rural.jpg" alt="No Image" width="500px" height="500px">
             <div class="section4-text">
                 <h1 class="sec4-head">Education Right To Development</h1>
                 <hr>
@@ -130,7 +130,7 @@ session_start();
             <div class="topic">
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/children-0-3-years.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/children-0-3-years.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Early Childhood Education</h2>
                             <span>0-3 years</span>
@@ -145,7 +145,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/children-3-6-years.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/children-3-6-years.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>School Readiness</h2>
                             <span>3-6 years</span>
@@ -157,7 +157,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/children-6-18-years.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/children-6-18-years.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Learning Outcomes</h2>
                             <span>6-18 years</span>
@@ -194,7 +194,7 @@ session_start();
                     supporting cast - healthy fats, the smooth lubricants that ensure seamless communication between
                     brain cells.</p>
             </div>
-            <img src="../assests/Children/Children of diverse.jpg" alt="No Image" width="500px" height="500px">
+            <img src="../../assests/Children/Children of diverse.jpg" alt="No Image" width="500px" height="500px">
         </div>
         <div class="section4-text-part2">
             <h3>Hope Foundation Right to Survival Focus on:</h3>
@@ -202,7 +202,7 @@ session_start();
             <div class="topic">
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Care for Expectant and Newborns.png" alt="" width="80px"
+                        <img src="../../assests/Children/Care for Expectant and Newborns.png" alt="" width="80px"
                             height="80px">
                         <div class="flex-part2">
                             <h2>Care for Expectant and Newborns</h2>
@@ -217,7 +217,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Growth monitoring.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/Growth monitoring.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Growth Monitoring</h2>
                         </div>
@@ -232,7 +232,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Learning outcomes.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/Learning outcomes.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Learning Outcomes</h2>
                         </div>
@@ -250,7 +250,7 @@ session_start();
         <hr>
 
         <div class="section4-part1">
-            <img src="../assests/Children/Safety & Protection.jpg" alt="No Image" width="500px" height="500px">
+            <img src="../../assests/Children/Safety & Protection.jpg" alt="No Image" width="500px" height="500px">
             <div class="section4-text">
                 <h1 class="sec4-head">Safety & Protection</h1>
                 <hr>
@@ -273,7 +273,7 @@ session_start();
             <div class="topic">
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Care for Expectant and Newborns.png" alt="" width="80px"
+                        <img src="../../assests/Children/Care for Expectant and Newborns.png" alt="" width="80px"
                             height="80px">
                         <div class="flex-part2">
                             <h2>Child Labour</h2>
@@ -287,7 +287,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Child marriage.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/Child marriage.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Child Marriage</h2>
                         </div>
@@ -300,7 +300,7 @@ session_start();
                 </div>
                 <div class="subtopic">
                     <div class="flex-part1">
-                        <img src="../assests/Children/Child Trafficking.png" alt="" width="80px" height="80px">
+                        <img src="../../assests/Children/Child Trafficking.png" alt="" width="80px" height="80px">
                         <div class="flex-part2">
                             <h2>Child Traffickings</h2>
                         </div>

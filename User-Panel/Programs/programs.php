@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs</title>
     <link rel="stylesheet" href="../navbar/nav.css">
-    <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="programs.css">
 </head>
 
@@ -57,7 +57,7 @@ session_start();
                         </div>
                     </div>
                     <div class="image">
-                        <img class="animal-image" src="../assests/Programs/Programs for Animals.jpg" alt="">
+                        <img class="animal-image" src="../../assests/Programs/Programs for Animals.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ session_start();
             </h3>
             <div class="subtopics-div">
                 <div class="image">
-                    <img class="animal-image" src="../assests/Programs/Programs for Children.jpg" alt="">
+                    <img class="animal-image" src="../../assests/Programs/Programs for Children.jpg" alt="">
                 </div>
                 <div>
                     <div class="topics-right topics">
@@ -140,7 +140,7 @@ session_start();
                     </div>
                 </div>
                 <div class="image">
-                    <img class="animal-image" src="../assests/Programs/Programs for elder.jpg" alt="">
+                    <img class="animal-image" src="../../assests/Programs/Programs for elder.jpg" alt="">
                 </div>
             </div>
         </div>
