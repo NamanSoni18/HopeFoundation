@@ -1,3 +1,11 @@
+/* Define styles specifically for printing */
+@media print {
+    /* Ensure background colors are printed */
+    .invoice-header h1 {
+        -webkit-print-color-adjust: exact; /* For WebKit-based browsers like Chrome and Safari */
+        color-adjust: exact; /* For Firefox */
+    }
+}
 .main-content {
     border: 0;
     box-sizing: content-box;
@@ -33,7 +41,8 @@ article table {
 
 }
 
-article th, td {
+article th,
+td {
     border-width: 1px;
     padding: 0.5em;
     position: relative;
@@ -52,8 +61,11 @@ article td {
     border-color: #DDD;
 }
 
-/* page */
+.printable {
 
+}
+
+/* page */
 .main-content {
     font: 16px/1 'Open Sans', sans-serif;
     overflow: auto;
@@ -61,7 +73,7 @@ article td {
 }
 
 .main-content {
-    background: #999;
+    /* background: #999; */
     cursor: default;
 }
 
@@ -80,10 +92,13 @@ article td {
 }
 
 /* header */
-
 .invoice-header {
     margin: 0 0 3em;
-    z-index: 1;
+    /* z-index: 1; */
+}
+
+.invoice-header h3 {
+    color: #000;
 }
 
 .invoice-header:after {
@@ -95,7 +110,7 @@ article td {
 .invoice-header h1 {
     background: #000;
     border-radius: 0.25em;
-    color: #FFF;
+    /* color: #FFF; */
     margin: 0 0 1em;
     padding: 1em 1em;
 }
