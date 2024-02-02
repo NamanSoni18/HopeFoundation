@@ -23,8 +23,7 @@ if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_S
         alert("Save your Profile Image on assests/News_Image/");
 
         function news_uploaded() {
-            alert("News Uploaded");
-            window.location.href = "news_upload.php";
+
         }
     </script>
 </head>
@@ -76,7 +75,8 @@ if ($result) {
 
         if (mysqli_query($conn, $sql)) {
             echo "Image uploaded successfully.";
-            echo "<script>news_uploaded();</script>";
+            echo "<script>alert('News Uploaded');</script>";
+            echo "<script>window.location.href = 'news_upload.php';</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
