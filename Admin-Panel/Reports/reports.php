@@ -38,17 +38,19 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
     </div>
 
     <div class="report-container">
-        <div class="from date">
-            <h2>From:</h2>
-            <input type="date" name="from" id="from">
-        </div>
-        <div class="to date">
-            <h2>To:</h2>
-            <input type="date" name="to" id="to">
-        </div>
-        <div class="submit-button">
-            <button class="submit-button-profile">Print</button>
-        </div>
+        <form action="reports-query.php" method="POST">
+            <div class="from date">
+                <h2>From:</h2>
+                <input type="date" name="from" id="from" required>
+            </div>
+            <div class="to date">
+                <h2>To:</h2>
+                <input type="date" name="to" id="to" required>
+            </div>
+            <div class="submit-button">
+                <button type="submit" class="submit-button-profile" name="submit">Print</button>
+            </div>
+        </form>
     </div>
 </body>
 
