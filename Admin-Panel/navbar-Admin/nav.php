@@ -79,6 +79,11 @@ function getProfileImage()
                         </button>
                     </li>
                     <li>
+                        <button class="nav-link" onclick="window.location.href='../Reports/reports.php';">
+                            Report
+                        </button>
+                    </li>
+                    <li>
                         <button class="nav-link" onclick="window.location.href='http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation';">
                             Database
                         </button>

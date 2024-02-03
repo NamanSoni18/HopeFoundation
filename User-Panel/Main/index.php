@@ -18,6 +18,15 @@ session_start();
     <style>
         .submit-button-profile {
             color: white;
+            outline: 2px solid #2c9caf;
+        }
+
+        .submit-button-profile:hover {
+            outline: 2px solid #70bdca;
+            box-shadow: 4px 5px 17px -4px #268391;  
+        }
+        .submit-button-profile:before {
+            background-color: #2c9caf;
         }
     </style>
 </head>
@@ -52,27 +61,31 @@ session_start();
         <div class="part2">
             <div class="card-section3">
                 <img class="image-grid" src="../../assests/Donate/Poor-children-in-school-donate.jpg" alt="img-1"
-                   width="400px" height="300px"/>
+                    width="400px" height="300px" />
                 <h1 class="list-item">Send Children Back to School</h1>
                 <p class="list-item">If not now they might never return</p>
             </div>
             <div class="card-section3">
-                <img class="image-grid" src="../../assests/Donate/stop-child-labour.jpg" alt="img-1" width="400px" height="300px"/>
+                <img class="image-grid" src="../../assests/Donate/stop-child-labour.jpg" alt="img-1" width="400px"
+                    height="300px" />
                 <h1 class="list-item">Stop Child Labour</h1>
                 <p class="list-item">Help children go to school instead</p>
             </div>
             <div class="card-section3">
-                <img class="image-grid" src="../../assests/Donate/Unpreviliged-Mother.jpg" alt="img-1" width="400px" height="300px"/>
+                <img class="image-grid" src="../../assests/Donate/Unpreviliged-Mother.jpg" alt="img-1" width="400px"
+                    height="300px" />
                 <h1 class="list-item">Help Underprivileged Mothers</h1>
                 <p class="list-item">Provide them the nutritional care</p>
             </div>
             <div class="card-section3">
-                <img class="image-grid" src="../../assests/Donate/Education-Gap.jpg" alt="img-1" width="400px" height="300px"/>
+                <img class="image-grid" src="../../assests/Donate/Education-Gap.jpg" alt="img-1" width="400px"
+                    height="300px" />
                 <h1 class="list-item">Bridge The Education Gap</h1>
                 <p class="list-item">Through academic support centres</p>
             </div>
             <div class="card-section3">
-                <img class="image-grid" src="../../assests/Donate/Kitchen-Garden.jpg" alt="img-1" width="400px" height="300px"/>
+                <img class="image-grid" src="../../assests/Donate/Kitchen-Garden.jpg" alt="img-1" width="400px"
+                    height="300px" />
                 <h1 class="list-item">Support Kitchen Gardens</h1>
                 <p class="list-item">Give children sustainable nutrition</p>
             </div>

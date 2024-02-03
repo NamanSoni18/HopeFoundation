@@ -1,0 +1,19 @@
+.report-container {
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow: 31px 31px 62px #c7c7c7, -31px -31px 62px #f9f9f9;
+  width: 95%;
+  height: max-content;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.date {
+    margin-top: 30px;
+}
+
+.date input{
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+}

@@ -88,7 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error updating OTP: " . mysqli_error($conn);
             }
         } else {
-            echo "Email not found.";
+            echo "<script>alert('Email not found.');</script>";
+            echo '<script>location.href="../login/login.php"</script>';
         }
     } else {
         echo "Error: " . mysqli_error($conn);
