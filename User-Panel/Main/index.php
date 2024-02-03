@@ -100,17 +100,16 @@ session_start();
         <div class="query">
             <div class="send-query">
                 <form action="query-related.php" class="form" method="post">
-                    <input type="text" class="name" placeholder="Name" name="name">
-                    <input type="number" class="phone" placeholder="phone" name="phone">
-                    <input type="email" class="email" placeholder="Email" name="email">
-                    <select name="query-related" id="query-related">
-                        <option value="query related to" selected>Query Related to</option>
-                        <option value="Donation">Donation</option>
+                    <input type="text" class="name" placeholder="Name" name="name" required>
+                    <input type="number" class="phone" placeholder="phone" name="phone" required>
+                    <input type="email" class="email" placeholder="Email" name="email" required>
+                    <select name="query-related" id="query-related" required>
+                        <option value="Donation" selected>Donation</option>
                         <option value="Volunteering">Volunteering</option>
                         <option value="Join a campaign">Join a campaign</option>
                         <option value="Others">Others</option>
                     </select>
-                    <textarea name="message" id="message" cols="2" rows="2" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" cols="2" rows="2" placeholder="Message" required></textarea>
                     <div class="submit">
                         <button class="submit-button-profile" type="submit" name="submit">Send Query</button>
                     </div>
