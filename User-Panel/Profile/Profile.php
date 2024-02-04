@@ -53,6 +53,8 @@ ob_end_clean();
     </div>
 
     <script>
+        alert('Save your Profile Image on C:/xampp/htdocs/HopeFoundation/assests/profileImage');
+
         function retVal() {
             var retVal = confirm("You Have not logged in. Want to Login?");
             if (retVal == true) {

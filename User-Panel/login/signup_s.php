@@ -45,6 +45,7 @@ if (isset($_POST["submit"])) {
             echo '<script>location.href="../Main/index.php"</script>';
         } else {
             echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+            echo "<script>window.location.href = 'signup.php';</script>";
         }
     }
 }

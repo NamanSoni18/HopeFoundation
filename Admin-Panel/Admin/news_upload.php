@@ -20,11 +20,7 @@ if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_S
     <link rel="stylesheet" href="../navbar-Admin/nav.css">
     <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <script>
-        alert("Save your Profile Image on assests/News_Image/");
-
-        function news_uploaded() {
-
-        }
+        alert("Save your Profile Image on C:/xampp/htdocs/HopeFoundation/assests/News_Image");
     </script>
 </head>
 

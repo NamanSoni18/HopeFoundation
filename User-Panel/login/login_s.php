@@ -36,9 +36,11 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             echo '<script> alert("Login Failed"); </script>';
+            echo "<script>window.location.href = 'login.php';</script>";
         }
     } else {
-        echo '<script> alert("Login Failed"); </script>';
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        echo "<script>window.location.href = 'login.php';</script>";
     }
 }
 ?>
