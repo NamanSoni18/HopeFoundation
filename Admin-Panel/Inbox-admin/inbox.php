@@ -46,36 +46,44 @@ if ($result) {
         <h1 style="text-align: center; font-size: 50px">Inbox</h1>
     </div>
 
-    <?php foreach ($posts as $post): ?>
-        <section class="inbox-layout">
-            <div class="grow2 item item1">
-                <?php
-                echo $post['email'];
-                ?>
-            </div>
-            <div class="grow2 item item1 time">
-                <?php echo $post['time']; ?>
-            </div>
-            <div class="grow2 item message item1">
-                <?php echo $post['message']; ?>
-            </div>
-            <div class="grow1 item2">
-                <button class="delete detail button-inbox">
-                    <a href="contact_detail.php?message=<?php echo $post['message']; ?>">
-                        <span>Get Detail</span>
-                    </a>
-                </button>
-            </div>
-            <div class="grow1 item2">
-                <form method="post" action="" onsubmit="return confirmDelete()">
-                    <input type="hidden" name="message_del" value="<?php echo $post['message']; ?>">
-                    <button type="submit" class="delete detail button-inbox" name="delete_message">
-                        <span>Delete</span>
+    <?php
+    if (empty($posts)) {
+        echo "<p style='text-align: center; font-size: 20px;'>No inbox messages available.</p>";
+    } else {
+        foreach ($posts as $post):
+            ?>
+            <section class="inbox-layout">
+                <div class="grow2 item item1">
+                    <?php
+                    echo $post['email'];
+                    ?>
+                </div>
+                <div class="grow2 item item1 time">
+                    <?php echo $post['time']; ?>
+                </div>
+                <div class="grow2 item message item1">
+                    <?php echo $post['message']; ?>
+                </div>
+                <div class="grow1 item2">
+                    <button class="delete detail button-inbox">
+                        <a href="contact_detail.php?message=<?php echo $post['message']; ?>">
+                            <span>Get Detail</span>
+                        </a>
                     </button>
-                </form>
-            </div>
-        </section>
-    <?php endforeach; ?>
+                </div>
+                <div class="grow1 item2">
+                    <form method="post" action="" onsubmit="return confirmDelete()">
+                        <input type="hidden" name="message_del" value="<?php echo $post['message']; ?>">
+                        <button type="submit" class="delete detail button-inbox" name="delete_message">
+                            <span>Delete</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        <?php
+        endforeach;
+    }
+    ?>
 
     <script>
         function confirmDelete() {
