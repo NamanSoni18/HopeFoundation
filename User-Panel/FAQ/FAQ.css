@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Roboto+Slab:wght@402&display=swap');
+
 .content {
   margin: 30px;
   text-align: center;
@@ -7,10 +9,17 @@
 .content h1 {
   font-size: 40px;
   padding: 20px 0;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .content p {
   font-size: 20px;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 489;
+  font-style: normal;
 }
 
 .faq {
@@ -30,9 +39,16 @@
   font-size: 25px;
   font-weight: 900;
   padding: 10px 0;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .faq-ans {
   font-size: 20px;
   text-align: justify;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 402;
+  font-style: normal;
 }

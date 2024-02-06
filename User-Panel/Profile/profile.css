@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Roboto+Slab:wght@402&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -61,6 +63,9 @@ body {
   margin-bottom: 30px;
   padding-bottom: 10px;
   border-bottom: 3px solid #ec8b3c;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
 
   /* text-align: center; */
 }
@@ -91,6 +96,14 @@ body {
   background-color: #f3f7fe;
   transition: 0.3s;
   color: #3b82f6;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 489;
+  font-style: normal;
+}
+
+.input[type="text"], .input[type="email"], .input[type="password"], .input[type="date"] {
+  font-size: 18px;
 }
 
 .input:focus {
@@ -99,10 +112,11 @@ body {
 }
 
 .label {
-  /* font-size: 20px; */
   font-weight: 900;
   font-size: 25px;
-  /* background-color: #000; */
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Submit Button */

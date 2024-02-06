@@ -38,6 +38,8 @@ function deleteAccount($username)
     <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Roboto+Slab:wght@402&display=swap');
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -45,9 +47,19 @@ function deleteAccount($username)
 
         h2 {
             color: #e74c3c;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
         }
 
-        .delete-user {
+        p {
+            font-family: "Karla", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 489;
+            font-style: normal;
+        }
+
+        .delete-user_ac {
             padding: 10px 20px;
             margin: 10px;
             font-size: 16px;
@@ -55,9 +67,12 @@ function deleteAccount($username)
             color: #fff;
             border: none;
             cursor: pointer;
+            font-family: "PT Serif", serif;
+            font-weight: 700;
+            font-style: normal;
         }
 
-        .delete-user:hover {
+        .delete-user_ac:hover {
             background-color: #c0392b;
         }
     </style>
@@ -79,7 +94,7 @@ function deleteAccount($username)
 
     <h2>Delete Your Account</h2>
     <p>This action is irreversible. Deleting your account will permanently remove all your data.</p>
-    <button class="delete-user" onclick="confirmDelete()">Delete My Account</button>
+    <button class="delete-user_ac" onclick="confirmDelete()">Delete My Account</button>
 
     <!-- Hidden form to submit the deletion after confirmation -->
     <form id="deleteForm" method="post">
