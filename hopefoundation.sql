@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2024 at 10:26 AM
+-- Generation Time: Feb 04, 2024 at 10:48 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -41,7 +41,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`name`, `c_no`, `email`, `query`, `message`, `time`) VALUES
-('Naman Soni', 2147483647, 'sknaman763@gmail.com', 'Join a campaign', 'fsfd', '14:52:09');
+('Naman Soni', 2147483647, 'sknaman763@gmail.com', 'Volunteering', 'fdfda', '15:13:55');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,8 @@ CREATE TABLE `donation` (
 --
 
 INSERT INTO `donation` (`invoice_num`, `name`, `username`, `email`, `phone_no`, `donate_date`, `time`, `address`, `pan`, `aadhaar`, `postalcode`, `city`, `state`, `country`, `nationality`, `focus`, `payment`, `amount`) VALUES
-('INV202402021019131736', 'Naman Soni', 'NamanSoni1', 'sknaman763@gmail.com', 2147483647, '2024-02-02', '14:49:13', 'Housing Board Colony\r\nL.I.G. 295, Ward No. -14', 'ds24414', 242342, 490042, 'Durg', 'Chhattisgarh', 'Indian', 'Indian', 'Unprivileged Elders', 'One-Time Payment', '15000');
+('INV202402021019131736', 'Naman Soni', 'NamanSoni1', 'sknaman763@gmail.com', 2147483647, '2024-02-02', '14:49:13', 'Housing Board Colony\r\nL.I.G. 295, Ward No. -14', 'ds24414', 242342, 490042, 'Durg', 'Chhattisgarh', 'Indian', 'Indian', 'Unprivileged Elders', 'One-Time Payment', '15000'),
+('INV202402041030317111', 'Girdhar Agrawal', 'girdhar12', 'girdhar12@gmail.com', 2147483647, '2024-02-04', '15:00:31', 'Nhi pta', 'fdsf413', 2147483647, 492001, 'Raipur', 'Raipur', 'Indian', 'Indian', 'Unprivileged Elders', 'One-Time Payment', '50000');
 
 -- --------------------------------------------------------
 
@@ -110,15 +111,20 @@ CREATE TABLE `user` (
   `fname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `dob` varchar(30) NOT NULL,
-  `role` enum('admin','staff','user') NOT NULL
+  `role` enum('admin','staff','user') NOT NULL,
+  `otp` int(11) NOT NULL,
+  `image` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `fname`, `email`, `dob`, `role`) VALUES
-('NamanSoni1', 'Fake1234', 'Naman Soni', 'sknaman763@gmail.com', '2003-12-25', 'admin');
+INSERT INTO `user` (`username`, `password`, `fname`, `email`, `dob`, `role`, `otp`, `image`) VALUES
+('Girdhar12', 'Fake1234', 'Girdhar Agrawal', 'girdharagrawalbro@gmail.com', '2003-12-27', 'staff', 0, ''),
+('LeenaSharma1', 'Fake1234', 'Leena Sharma', 'leenasharma2761@gmail.com', '2002-05-11', 'admin', 0, ''),
+('NamanSoni1', 'Fake1234', 'Naman Soni', 'sknaman763@gmail.com', '2003-12-25', 'admin', 0, '8322_edited.png'),
+('NamanSoni198', 'Fake1234', 'Naman Soni', 'skkhilesh763@gmail.com', '2003-12-25', 'user', 0, '');
 
 --
 -- Indexes for dumped tables

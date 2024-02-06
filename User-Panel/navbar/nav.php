@@ -40,8 +40,6 @@ function getProfileImage()
 
 <head>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Marcellus">
     <script>
         // JavaScript to set default image if the profile image is not available
         document.getElementById('profile-image').onerror = function () {
@@ -126,7 +124,7 @@ function getProfileImage()
                             <div class="img-box">
                                 <?php
                                 $profileImage = getProfileImage();
-                            
+
                                 if ($profileImage) {
                                     echo '<img src="../../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                                 } else {

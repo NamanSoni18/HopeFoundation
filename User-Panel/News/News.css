@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Roboto+Slab:wght@402&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -64,8 +64,6 @@ body {
 
 .news-info .Content {
   padding: 0 25px;
-  font-family: "Eczar";
-  font-weight: 400;
   text-align: justify;
   font-size: 17px;
   word-spacing: 0;
@@ -74,6 +72,10 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   white-space: normal;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 402;
+  font-style: normal;
 }
 
 .news-info .title {
@@ -81,13 +83,15 @@ body {
   padding: 1.5rem;
   text-align: center;
   font-size: 30px;
-  font-family: "Kreon", serif;
   color: rgb(38 50 56);
   letter-spacing: 0;
   line-height: 1.375;
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .footer {

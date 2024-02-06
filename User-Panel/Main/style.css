@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,322&display=swap');
+
+
 .section1 {
   margin: 20px;
   display: flex;
@@ -7,8 +11,10 @@
 
 .text1 {
   font-size: 50px;
-  font-weight: 900;
   margin-top: 150px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   margin-right: 20px;
   animation: myAnim 0.8s ease-in-out 0s 1 reverse forwards;
 }
@@ -61,7 +67,6 @@
 .part2 {
   width: 1366px;
   /* height: 768px; */
-
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
@@ -91,20 +96,6 @@
 .card-section3:hover {
   transform: scale(1.021);
 }
-
-/* .content-wrapper {
-  position: relative;
-  top: 60px;
-  padding: 10px 20px;
-}
-
-.content-wrapper-heading {
-  font-size: 60px;
-}
-
-.content-wrapper-paragraph {
-  font-size: 20px;
-} */
 
 @media (max-width: 1100px) {
   .section1 {
@@ -205,6 +196,10 @@
   border: none;
   background: 0 0;
   border-bottom: 1px solid #fff;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 322;
+  font-style: normal;
 }
 
 input::placeholder, textarea::placeholder {
