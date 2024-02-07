@@ -205,11 +205,10 @@ session_start();
 </html>
 <?php
 include "../login/connection.php";
-// session_start();
 
 function donateuser()
 {
-    if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+    if (!(isset($_COOKIE["username"]) || isset($_SESSION['username']))) {
         echo "<script>retVal();</script>";
     }
 }
@@ -220,6 +219,9 @@ $name = $email = $dob = $address = $city = $state = $country = $nationality = $f
 $amount = 100;
 if (isset($_POST['submit'])) {
     $name = $_POST['fname'];
+    $invoice_number = generateInvoiceNumber();
+    $today_date = date("Y-m-d");
+    $username = $_SESSION['username'];
     $email = $_POST['email'];
     $phone_no = $_POST['phone_no'];
     $address = $_POST['address'];
@@ -240,15 +242,19 @@ if (isset($_POST['submit'])) {
         $amount = $_POST['price'];
     }
 
-    $query = "INSERT INTO donation(name, email, phone_no, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$name', '$email', '$phone_no', '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
+    $query = "INSERT INTO donation(invoice_num, name, username, email, phone_no, donate_date, time, address, pan, aadhaar, postalcode, city, state, country, nationality, focus, payment, amount) VALUES('$invoice_number','$name', '$username', '$email', '$phone_no', '$today_date', NOW() , '$address', '$pan', '$aadhaar', '$zipcode', '$city', '$state', '$country', '$nationality', '$focus', '$pay_meth', '$amount')";
 
     $result = mysqli_query($conn, $query);
 
     if ($result == 1) {
-        echo '<script>alert("Donation Successfull");';
-        echo 'window.location.href="Donate.php";</script>';
+        echo '<script>alert("Donation Successfull");</script>';
+        echo '<script>window.location.href="invoice-donate.php?invoice_number=' . $invoice_number . '";</script>';
     } else {
         echo '<script>alert("Donation Unsuccessfull");</script>';
     }
+}
+
+function generateInvoiceNumber() {
+    return 'INV' . date('YmdHis') . rand(1000, 9999); // Example: INV202401312359591234
 }
 ?>

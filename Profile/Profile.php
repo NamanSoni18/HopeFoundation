@@ -164,7 +164,7 @@ ob_end_clean();
 
     function profileuser()
     {
-        if (!(isset($_COOKIE["user"]) || isset($_SESSION['username']))) {
+        if (!(isset($_COOKIE["username"]) || isset($_SESSION['username']))) {
             echo "<script>retVal();</script>";
         }
     }
