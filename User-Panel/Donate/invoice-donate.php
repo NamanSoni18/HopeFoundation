@@ -5,11 +5,12 @@
     <title>Invoice</title>
     <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="../Profile/profile.css">
+    <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
         @media print {
             .invoice-header h1 {
                 -webkit-print-color-adjust: exact; /* For WebKit-based browsers like Chrome and Safari */
-                color-adjust: exact; /* For Firefox */
+                print-color-adjust: exact; /* For Firefox */
             }
             .nav, .print {
                 display: none;
@@ -68,10 +69,6 @@
 
         article td {
             border-color: #DDD;
-        }
-
-        .printable {
-
         }
 
         /* page */
@@ -341,7 +338,7 @@
         </header>
         <article>
             <section class="invoice-details">
-                <h1>Recipient</h1>
+                <!-- <h1>Recipient</h1> -->
                 <address>
                     <p>
                         Name:
@@ -435,11 +432,7 @@
     <!-- JavaScript to trigger print preview -->
     <script>
         function printPreview() {
-            var printContent = document.querySelector('.main-content').innerHTML;
-            var originalContent = document.body.innerHTML;
-            document.body.innerHTML = printContent;
             window.print();
-            document.body.innerHTML = originalContent;
         }
     </script>
 
