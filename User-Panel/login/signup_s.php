@@ -30,6 +30,7 @@ if (isset($_POST["submit"])) {
         $result = mysqli_query($conn, $query);
 
         if ($result) {
+            session_start();
             $_SESSION['username'] = $username;
             $_SESSION['fname'] = $fname;
             $_SESSION['dob'] = $dob;
