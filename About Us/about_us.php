@@ -11,6 +11,7 @@ session_start();
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="about_us.css">
     <link rel="stylesheet" href="../Donate/Donate.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
 </head>
 
 <body>

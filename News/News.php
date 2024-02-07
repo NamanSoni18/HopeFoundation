@@ -26,6 +26,7 @@ if ($result) {
     <link rel="stylesheet" href="News.css">
     <link rel="stylesheet" href="../backtotop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <script>
         function msgDelete() {
             alert("Message Deleted Successfull");
@@ -47,7 +48,6 @@ if ($result) {
         <a href="#backtotop">
             <div id="backtotop-div">
                 <div>Back to Top</div>
-                <!-- <img src="../assests/icons/system-regular-11-arrow-up.svg" alt="" width="50px" height="50px"> -->
                 <i class="fa-solid fa-arrow-up"></i>
             </div>
         </a>
@@ -55,33 +55,33 @@ if ($result) {
 
     <!-- News Container -->
     <div class="news-main">
-    <?php foreach ($posts as $post): ?>
-        <div class="news-card">
-            <div class="news-card-container">
-                <div class="header">
-                    <img src="data:image/*;base64,<?php echo base64_encode($post['image']); ?>" alt="News Image">
+        <?php foreach ($posts as $post): ?>
+            <div class="news-card">
+                <div class="news-card-container">
+                    <div class="header">
+                        <img src="../assests/News_Image/ <?php echo $post["image"]; ?>" alt="News Image">
+                    </div>
+                    <div class="news-info">
+                        <h1 class="title">
+                            <?php echo $post['title'] ?>
+                        </h1>
+                        <p class="Content">
+                            <?php echo $post['paragraph'] ?>
+                        </p>
+                    </div>
                 </div>
-                <div class="news-info">
-                    <h1 class="title">
-                        <?php echo $post['title'] ?>
-                    </h1>
-                    <p class="Content">
-                        <?php echo $post['paragraph'] ?>
-                    </p>
-                </div>
-            </div>
-            <div class="footer">
-                <form method="post" action="">
-                    <button type="button" class="news-more-info">More Info</button>
-                </form>
+                <div class="footer">
+                    <form method="post" action="">
+                        <button type="button" class="news-more-info">More Info</button>
+                    </form>
 
-                <form method="post" action="">
-                    <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
-                    <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
-                </form>
+                    <form method="post" action="">
+                        <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
+                        <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </body>
 

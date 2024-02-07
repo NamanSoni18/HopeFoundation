@@ -6,8 +6,8 @@ $_SESSION = array();
 
 session_destroy();
 
-if (isset($_COOKIE["user"])) {
-    setcookie("user", "", time() - 3600, "/");
+if (isset($_COOKIE["username"])) {
+    setcookie("username", "", time() - 3600, "/");
 }
 setcookie("role", "", time() + (30 * 24 * 3600), "/");
 

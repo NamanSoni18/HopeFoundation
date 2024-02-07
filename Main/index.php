@@ -15,9 +15,20 @@ session_start();
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="../Profile/profile.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <style>
         .submit-button-profile {
             color: white;
+            outline: 2px solid #2c9caf;
+        }
+
+        .submit-button-profile:hover {
+            outline: 2px solid #70bdca;
+            box-shadow: 4px 5px 17px -4px #268391;
+        }
+
+        .submit-button-profile:before {
+            background-color: #2c9caf;
         }
     </style>
 </head>

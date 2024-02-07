@@ -4,8 +4,8 @@ session_start();
 
 ob_start();
 
-if (isset($_COOKIE["user"]) || isset($_SESSION['username'])) {
-    $username = isset($_COOKIE['user']) ? $_COOKIE['user'] : $_SESSION['username'];
+if (isset($_COOKIE["username"]) || isset($_SESSION['username'])) {
+    $username = isset($_COOKIE['username']) ? $_COOKIE['username'] : $_SESSION['username'];
     $query = "SELECT * FROM user WHERE username = '$username'";
     $result = mysqli_query($conn, $query);
 
@@ -32,6 +32,7 @@ ob_end_clean();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../navbar/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="icon" href="../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <style>
@@ -52,6 +53,8 @@ ob_end_clean();
     </div>
 
     <script>
+        alert('Save your Profile Image on C:/xampp/htdocs/HopeFoundation/assests/profileImage');
+
         function retVal() {
             var retVal = confirm("You Have not logged in. Want to Login?");
             if (retVal == true) {
@@ -77,6 +80,30 @@ ob_end_clean();
                 icon.classList.add('fa-eye-slash');
             }
         }
+
+        document.getElementById("up_image").addEventListener("change", displayImage);
+
+
+        function displayImage() {
+            const input = document.getElementById("up_image");
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const imageDataUrl = event.target.result;
+                    updateImageSrc(imageDataUrl);
+                };
+                reader.onerror = function (error) {
+                    console.error("Error reading the file:", error);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateImageSrc(src) {
+            const uploadedImage = document.getElementById("uploaded-image");
+            uploadedImage.src = src;
+        }
     </script>
 
     <div class="background"></div>
@@ -88,18 +115,19 @@ ob_end_clean();
             <div class="profile-div-img">
                 <?php
                 $profileImage = getProfileImage();
-                $profileImageData = base64_encode($profileImage);
+                // $profileImageData = base64_encode($profileImage);
 
                 if ($profileImage) {
-                    echo '<img src="data:image/*;base64,' . $profileImageData . '" class="profile-img" alt="">';
+                    echo '<img src="../assests/profileImage/' . $profileImage . '" class="profile-img" alt="">';
                 } else {
-                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="">';
+                    echo '<img src="../assests/icons/icons8-user-94.png" class="profile-img" alt="" id="uploaded-image">';
                 }
                 ?>
             </div>
             <div class="profile-div2">
                 <label for="up_image" class="label">Edit your Profile Photo</label>
-                <input type="file" id="up_image" name="up_image" class="input profile-photo">
+                <input type="file" id="up_image" accept="image/*" onchange="displayImage()" name="up_image"
+                    class="input profile-photo">
             </div>
             <div class="profile-div2">
                 <label for="up_username" class="label">Edit your Username</label>
@@ -118,7 +146,8 @@ ob_end_clean();
             </div>
             <div class="profile-div2">
                 <label for="up_pwd" class="label">Edit your Password</label>
-                <input type="password" class="input" id="up_pwd" value='<?php echo $_SESSION['password'] ?>' name="up_pwd">
+                <input type="password" class="input" id="up_pwd" value='<?php echo $_SESSION['password'] ?>'
+                    name="up_pwd">
                 <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('up_pwd')"
                     style="color: black;"></i>
             </div>
@@ -166,10 +195,10 @@ ob_end_clean();
                 die('<script>alert("Username already Exist")</script>');
             }
 
-            if (isset($_FILES['up_image']['tmp_name']) && !empty($_FILES['up_image']['tmp_name'])) {
-                $up_image = $_FILES['up_image']['tmp_name'];
-                $imageData = addslashes(file_get_contents($up_image));
-                $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname', image = '$imageData' WHERE username = '$username'";
+            if (isset($_FILES["up_image"]) && $_FILES["up_image"]["error"] == 0) {
+                $uploadedFile = $_FILES["up_image"];
+                $imageName = $uploadedFile["name"];
+                $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname', image = '$imageName' WHERE username = '$username'";
             } else {
                 $updateProfileQuery = "UPDATE user SET username = '$up_username', password = '$up_pwd', email = '$up_email', dob = '$up_dob', fname = '$up_fname' WHERE username = '$username'";
             }
