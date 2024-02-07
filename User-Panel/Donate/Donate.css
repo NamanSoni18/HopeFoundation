@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Roboto+Slab:wght@402&display=swap');
+
 .form-container2 {
   width: 100%;
   /* display: none; */
@@ -20,15 +22,21 @@
 
 .title {
   text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 10px 0 30px 0;
   font-size: 28px;
-  font-weight: 800;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .begin {
   text-align: center;
+}
+
+.begin h1 {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .content input {
@@ -46,6 +54,9 @@
   font-size: 30px;
   margin: 30px;
   color: #ff7801;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .inputs {
@@ -55,12 +66,7 @@
   padding-left: 40px;
 }
 
-.label {
-  flex-grow: 2;
-  /* padding-left: 30px; */
-}
-
-.label label {
+label {
   font-size: 20px;
   font-weight: 300;
 }

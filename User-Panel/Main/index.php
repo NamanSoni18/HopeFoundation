@@ -21,8 +21,9 @@ session_start();
 
         .submit-button-profile:hover {
             outline: 2px solid #70bdca;
-            box-shadow: 4px 5px 17px -4px #268391;  
+            box-shadow: 4px 5px 17px -4px #268391;
         }
+
         .submit-button-profile:before {
             background-color: #2c9caf;
         }
@@ -88,7 +89,6 @@ session_start();
                 <p class="list-item">Give children sustainable nutrition</p>
             </div>
         </div>
-    </div>
     </div>
     <br>
     <div class="contact-us">
