@@ -22,13 +22,17 @@ if (!(isset($_SESSION['user_role']) || $_SESSION['user_role'] == 'admin' || $_SE
     <link rel="stylesheet" href="../navbar-Admin/nav.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
         .welcome-text {
             font-size: 5rem;
             background: linear-gradient(90deg, #f79533 0%, #e88730 50%, #f79533 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
+            font-family: "Protest Riot", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
         .welcome-container {

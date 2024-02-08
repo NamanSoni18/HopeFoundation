@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Protest+Riot&family=Roboto+Slab:wght@402&display=swap');
+
+.inbox-head {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .inbox-layout {
   box-sizing: border-box;
   width: auto;
@@ -20,6 +28,11 @@
   padding: 10px;
   margin: auto 15px;
   margin-top: 20px;
+
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 489;
+  font-style: normal;
 }
 
 .inbox-layout:hover {
@@ -36,6 +49,10 @@
   flex-grow: 1;
   /* justify-content: center; */
   width: 10%;
+}
+
+.email {
+  width: 15%;
 }
 
 .time {

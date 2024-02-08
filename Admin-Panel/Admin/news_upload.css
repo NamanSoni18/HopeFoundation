@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Protest+Riot&family=Roboto+Slab:wght@402&display=swap');
+
 .news {
   border-radius: 29px;
   background: #e0e0e0;
@@ -10,6 +12,21 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
+}
+
+label {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 15px;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 402;
+  font-style: normal;
 }
 
 .news-label {

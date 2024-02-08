@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Protest+Riot&family=Roboto+Slab:wght@402&display=swap');
+
 .report-container {
   border-radius: 15px;
   background: #e0e0e0;
@@ -8,6 +10,12 @@
   padding: 20px;
 }
 
+h2 {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .date {
     margin-top: 30px;
 }
@@ -16,4 +24,8 @@
     width: 100%;
     margin-top: 15px;
     padding: 10px;
+    font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 489;
+  font-style: normal;
 }

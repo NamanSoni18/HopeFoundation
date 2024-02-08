@@ -1,27 +1,46 @@
-table, th, td {
-    border: 1px solid black;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Protest+Riot&family=Roboto+Slab:wght@402&display=swap");
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
 
-th, td {
-    padding: 10px;
-    text-align: center;
-    color: #e88730;
-    font-weight: 500;
-    font-size: 20px;
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  color: #e88730;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 th {
-    background-color: #e88730;
-    color: aliceblue;
-    font-size: 20px;
-    font-weight: 700;
+  background-color: #e88730;
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+td {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 489;
+  font-style: normal;
 }
 
 table {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .user-info {
-    font-size: 20px;
-    font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 402;
+  font-style: normal;
 }

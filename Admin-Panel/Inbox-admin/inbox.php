@@ -43,7 +43,7 @@ if ($result) {
     </div>
 
     <div>
-        <h1 style="text-align: center; font-size: 50px">Inbox</h1>
+        <h1 class="inbox-head" style="text-align: center; font-size: 50px">Inbox</h1>
     </div>
 
     <?php
@@ -53,7 +53,7 @@ if ($result) {
         foreach ($posts as $post):
             ?>
             <section class="inbox-layout">
-                <div class="grow2 item item1">
+                <div class="grow2 item email item1">
                     <?php
                     echo $post['email'];
                     ?>

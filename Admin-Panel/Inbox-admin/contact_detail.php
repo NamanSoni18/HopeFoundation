@@ -41,6 +41,33 @@ mysqli_close($conn);
     <link rel="stylesheet" href="../../navbar-Admin/nav.css">
     <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../navbar-Admin/nav.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@489&family=Libre+Baskerville:wght@700&family=PT+Serif:wght@700&family=Protest+Riot&family=Roboto+Slab:wght@402&display=swap');
+
+        th,
+        td {
+            padding: 15px;
+            text-align: justify;
+        }
+
+        th {
+            width: 150px;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        td {
+            font-family: "Karla", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 489;
+            font-style: normal;
+        }
+
+        table {
+            margin: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,19 +76,34 @@ mysqli_close($conn);
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
         <?php require_once("../navbar-Admin/nav.php") ?>
     </div>
-    
-    <div>Name:
-        <?php echo "$name" ?>
-    </div>
-    <div>Email ID:
-        <?php echo $email ?>
-    </div>
-    <div>Time:
-        <?php echo $time ?>
-    </div>
-    <div>Message:
-        <?php echo $message ?>
-    </div>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <td>
+                <?php echo $name ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Email ID</th>
+            <td>
+                <?php echo $email ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Time</th>
+            <td>
+                <?php echo $time ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td>
+                <?php echo $message ?>
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>
