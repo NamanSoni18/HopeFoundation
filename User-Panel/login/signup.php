@@ -36,6 +36,15 @@ session_start();
     </style>
     <script>
         alert("Save your Profile Image on assests/ProfileImage/");
+        
+        function exit() {
+            var elem = confirm("You're Already Logged in");
+            if(elem == true) {
+                window.location.href = "../Main/index.php";
+            } else {
+                window.location.href = "../Main/index.php"
+            }
+        }
     </script>
 
 </head>
@@ -71,3 +80,8 @@ session_start();
 </body>
 
 </html>
+<?php 
+if(isset($_SESSION['username'])) {
+    echo "<script>exit();</script>";
+}
+?>

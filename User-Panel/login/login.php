@@ -18,6 +18,16 @@ session_start();
             background-position: top -80px left 50%;
         }
     </style>
+    <script>
+        function exit() {
+            var elem = confirm("You're Already Logged in");
+            if(elem == true) {
+                window.location.href = "../Main/index.php";
+            } else {
+                window.location.href = "../Main/index.php"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -49,3 +59,8 @@ session_start();
 </body>
 
 </html>
+<?php 
+if(isset($_SESSION['username'])) {
+    echo "<script>exit();</script>";
+}
+?>
