@@ -1,7 +1,7 @@
 <?php
 include "../connection/connection.php";
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['download'])) {
     $from = $_POST['from'];
     $to = $_POST['to'];
 
@@ -16,7 +16,6 @@ if (isset($_POST['submit'])) {
 
     // Check if there are any results
     if (mysqli_num_rows($result) > 0) {
-        // Output CSV headers
         header("Content-Type: text/csv");
         header("Content-Disposition: attachment; filename=donations_report.csv");
         header("Pragma: no-cache");
@@ -26,26 +25,29 @@ if (isset($_POST['submit'])) {
         $output = fopen("php://output", "w");
 
         // Write the CSV headers
-        fputcsv($output, array(
-            'Invoice Number',
-            'Donor Name',
-            'Username',
-            'Email',
-            'Phone Number',
-            'Donation Date',
-            'Donation Time',
-            'Address',
-            'PAN',
-            'Aadhaar',
-            'Postal Code',
-            'City',
-            'State',
-            'Country',
-            'Nationality',
-            'Focus',
-            'Payment_Method',
-            'Amount'
-        ));
+        fputcsv(
+            $output,
+            array(
+                'Invoice Number',
+                'Donor Name',
+                'Username',
+                'Email',
+                'Phone Number',
+                'Donation Date',
+                'Donation Time',
+                'Address',
+                'PAN',
+                'Aadhaar',
+                'Postal Code',
+                'City',
+                'State',
+                'Country',
+                'Nationality',
+                'Focus',
+                'Payment_Method',
+                'Amount'
+            )
+        );
 
         // Loop through the results and output data
         while ($row = mysqli_fetch_assoc($result)) {
@@ -77,10 +79,46 @@ if (isset($_POST['submit'])) {
 
         // Close the output stream
         fclose($output);
-
         exit();
-    } else {
-        echo "No donations found within the specified date range.";
+    }
+}
+
+if (isset($_POST['submit'])) {
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+
+    $from = date("Y-m-d", strtotime($from));
+    $to = date("Y-m-d", strtotime($to));
+
+    $query = "SELECT * FROM donation WHERE donate_date BETWEEN '$from' AND '$to'";
+
+    // Execute the query
+    // Assuming you have some database connection object, e.g., $conn
+    $result = mysqli_query($conn, $query);
+
+    // Check if there are any results
+    if (mysqli_num_rows($result) > 0) {
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $invoice_number = $row['invoice_num'];
+            $name = $row['name'];
+            $today_date = $row['donate_date'];
+            $time = $row['time'];
+            $address = $row['address'];
+            $pan = $row['pan'];
+            $aadhaar = $row['aadhaar'];
+            $postalcode = $row['postalcode'];
+            $city = $row['city'];
+            $state = $row['state'];
+            $username = $row['username'];
+            $email = $row['email'];
+            $phone_no = $row['phone_no'];
+            $country = $row['country'];
+            $nationality = $row['nationality'];
+            $focus = $row['focus'];
+            $pay_meth = $row['payment'];
+            $amount = $row['amount'];
+        }
     }
 }
 ?>

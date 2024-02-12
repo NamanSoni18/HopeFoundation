@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../../assests/Hope_Foundation_logo2.png" sizes="192X192" type="image/png">
     <link rel="stylesheet" href="../navbar/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
         body {
             background: url("../../assests/backgrounds/background6.svg") no-repeat;
@@ -33,6 +34,14 @@ session_start();
             position: absolute;
             top: 20%;
         }
+
+        .password-toggle {
+            position: absolute;
+            right: 42px;
+            top: 70%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     </style>
     <script>
         alert("Save your Profile Image on assests/ProfileImage/");
@@ -43,6 +52,21 @@ session_start();
                 window.location.href = "../Main/index.php";
             } else {
                 window.location.href = "../Main/index.php"
+            }
+        }
+
+        function togglePasswordVisibility(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = document.querySelector('.password-toggle');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
             }
         }
     </script>
@@ -64,7 +88,9 @@ session_start();
             <input type="text" name="fname" class="input" placeholder="Full Name">
             <input type="date" name="dob" class="input" placeholder="Date of Birth">
             <input type="email" name="email" class="input" placeholder="Email">
-            <input type="password" name="password" class="input" placeholder="Password">
+            <input type="password" name="password" id="password" class="input" placeholder="Password">
+            <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('password')"
+                style="color: black;"></i>
             <div class="remember">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember Me</label>
