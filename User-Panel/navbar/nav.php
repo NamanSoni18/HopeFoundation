@@ -137,6 +137,7 @@ function getProfileImage()
                         <div class="menu-profile" id="menu-profile">
                             <ul>
                                 <li><a href="../Profile/profile.php">Profile</a></li>
+                                <li><a href="../Donate/donation-report.php">Donation Report</a></li>
                                 <?php
                                 // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff') {

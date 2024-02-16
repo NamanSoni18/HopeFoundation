@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include "../login/connection.php";
+?>
 <html>
 
 <head>
@@ -303,7 +307,6 @@
     </div>
     <?php
     ob_start();
-    include '../login/connection.php';
 
     $invoice_number = $_GET['invoice_number'];
 
