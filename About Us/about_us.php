@@ -112,7 +112,7 @@ session_start();
         </p> -->
         <!-- <h5><b>Thank you for being a part of our mission.</b>
         </h5> -->
-        <a href="../connect/contact.php">
+        <a href="../Donate/Donate.php">
             <button class="Donate-btn-wrapper content-wrapper" style=" margin: 20px auto;">Contact US ❤️</button></a>
     </div>
 
