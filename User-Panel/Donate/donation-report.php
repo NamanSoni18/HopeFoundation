@@ -2,7 +2,7 @@
 session_start();
 include "../login/connection.php";
 
-$username = mysqli_real_escape_string($conn, $_SESSION["username"]);
+$username = mysqli_real_escape_string($conn, $_COOKIE["username"]);
 
 $query = "SELECT * FROM donation WHERE username = '$username'";
 $result = mysqli_query($conn, $query);

@@ -70,7 +70,7 @@ if ($result) {
                         </p>
                     </div>
                 </div>
-                <div class="footer">
+                <!-- <div class="footer">
                     <form method="post" action="">
                         <button type="button" class="news-more-info">More Info</button>
                     </form>
@@ -79,7 +79,7 @@ if ($result) {
                         <input type="hidden" name="title" value="<?php echo $post['title']; ?>">
                         <button type="submit" name="delete_message" class="news-more-info Delete">Delete</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         <?php endforeach; ?>
     </div>
