@@ -156,7 +156,7 @@ function getProfileImage()
                     </div>
                 <?php } ?>
 
-                <a href="https://rzp.io/l/rOOnfFFkh">
+                <a href="https://rzp.io/l/UY27L3w">
                     <button class="Donate-btn-wrapper">
                         <span class="span-donate">Donate ❤️</span>
                     </button>
