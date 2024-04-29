@@ -71,7 +71,7 @@ mysqli_close($conn);
 <body>
     <!-- NavBar Load -->
     <div style="position: sticky; top: 0; background-color: #e88730; z-index: 1000">
-        <?php require_once("../navbar/nav.php") ?>
+        <?php require_once ("../navbar/nav.php") ?>
     </div>
 
     <table border="1">
@@ -84,7 +84,7 @@ mysqli_close($conn);
         <tr>
             <th>Email ID</th>
             <td>
-                <?php echo $email ?>
+                <a href="mailto:<?php echo $email ?>"><?php echo $email ?></a>
             </td>
         </tr>
         <tr>
