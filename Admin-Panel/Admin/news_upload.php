@@ -33,8 +33,9 @@ if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_S
     <div class="news">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="image-news-div news_up">
-                <label for="image" class="news-label">Type the Image Name:</label>
-                <input type="text" name="image" id="image" required>
+                <label for="up_image" class="label">Select Photo</label>
+                <input type="file" id="up_image" accept="image/*" name="up_image" class="input profile-photo" required>
+
             </div>
 
             <div class="title-news-div news_up">
@@ -50,11 +51,12 @@ if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_S
             <button type="submit" class="form-btn submit" name="submit">Upload</button>
         </form>
     </div>
+
 </body>
 
 </html>
 <?php
-include "../connection/connection.php";
+include "../login/connection.php";
 
 $sql = "SELECT * FROM news";
 
@@ -66,12 +68,14 @@ if ($result) {
         $image = $_POST['image'];
         $title = $_POST['title'];
         $paragraph = $_POST['paragraph'];
+        $uploadedFile = $_FILES["up_image"];
+        $imageName = $uploadedFile["name"];
 
-        $sql = "INSERT INTO news(image, title, paragraph, created_at) VALUES('$image', '$title', '$paragraph', NOW());";
+        $sql = "INSERT INTO news(image, title, paragraph, created_at) VALUES('$imageName', '$title', '$paragraph', NOW());";
 
         if (mysqli_query($conn, $sql)) {
             echo "Image uploaded successfully.";
-            echo "<script>alert('News Uploaded');</script>";
+            echo "<script>alert('News Uploaded');</>";
             echo "<script>window.location.href = 'news_upload.php';</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
