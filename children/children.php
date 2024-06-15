@@ -325,7 +325,7 @@ session_start();
         <p>Even the smallest gift has a significant impact on children's lives. For us to be able to <br> truly
             transform the
             lives of the children of India, we rely on the kindness of people like you!</p>
-        <a href="../Donate/Donate.php">
+        <a href="https://rzp.io/l/UY27L3w">
             <button class="Donate-btn-wrapper content-wrapper">Donate for Children ❤️</button></a>
     </div>
 </body>
