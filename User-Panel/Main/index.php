@@ -54,7 +54,7 @@ session_start();
             <p class="content-wrapper content-wrapper-paragraph">Your smallest contribution makes a big difference to
                 children's lives. We count on the generosity of people like you to be able to create real change for
                 India's children!</p>
-            <a href="../Donate/Donate.php">
+            <a href="https://rzp.io/l/UY27L3w">
                 <button class="Donate-btn-wrapper content-wrapper" style="margin: 20px auto;">Donate ❤️</button></a>
         </div>
         <div class="part2">

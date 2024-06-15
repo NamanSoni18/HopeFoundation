@@ -78,11 +78,11 @@ function getProfileImage()
                             Inbox
                         </button>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button class="nav-link" onclick="window.location.href='../Reports/reports.php';">
                             Report
                         </button>
-                    </li>
+                    </li> -->
                     <li>
                         <button class="nav-link" onclick="window.location.href='http://localhost/phpmyadmin/index.php?route=/database/structure&db=hopefoundation';">
                             Database
@@ -134,7 +134,7 @@ function getProfileImage()
                     </div>
                 <?php } ?>
 
-                <a href="../../User-Panel/Donate/Donate.php">
+                <a href="https://rzp.io/l/UY27L3w">
                     <button class="Donate-btn-wrapper">
                         <span class="span-donate">Donate❤️</span>
                     </button>

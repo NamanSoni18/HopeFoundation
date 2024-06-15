@@ -56,7 +56,7 @@ if (!(isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'admin' || $_S
 
 </html>
 <?php
-include "../login/connection.php";
+include "../connection/connection.php";
 
 $sql = "SELECT * FROM news";
 

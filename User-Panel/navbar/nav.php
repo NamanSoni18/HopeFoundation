@@ -137,7 +137,6 @@ function getProfileImage()
                         <div class="menu-profile" id="menu-profile">
                             <ul>
                                 <li><a href="../Profile/profile.php">Profile</a></li>
-                                <li><a href="../Donate/donation-report.php">Donation Report</a></li>
                                 <?php
                                 // Check if user is admin
                                 if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'staff') {
@@ -151,7 +150,7 @@ function getProfileImage()
                     </div>
                 <?php } ?>
 
-                <a href="../Donate/Donate.php">
+                <a href="https://rzp.io/l/UY27L3w">
                     <button class="Donate-btn-wrapper">
                         <span class="span-donate">Donate❤️</span>
                     </button>
